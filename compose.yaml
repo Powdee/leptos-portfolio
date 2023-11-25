@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  web:
+    build:
+      context: .
+      target: final
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    command: /usr/local/cargo/bin/cargo leptos watch
