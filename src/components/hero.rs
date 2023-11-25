@@ -19,3 +19,4 @@ pub fn Hero() -> impl IntoView {
         </div>
     }
 }
+

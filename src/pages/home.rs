@@ -1,6 +1,6 @@
+use crate::components::about::About;
 use crate::components::header::Header;
 use crate::components::hero::Hero;
-use crate::components::me::Me;
 
 use leptos::*;
 
@@ -11,7 +11,7 @@ pub fn HomePage() -> impl IntoView {
             <Header/>
             <main>
                 <Hero/>
-                <Me/>
+                <About/>
             </main>
         </div>
     }
