@@ -1,7 +1,8 @@
 version: "3"
 
+# TODO: Figure it out how to run cargo leptos with watcher and run tailwind
 services:
-  web:
+  tailwind:
     build:
       context: .
       target: final
