@@ -1,7 +1,6 @@
 pub mod app;
+pub mod components;
 pub mod pages;
-
-use std::clone;
 
 use rand::Rng;
 use wasm_bindgen::prelude::*;
@@ -12,32 +11,20 @@ use web_sys::*;
 
 static mut CURRENT_TIME: f32 = 0.0;
 
-// Function to resize the canvas
-fn resize_canvas(canvas: &web_sys::HtmlCanvasElement, window: &Window) {
-    let width = window.inner_width().unwrap().as_f64().unwrap() as u32;
-    let height = window.inner_height().unwrap().as_f64().unwrap() as u32;
-
-    // Set the canvas size to match the window size
-    canvas.set_width(width);
-    canvas.set_height(height);
-
-    // Additional logic for handling the resize, if needed
-    // For example, you might need to update the viewport or other WebGL settings
-}
-
 fn initialize_webgl_context() -> Result<WebGlRenderingContext, JsValue> {
-    let window = web_sys::window().expect("should have a window in this context");
+    let window =
+        web_sys::window().expect("should have a window in this context");
     let document = window.document().unwrap();
     let canvas = document.get_element_by_id("canvas").unwrap();
-    let canvas: web_sys::HtmlCanvasElement = canvas.dyn_into::<web_sys::HtmlCanvasElement>()?;
-    let gl: WebGlRenderingContext = canvas.get_context("webgl")?.unwrap().dyn_into()?;
+    let canvas: web_sys::HtmlCanvasElement =
+        canvas.dyn_into::<web_sys::HtmlCanvasElement>()?;
+    let gl: WebGlRenderingContext =
+        canvas.get_context("webgl")?.unwrap().dyn_into()?;
 
     let canvas_width = canvas.width() as f32;
     let canvas_height = canvas.height() as f32;
 
     gl.viewport(0, 0, canvas_width as i32, canvas_height as i32);
-
-    resize_canvas(&canvas, &window);
 
     // Set up the WebGL program
     let program = init_shaders(&gl);
@@ -48,7 +35,6 @@ fn initialize_webgl_context() -> Result<WebGlRenderingContext, JsValue> {
     let gl_clone = gl.clone();
     // Set up resize event listener
     let closure = Closure::wrap(Box::new(move |_| {
-        resize_canvas(&canvas, &window);
         draw_dots(&gl_clone, &program, 10000, canvas_width, canvas_height);
     }) as Box<dyn FnMut(web_sys::Event)>);
 
@@ -63,7 +49,11 @@ fn initialize_webgl_context() -> Result<WebGlRenderingContext, JsValue> {
     Ok(gl)
 }
 
-fn compile_shader(context: &WebGlRenderingContext, source: &str, shader_type: u32) -> WebGlShader {
+fn compile_shader(
+    context: &WebGlRenderingContext,
+    source: &str,
+    shader_type: u32,
+) -> WebGlShader {
     let shader = context.create_shader(shader_type).unwrap();
     context.shader_source(&shader, source);
     context.compile_shader(&shader);
@@ -128,9 +118,16 @@ pub fn init_shaders(context: &WebGlRenderingContext) -> WebGlProgram {
     "#;
 
     // Compile shaders
-    let vertex_shader = compile_shader(context, vs_source, WebGlRenderingContext::VERTEX_SHADER);
-    let fragment_shader =
-        compile_shader(context, fs_source, WebGlRenderingContext::FRAGMENT_SHADER);
+    let vertex_shader = compile_shader(
+        context,
+        vs_source,
+        WebGlRenderingContext::VERTEX_SHADER,
+    );
+    let fragment_shader = compile_shader(
+        context,
+        fs_source,
+        WebGlRenderingContext::FRAGMENT_SHADER,
+    );
 
     // Link program
     link_program(context, &vertex_shader, &fragment_shader)
@@ -173,7 +170,8 @@ pub fn draw_dots(
         .unwrap();
     context.bind_buffer(WebGlRenderingContext::ARRAY_BUFFER, Some(&buffer));
 
-    let time_location = context.get_uniform_location(&program, "u_time").unwrap();
+    let time_location =
+        context.get_uniform_location(&program, "u_time").unwrap();
     unsafe {
         let vertices_array = js_sys::Float32Array::view(&vertices);
         context.uniform1f(Some(&time_location), CURRENT_TIME);
@@ -185,8 +183,10 @@ pub fn draw_dots(
     }
 
     // Get attribute and uniform locations
-    let position_location = context.get_attrib_location(&program, "a_position") as u32;
-    let color_location = context.get_uniform_location(&program, "u_color").unwrap();
+    let position_location =
+        context.get_attrib_location(&program, "a_position") as u32;
+    let color_location =
+        context.get_uniform_location(&program, "u_color").unwrap();
 
     web_sys::console::log_1(&format!("{:?}", position_location).into());
     web_sys::console::log_1(&format!("{:?}", color_location).into());
@@ -223,5 +223,6 @@ pub fn hydrate() {
 
     leptos::mount_to_body(App);
 
-    let _ = initialize_webgl_context();
+    // let _ = initialize_webgl_context();
 }
+

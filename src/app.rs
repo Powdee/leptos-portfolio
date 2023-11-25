@@ -12,11 +12,11 @@ pub fn App() -> impl IntoView {
 
     view! {
         <Stylesheet id="leptos" href="/pkg/leptos_start.css"/>
-        <Script src="https://unpkg.com/htmx.org@1.9.8" />
+        <Script src="https://unpkg.com/htmx.org@1.9.8"/>
         <Title text="Erik Kurjak"/>
 
         <Router>
-            <canvas id="canvas" width="800" height="600" class="absolute" />
+            // <canvas id="canvas" width="800" height="600" class="absolute" />
             <div class="h-full">
                 <Routes>
                     <Route path="" view=HomePage/>
