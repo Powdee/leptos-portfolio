@@ -15,6 +15,9 @@ module.exports = {
         tighter: 1.15,
         relaxish: 1.8,
       },
+      maxWidth: {
+        "8xl": "88rem",
+      },
     },
   },
   plugins: [],

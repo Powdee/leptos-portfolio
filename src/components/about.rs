@@ -1,42 +1,35 @@
+use crate::components::layout::Layout;
 use crate::components::me_circle::MeCircle;
+use crate::components::me_circle::MeCircleTablet;
 
 use leptos::*;
 
 #[component]
 pub fn About() -> impl IntoView {
     view! {
-        <div class="relative isolate">
-            <div class="overflow-hidden">
-                <div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-60">
-                    <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-                        <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-                            <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                                <div></div>
-                                <div class="flex absolute justify-center items-center w-96 h-96">
-                                    <img
-                                        class="w-80 h-80 bg-cover bg-no-repeat bg-center rounded-full"
-                                        style="background-image: url(assets/me.jpg)"
-                                        title="me"
-                                    />
-                                </div>
-                                <MeCircle/>
-                            </div>
-                            <div class="mt-14 flex flex-col justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-                                <p class="relative mt-0 mb-6 text-2xl leading-relaxish text-black sm:max-w-md lg:max-w-none">
-                                    A team player with a passion for building modern digital products. With a strong affinity for functional programming and a natural problem-solving ability.
-                                </p>
-                                <button
-                                    type="button"
-                                    class="rounded-full font-normal text-2xl bg-white px-4 py-16 text-black shadow-sm ring-1 ring-inset ring-gray hover:bg-black hover:text-white"
-                                >
-                                    "Let's connect"
-                                </button>
-                            </div>
-                        </div>
+        <Layout aria_label="About">
+            <div class="grid lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col gap-x-12 lg:gap-y-0 gap-y-12">
+                <div class="order-2 lg:order-1 lg:row-span-3 self-center col-span-1">
+                    <div class="w-full h-full lg:w-96 lg:h-96 flex justify-center items-center">
+                        <img
+                            class="absolute w-48 h-48 lg:w-80 lg:h-80 bg-cover bg-no-repeat bg-center rounded-full"
+                            style="background-image: url(assets/me.jpg)"
+                        />
+                        <MeCircle/>
+                        <MeCircleTablet/>
                     </div>
                 </div>
+                <p class="lg:col-span-2 order-1 min-w-full lg:order-2 text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-black">
+                    A team player with a passion for building modern digital solutions. With a strong affinity for functional programming and a natural problem-solving ability.
+                </p>
+                <button
+                    type="button"
+                    class="lg:row-span-1 lg:col-span-2 order-3 w-full lg:mt-12 rounded-full self-end font-normal text-lg md:text-2xl bg-white px-4 py-8 lg:py-16 text-black shadow-sm ring-1 ring-inset ring-gray hover:bg-black hover:text-white"
+                >
+                    "Let's connect"
+                </button>
             </div>
-        </div>
+        </Layout>
     }
 }
 
