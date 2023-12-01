@@ -1,5 +1,6 @@
-use crate::components::layout::Layout;
-use crate::components::me_circle::{MeCircle, MeCircleTablet};
+use crate::components::ui::layout::Layout;
+use crate::components::ui::me_circle::MeCircle;
+use crate::components::ui::me_circle::MeCircleTablet;
 
 use leptos::*;
 
@@ -11,7 +12,7 @@ pub fn About() -> impl IntoView {
                 <div class="order-2 lg:order-1 lg:row-span-3 self-center col-span-1">
                     <div class="w-full h-full lg:w-96 lg:h-96 flex justify-center items-center">
                         <div
-                            class="absolute w-48 h-48 lg:w-80 lg:h-80 bg-cover bg-no-repeat bg-center rounded-full"
+                            class="absolute w-48 h-48 lg:w-72 lg:h-72 bg-cover bg-no-repeat bg-center rounded-full"
                             style="background-image: url(assets/me.webp)"
                         ></div>
                         <MeCircle/>

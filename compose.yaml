@@ -1,13 +1,7 @@
-version: "3"
-
-# TODO: Figure it out how to run cargo leptos with watcher and run tailwind
 services:
-  tailwind:
+  server:
     build:
       context: .
       target: final
     ports:
-      - "3000:3000"
-    volumes:
-      - .:/app
-    command: /usr/local/cargo/bin/cargo leptos watch
+      - 3000:3000

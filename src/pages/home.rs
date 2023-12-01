@@ -1,6 +1,7 @@
 use crate::components::about::About;
 use crate::components::features::Features;
 use crate::components::hero::Hero;
+use crate::components::perdiem::Perdiem;
 
 use leptos::*;
 
@@ -11,6 +12,7 @@ pub fn HomePage() -> impl IntoView {
             <Hero/>
             <About/>
             <Features/>
+            <Perdiem/>
         </main>
     }
 }
