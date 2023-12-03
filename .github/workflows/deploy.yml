@@ -6,15 +6,33 @@ on:
       - main
 
 jobs:
+  check_commit_message:
+    name: Check Commit Message
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Check Commit Message
+        run: |
+          if [[ "${{ github.event.head_commit.message }}" =~ "feat:" || "${{ github.event.head_commit.message }}" =~ "fix:" ]]; then
+            echo "Commit message contains 'feat' or 'fix', proceeding with deployment..."
+          else
+            echo "Commit message does not contain 'feat' or 'fix', skipping deployment."
+            exit 78
+          fi
+
   deploy:
     name: Deploy CV
     runs-on: ubuntu-latest
 
-    if: contains(github.event.head_commit.message, 'feat:') || contains(github.event.head_commit.message, 'fix:')
+    needs: check_commit_message
 
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only
+      - name: Deploy
+        run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
