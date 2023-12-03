@@ -1,72 +1,83 @@
-<picture>
-    <source srcset="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_Solid_White.svg" media="(prefers-color-scheme: dark)">
-    <img src="https://leptoscv.s3.eu-central-1.amazonaws.com/figma-design-leptos-cv" alt="Figma CV Design">
-</picture>
+# Erik Kurjak - Curriculum Vitae 🧑🏼‍💻
 
-# Curriculum Vitae - Erik Kurjak
+My personal website build with Rust (leptos), wasm bindgen, tailwind css for styling, little bit of HTMX (just for the sake of being cool) and deployed to cloud using fly.io with CI github actions.
 
-## Running website
+## Design ✍️
+
+Before I began implementing my website, I sketched the design, including typography and color palette, using Figma. It's not perfect, and it didn't need to be, as my main focus was on the technical aspects of the website.
+
+<br />
+
+<img src="https://leptoscv.s3.eu-central-1.amazonaws.com/figma-design-leptos-cv" height="400" alt="Figma CV Design">
+
+<br />
+
+## Why Rust - Leptos 🤷 ?
+
+I have built few application in Rust. Solved leet codes issue with it and fell in love with it.
+
+When I've decided that I want to build my portfolio (5th time) I was on a fence whether I want to use NextJS, Gatsby, Svelte or other JS framework. Then I remebered that Rust is compatible with wasm and there is a framework called Yew. After a research I decided to go with <b>Leptos</b>.
+
+A full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
+
+Over engineering at it's best, would you agree ? 😀 Nonetheless I went for it and here are the results.
+
+## Installing dependencies
+
+Install `Rust` on your machine - make sure you have at least `1.70` version of Rust or newer.
+https://www.rust-lang.org/tools/install
+
+We need to install `node` dependencies for Tailwind and JS related work.
+
+Make sure you have at least `Node 18` or newer.
+
+Then run
+
+`npm i`
 
 If you don't have `cargo-leptos` installed you can install it with
 
 `cargo install cargo-leptos`
 
-Then run
+## Running your project locally
 
-`cargo leptos new --git leptos-rs/start`
+`cargo leptos watch`
 
-to generate a new project template (you will be prompted to enter a project name).
+By default, you can access website at
+`http://localhost:3000`
 
-`cd {projectname}`
+In other terminal window we need to turn on our watcher for `tailwind css`.
 
-to go to your newly created project.
+`npx tailwindcss -i ./input.css -o ./style/main.css --watch  `
 
-Of course, you should explore around the project structure, but the best place to start with your application code is in `src/app.rs`.
+This will build our css and each change to either rust files or adding a new tailwding class to rust file will trigger hot reload.
 
-## Running your project
+## Running your project locally with Docker
 
-`cargo leptos watch`  
-By default, you can access your local project at `http://localhost:3000`
+To run this website on your local docker you need to have Docker installed.
 
-## Installing Additional Tools
+If you have docker installed run:
 
-By default, `cargo-leptos` uses `nightly` Rust, `cargo-generate`, and `sass`. If you run into any trouble, you may need to install one or more of these tools.
+`docker-compose up --build`
 
-1. `rustup toolchain install nightly --allow-downgrade` - make sure you have Rust nightly
-2. `rustup target add wasm32-unknown-unknown` - add the ability to compile Rust to WebAssembly
-3. `cargo install cargo-generate` - install `cargo-generate` binary (should be installed automatically in future)
-4. `npm install -g sass` - install `dart-sass` (should be optional in future)
+After succesfull build you should see in your terminal
 
-## Executing a Server on a Remote Machine Without the Toolchain
+`leptos-cv-web-1  | listening on http://0.0.0.0:3000`
 
-After running a `cargo leptos build --release` the minimum files needed are:
+## CI pipeline
 
-1. The server binary located in `target/server/release`
-2. The `site` directory and all files within located in `target/site`
+Each commit should have three prefixes:
 
-Copy these files to your remote server. The directory structure should be:
+**feat** - developing/creating someting new on website - this will trigger deployment
 
-```text
-leptos_start
-site/
-```
+**fix** - fixing a bug on website - this will trigger deployment
 
-Set the following environment variables (updating for your project as needed):
+**chore** - updating non coding stuff such as README, documentation etc... - this won't trigger deployment
 
-```sh
-export LEPTOS_OUTPUT_NAME="leptos_start"
-export LEPTOS_SITE_ROOT="site"
-export LEPTOS_SITE_PKG_DIR="pkg"
-export LEPTOS_SITE_ADDR="127.0.0.1:3000"
-export LEPTOS_RELOAD_PORT="3001"
-```
+Other prefixes or commit without prefix won't do deploy and will fail CI pipeline.
 
-Finally, run the server binary.
+## TODO
 
-## Notes about CSR and Trunk:
-
-Although it is not recommended, you can also run your project without server integration using the feature `csr` and `trunk serve`:
-
-`trunk serve --open --features csr`
-
-This may be useful for integrating external tools which require a static site, e.g. `tauri`.
+- Use wGPU for basic 2D/3D animation on website
+- Write an article about my journey using Rust for my portfolio
+- Create custom Headless CMS for this website
