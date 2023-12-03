@@ -10,7 +10,7 @@ jobs:
     name: Deploy CV
     runs-on: ubuntu-latest
 
-    if: contains(github.event.head_commit.message, 'feat') || contains(github.event.head_commit.message, 'fix')
+    if: contains(github.event.head_commit.message, 'feat:') || contains(github.event.head_commit.message, 'fix:')
 
     steps:
       - uses: actions/checkout@v3
