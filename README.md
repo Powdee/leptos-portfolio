@@ -8,23 +8,24 @@ Before I began implementing my website, I sketched the design, including typogra
 
 <br />
 
-<img src="https://leptoscv.s3.eu-central-1.amazonaws.com/figma-design-leptos-cv" height="400" alt="Figma CV Design">
+<img src="https://leptoscv.s3.eu-central-1.amazonaws.com/figma-design-leptos-cv" height="500" alt="Figma CV Design">
 
 <br />
 
 ## Why Rust - Leptos 🤷 ?
 
-I have built few application in Rust. Solved leet codes issue with it and fell in love with it.
+I've built a few applications in Rust, solving LeetCode issues and really falling in love with the language.
 
-When I've decided that I want to build my portfolio (5th time) I was on a fence whether I want to use NextJS, Gatsby, Svelte or other JS framework. Then I remebered that Rust is compatible with wasm and there is a framework called Yew. After a research I decided to go with <b>Leptos</b>.
+When I decided to create my portfolio for the fifth time, I was torn between using NextJS, Gatsby, Svelte, or other JavaScript frameworks. Then it hit me that Rust is compatible with wasm, and there's a framework called Yew. After some research, I opted for `Leptos`.
 
-A full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
+It's a full-stack, isomorphic Rust web framework that utilizes fine-grained reactivity to construct declarative user interfaces.
 
-Over engineering at it's best, would you agree ? 😀 Nonetheless I went for it and here are the results.
+It might be considered over-engineering at its best—what do you think? 😄 Anyway, I went for it, and here are the results.
 
 ## Installing dependencies
 
 Install `Rust` on your machine - make sure you have at least `1.70` version of Rust or newer.
+
 https://www.rust-lang.org/tools/install
 
 We need to install `node` dependencies for Tailwind and JS related work.
@@ -50,7 +51,7 @@ In other terminal window we need to turn on our watcher for `tailwind css`.
 
 `npx tailwindcss -i ./input.css -o ./style/main.css --watch  `
 
-This will build our css and each change to either rust files or adding a new tailwding class to rust file will trigger hot reload.
+This will build our css and each change to either rust file or adding a new tailwind class to rust file will trigger hot reload.
 
 ## Running your project locally with Docker
 
@@ -78,6 +79,6 @@ Other prefixes or commit without prefix won't do deploy and will fail CI pipelin
 
 ## TODO
 
-- Use wGPU for basic 2D/3D animation on website
+- Use wGPU for basic 2D/3D animation
 - Write an article about my journey using Rust for my portfolio
-- Create custom Headless CMS for this website
+- Create custom Headless CMS to handle displaying projects
