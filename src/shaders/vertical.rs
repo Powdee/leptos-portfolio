@@ -12,3 +12,4 @@ pub fn get_vert_shader() {
     )?;
     return vert_shader;
 }
+
