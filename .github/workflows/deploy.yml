@@ -16,11 +16,12 @@ jobs:
 
       - name: Check Commit Message
         run: |
-          if [[ "${{ github.event.head_commit.message }}" =~ "feat:" || "${{ github.event.head_commit.message }}" =~ "fix:" || "${{ github.event.head_commit.message }}" =~ "chore:" ]]; then
-            echo "Commit message contains 'feat', 'fix' or 'chore', proceeding with deployment..."
+          commit_message="${{ github.event.head_commit.message }}"
+          if [[ "$commit_message" == *"feat:"* || "$commit_message" == *"fix:"* ]]; then
+            echo "Commit message contains 'feat', 'fix', or 'chore', proceeding with deployment..."
           else
             echo "Commit message does not contain 'feat' or 'fix', skipping deployment."
-            exit 78
+            echo "::set-output name=skip::true" # Set an output variable to indicate skipping
           fi
 
   deploy:
@@ -29,7 +30,7 @@ jobs:
 
     needs: check_commit_message
 
-    if: contains(github.event.head_commit.message, 'feat') || contains(github.event.head_commit.message, 'fix')
+    if: needs.check_commit_message.outputs.skip != 'true'
 
     steps:
       - uses: actions/checkout@v3
