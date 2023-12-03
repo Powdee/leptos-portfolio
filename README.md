@@ -3,7 +3,7 @@
     <img src="https://leptoscv.s3.eu-central-1.amazonaws.com/figma-design-leptos-cv" alt="Figma CV Design">
 </picture>
 
-# Leptos Curiculum Vitea - Erik Kurjak
+# Curriculum Vitae - Erik Kurjak
 
 ## Running website
 
