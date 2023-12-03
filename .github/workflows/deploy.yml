@@ -9,9 +9,6 @@ jobs:
   check_commit_message:
     name: Check Commit Message
     runs-on: ubuntu-latest
-    outputs:
-      id: skip
-      value: false
 
     steps:
       - name: Checkout Repository
@@ -24,7 +21,7 @@ jobs:
             echo "Commit message contains 'feat' or 'fix' proceeding with deployment..."
           else
             echo "Commit message does not contain 'feat' or 'fix' skipping deployment."
-            exit 1
+            exit 78
           fi
 
   deploy:
