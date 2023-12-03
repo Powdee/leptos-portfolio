@@ -11,10 +11,20 @@ pub fn About() -> impl IntoView {
             <div class="grid lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col gap-x-12 lg:gap-y-0 gap-y-12">
                 <div class="order-2 lg:order-1 lg:row-span-3 self-center col-span-1">
                     <div class="w-full h-full lg:w-96 lg:h-96 flex justify-center items-center">
-                        <div
-                            class="absolute w-48 h-48 lg:w-72 lg:h-72 bg-cover bg-no-repeat bg-center rounded-full"
-                            style="background-image: url(assets/me.webp)"
-                        ></div>
+                        <picture class="absolute flex items-center w-48 h-48 md:w-72 md:h-72">
+                            <source
+                                type="image/webp"
+                                srcset="https://leptoscv.s3.eu-central-1.amazonaws.com/me.webp"
+                            />
+                            <img
+                                width="400"
+                                height="400"
+                                loading="lazy"
+                                class="rounded-full"
+                                decoding="async"
+                                src="https://leptoscv.s3.eu-central-1.amazonaws.com/me.jpg"
+                            />
+                        </picture>
                         <MeCircle/>
                         <MeCircleTablet/>
                     </div>
