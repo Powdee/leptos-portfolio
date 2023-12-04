@@ -19,46 +19,47 @@ pub fn Card(
             on:mouseleave=move |_e: MouseEvent| set_hovered(false)
             id=name
             class=class_name.to_owned() + spacer
-                + "cursor-pointer overflow-hidden relative bg-gray-2 rounded-[57px]"
+                + "cursor-pointer overflow-hidden relative bg-gray-2 rounded-[57px] duration-500 transition-shadow hover:shadow-md"
         >
-            <div
-                class="w-full h-full bg-cover bg-no-repeat bg-center rounded-[57px]"
-                style=format!("background-image: url(assets/{}.svg)", name)
-            ></div>
+            <Show when=move || { has_illustration }>
+                <div
+                    class="w-full h-full bg-cover bg-no-repeat bg-center rounded-[57px]"
+                    style=format!("background-image: url(assets/{}.svg)", name)
+                ></div>
+            </Show>
+
             {children()}
             <div class="bg-gray-1 w-auto absolute left-5 bottom-5 rounded-full flex flex-row justify-center items-center">
                 <div class="flex gap-4 flex-row items-center py-3 px-3">
-                    <Show when=move || { has_illustration }>
-                        <svg
-                            width="48"
-                            height="48"
-                            viewBox="0 0 58 58"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <g clip-path="url(#clip0_359_60)">
-                                <path
-                                    d="M40.9647 17.0386L17.0385 40.9648"
-                                    stroke="#212529"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                ></path>
-                                <path
-                                    d="M24.1677 16.9177L40.9647 17.0353L41.0854 33.8323"
-                                    stroke="#212529"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                ></path>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_359_60">
-                                    <rect width="48" height="48" fill="#F8F9FA"></rect>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </Show>
+                    <svg
+                        width="48"
+                        height="48"
+                        viewBox="0 0 58 58"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g clip-path="url(#clip0_359_60)">
+                            <path
+                                d="M40.9647 17.0386L17.0385 40.9648"
+                                stroke="#212529"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                            <path
+                                d="M24.1677 16.9177L40.9647 17.0353L41.0854 33.8323"
+                                stroke="#212529"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_359_60">
+                                <rect width="48" height="48" fill="#F8F9FA"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
                     <Show when=move || { is_hovered() }>
                         <span class="text-gray-9 pr-3 font-medium text-lg md:text-2xl">{name}</span>
                     </Show>

@@ -14,37 +14,43 @@ pub fn Features() -> impl IntoView {
 
             <div class="grid gap-4 md:grid-cols-5 md:grid-rows-7 mt-20 md:mt-40">
                 <Card
-                    style="height:400px"
                     has_illustration=true
                     name="alteryx"
-                    class_name="md:col-span-3 md:row-span-3"
+                    class_name="md:col-span-3 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row"
                 >
                     <span></span>
                 </Card>
                 <Card
-                    style="height:400px"
                     name="splashsports"
-                    class_name="md:col-span-2 md:row-span-3"
+                    class_name="md:col-span-2 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row"
                 >
                     <span></span>
                 </Card>
                 <Card
                     name="onemanshowfoundation"
-                    class_name="md:col-span-2 md:row-span-4"
-                    style="height:620px"
+                    class_name="md:col-span-2 md:row-span-4 min-h-card_2_row_mobile md:min-h-card_2_row"
                     has_illustration=true
                 >
                     <span></span>
                 </Card>
-            // <Card name="helpie" class_name="md:col-span-3 md:row-span-2">
-            // <span></span>
-            // </Card>
-            // <Card name="invaders" class_name="md:col-span-1 md:row-span-2 bg-gray-8">
-            // <span></span>
-            // </Card>
-            // <Card name="madesense" class_name="md:col-span-2 md:row-span-2">
-            // <span></span>
-            // </Card>
+                <Card
+                    name="helpie"
+                    class_name="md:col-span-3 md:row-span-2 min-h-card_2_row_mobile"
+                >
+                    <span></span>
+                </Card>
+                <Card
+                    name="invaders"
+                    class_name="md:col-span-1 md:row-span-2 bg-gray-8 min-h-card_2_row_mobile"
+                >
+                    <span></span>
+                </Card>
+                <Card
+                    name="madesense"
+                    class_name="md:col-span-2 md:row-span-2 min-h-card_2_row_mobile"
+                >
+                    <span></span>
+                </Card>
             </div>
         </Layout>
     }

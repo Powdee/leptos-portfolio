@@ -39,6 +39,13 @@ module.exports = {
         "8xl": "88rem",
         "10xl": "104rem",
       },
+      minHeight: {
+        card_1_row: "22rem",
+        card_1_row_mobile: "18rem",
+
+        card_2_row: "39rem",
+        card_2_row_mobile: "18rem",
+      },
     },
   },
   plugins: [],
