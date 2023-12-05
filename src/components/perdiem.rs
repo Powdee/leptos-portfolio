@@ -16,7 +16,7 @@ pub fn Perdiem() -> impl IntoView {
                 <div class="order-2 lg:order-1 lg:row-span-3 self-center col-span-1"></div>
                 <button
                     type="button"
-                    class="lg:row-span-1 lg:col-span-2 order-2 w-full lg:mb-12 rounded-full self-end outline-none font-normal text-lg md:text-3xl px-4 py-8 lg:py-16 text-gray-9 bg-gray-1 shadow-sm ring-1 ring-inset ring-gray-9 hover:bg-gray-9 hover:text-gray-1"
+                    class="lg:row-span-1 lg:col-span-2 order-2 w-full lg:mb-12 rounded-full self-end outline-none font-normal text-lg md:text-3xl px-4 py-8 md:py-12 lg:py-16 text-gray-9 bg-gray-1 shadow-sm ring-1 ring-inset ring-gray-9 hover:bg-gray-9 hover:text-gray-1"
                 >
                     "Have an idea?"
                 </button>

@@ -20,7 +20,7 @@ pub fn About() -> impl IntoView {
                                 width="400"
                                 height="400"
                                 loading="lazy"
-                                class="rounded-full w-48 h-48 md:w-72 md:h-72"
+                                class="rounded-full object-cover w-48 h-48 md:w-72 md:h-72"
                                 decoding="async"
                                 alt="erik kurjak"
                                 src="https://leptoscv.s3.eu-central-1.amazonaws.com/me.jpg"
@@ -35,7 +35,7 @@ pub fn About() -> impl IntoView {
                 </p>
                 <button
                     type="button"
-                    class="lg:row-span-1 lg:col-span-2 order-3 w-full lg:mt-12 rounded-full self-end outline-none font-normal text-lg md:text-3xl px-4 py-8 lg:py-16 text-gray-9 bg-gray-1 shadow-sm ring-1 ring-inset ring-gray-9 hover:bg-gray-9 hover:text-gray-1"
+                    class="lg:row-span-1 lg:col-span-2 order-3 w-full lg:mt-12 rounded-full self-end outline-none font-normal text-lg md:text-3xl px-4 py-8 md:py-12 lg:py-16 text-gray-9 bg-gray-1 shadow-sm ring-1 ring-inset ring-gray-9 hover:bg-gray-9 hover:text-gray-1"
                 >
                     "Let's connect"
                 </button>
