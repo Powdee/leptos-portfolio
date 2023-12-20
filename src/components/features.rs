@@ -17,40 +17,28 @@ pub fn Features() -> impl IntoView {
                     has_illustration=true
                     name="alteryx"
                     class_name="md:col-span-3 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row"
-                >
-                    <span></span>
-                </Card>
+                />
                 <Card
                     name="splashsports"
                     class_name="md:col-span-2 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row"
-                >
-                    <span></span>
-                </Card>
+                />
                 <Card
-                    name="onemanshowfoundation"
+                    name="oms"
                     class_name="md:col-span-2 md:row-span-4 min-h-card_2_row_mobile md:min-h-card_2_row"
                     has_illustration=true
-                >
-                    <span></span>
-                </Card>
+                />
                 <Card
                     name="helpie"
                     class_name="md:col-span-3 md:row-span-2 min-h-card_2_row_mobile"
-                >
-                    <span></span>
-                </Card>
+                />
                 <Card
                     name="invaders"
                     class_name="md:col-span-1 md:row-span-2 bg-gray-8 min-h-card_2_row_mobile"
-                >
-                    <span></span>
-                </Card>
+                />
                 <Card
                     name="madesense"
                     class_name="md:col-span-2 md:row-span-2 min-h-card_2_row_mobile"
-                >
-                    <span></span>
-                </Card>
+                />
             </div>
         </Layout>
     }

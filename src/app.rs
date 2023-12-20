@@ -2,8 +2,8 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
-use crate::components::header::Header;
 use crate::pages::about::AboutPage;
+use crate::pages::case::UseCasePage;
 use crate::pages::home::HomePage;
 use crate::pages::notfound::NotFound;
 
@@ -18,11 +18,12 @@ pub fn App() -> impl IntoView {
 
         <Router>
             // <canvas id="canvas" width="800" height="600" class="absolute" />
-            <Header/>
+            // <Header/>
             <Routes>
                 <Route path="" view=HomePage/>
                 <Route path="/*any" view=NotFound/>
                 <Route path="/about" view=AboutPage/>
+                <Route path="/projects/:id" view=UseCasePage/>
             </Routes>
         </Router>
     }

@@ -35,3 +35,11 @@
     @apply bg-gray-1;
   }
 }
+
+.usecase-in {
+  transform: translateY(40);
+}
+
+.usecase-out {
+  transform: translateY(0);
+}
