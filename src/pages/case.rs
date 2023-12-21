@@ -1,4 +1,4 @@
-use crate::components::ui::card::Card;
+use crate::components::ui::card_link::CardLink;
 use crate::components::ui::layout::Layout;
 use leptos::*;
 use leptos_router::use_params_map;
@@ -74,16 +74,16 @@ pub fn UseCasePage() -> impl IntoView {
                         </p>
 
                         <div class="flex flex-row gap-2 md:gap-4 overflow-x-scroll md:overflow-x-hidden">
-                            <div class="bg-gray-9 rounded-full px-6 py-2 cursor-pointer">
+                            <div class="bg-[#0078C0] rounded-full px-6 py-2 cursor-pointer">
                                 <span class="font-medium text-md text-gray-1">visit</span>
                             </div>
-                            <div class="bg-gray-3 rounded-full px-6 py-2">
+                            <div class="bg-gray-2 rounded-full px-6 py-2">
                                 <span class="font-medium text-md">iOS</span>
                             </div>
-                            <div class="bg-gray-3 rounded-full px-6 py-2">
+                            <div class="bg-gray-2 rounded-full px-6 py-2">
                                 <span class="font-medium text-md">android</span>
                             </div>
-                            <div class="bg-gray-3 rounded-full px-6 py-2">
+                            <div class="bg-gray-2 rounded-full px-6 py-2">
                                 <span class="font-medium text-md">flutter</span>
                             </div>
                         </div>
@@ -105,37 +105,26 @@ pub fn UseCasePage() -> impl IntoView {
                 </div>
 
                 <div class="grid gap-4 md:grid-cols-5 md:grid-rows-7 mt-10 md:mt-20">
-                    <Card
-                        is_link=false
-                        name="alteryx"
-                        class_name="md:col-span-3 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row"
-                    />
-                    <Card
-                        is_link=false
-                        name="splashsports"
-                        class_name="md:col-span-2 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row"
-                    />
-                    <Card
-                        is_link=false
-                        name="oms"
-                        class_name="md:col-span-2 md:row-span-4 min-h-card_2_row_mobile md:min-h-card_2_row"
-                    />
-                    <Card
-                        is_link=false
-                        name="helpie"
-                        class_name="md:col-span-3 md:row-span-2 min-h-card_2_row_mobile"
-                    />
-                    <Card
-                        is_link=false
-                        name="invaders"
-                        class_name="md:col-span-1 md:row-span-2 bg-gray-8 min-h-card_2_row_mobile"
-                    />
-                    <Card
-                        is_link=false
-                        name="madesense"
-                        class_name="md:col-span-2 md:row-span-2 min-h-card_2_row_mobile"
-                    />
+                    <CardLink class_name="md:col-span-3 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row">
+                        <span></span>
+                    </CardLink>
+                    <CardLink class_name="md:col-span-2 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row">
+                        <span></span>
+                    </CardLink>
+                    <CardLink class_name="md:col-span-2 md:row-span-4 min-h-card_2_row_mobile md:min-h-card_2_row">
+                        <span></span>
+                    </CardLink>
+                    <CardLink class_name="md:col-span-3 md:row-span-2 min-h-card_2_row_mobile">
+                        <span></span>
+                    </CardLink>
+                    <CardLink class_name="md:col-span-1 md:row-span-2 bg-gray-8 min-h-card_2_row_mobile">
+                        <span></span>
+                    </CardLink>
+                    <CardLink class_name="md:col-span-2 md:row-span-2 min-h-card_2_row_mobile">
+                        <span></span>
+                    </CardLink>
                 </div>
+
             </Layout>
         </main>
     }

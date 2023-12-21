@@ -1,5 +1,9 @@
-use crate::components::ui::card::Card;
-use crate::components::ui::layout::Layout;
+use crate::components::ui::assets::{
+    ayx_logo::AyxLogo, ayx_vector::AyxVector, helpie_logo::HelpieLogo,
+    invaders_logo::InvadersLogo, madesense_logo::MadesenseLogo,
+    oms_logo::OmsLogo, splash_logo::SplashLogo,
+};
+use crate::components::ui::{card::Card, layout::Layout};
 
 use leptos::*;
 
@@ -14,31 +18,57 @@ pub fn Features() -> impl IntoView {
 
             <div class="grid gap-4 md:grid-cols-5 md:grid-rows-7 mt-20 md:mt-40">
                 <Card
-                    has_illustration=true
                     name="alteryx"
                     class_name="md:col-span-3 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row"
-                />
-                <Card
-                    name="splashsports"
-                    class_name="md:col-span-2 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row"
-                />
+                >
+                    <div class="h-full flex justify-center items-center">
+                        <AyxLogo/>
+                    </div>
+
+                // <div class="absolute bottom-0">
+                // <AyxVector/>
+                // </div>
+                </Card>
                 <Card
                     name="oms"
-                    class_name="md:col-span-2 md:row-span-4 min-h-card_2_row_mobile md:min-h-card_2_row"
-                    has_illustration=true
-                />
+                    class_name="md:col-span-2 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row"
+                >
+                    <div class="h-full flex justify-center items-center">
+                        <OmsLogo/>
+                    </div>
+                </Card>
                 <Card
-                    name="helpie"
+                    name="madesense"
+                    class_name="md:col-span-2 md:row-span-4 min-h-card_2_row_mobile md:min-h-card_2_row"
+                >
+                    <div class="h-full flex justify-center items-center">
+                        <MadesenseLogo/>
+                    </div>
+                </Card>
+                <Card
+                    name="splashsports"
                     class_name="md:col-span-3 md:row-span-2 min-h-card_2_row_mobile"
-                />
+                >
+                    <div class="h-full flex justify-center items-center">
+                        <SplashLogo/>
+                    </div>
+                </Card>
                 <Card
                     name="invaders"
                     class_name="md:col-span-1 md:row-span-2 bg-gray-8 min-h-card_2_row_mobile"
-                />
+                >
+                    <div class="h-full flex justify-center items-center">
+                        <InvadersLogo/>
+                    </div>
+                </Card>
                 <Card
-                    name="madesense"
+                    name="helpie"
                     class_name="md:col-span-2 md:row-span-2 min-h-card_2_row_mobile"
-                />
+                >
+                    <div class="h-full flex justify-center items-center">
+                        <HelpieLogo/>
+                    </div>
+                </Card>
             </div>
         </Layout>
     }
