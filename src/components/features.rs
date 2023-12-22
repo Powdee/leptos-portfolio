@@ -1,7 +1,6 @@
 use crate::components::ui::assets::{
-    ayx_logo::AyxLogo, ayx_vector::AyxVector, helpie_logo::HelpieLogo,
-    invaders_logo::InvadersLogo, madesense_logo::MadesenseLogo,
-    oms_logo::OmsLogo, splash_logo::SplashLogo,
+    ayx_logo::AyxLogo, helpie_logo::HelpieLogo, invaders_logo::InvadersLogo,
+    madesense_logo::MadesenseLogo, oms_logo::OmsLogo, splash_logo::SplashLogo,
 };
 use crate::components::ui::{card::Card, layout::Layout};
 
@@ -24,7 +23,6 @@ pub fn Features() -> impl IntoView {
                     <div class="h-full flex justify-center items-center">
                         <AyxLogo/>
                     </div>
-
                 // <div class="absolute bottom-0">
                 // <AyxVector/>
                 // </div>

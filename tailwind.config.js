@@ -6,6 +6,9 @@ module.exports = {
       screens: {
         "2xl": "2400px",
       },
+      boxShadow: {
+        explore: "0px 0px 2px 6px rgba(206,212,218, 0.3)",
+      },
       backgroundColor: {
         "gray-1": "#F8F9FA",
         "gray-2": "#E9ECEF",

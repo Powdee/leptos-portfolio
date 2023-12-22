@@ -43,3 +43,11 @@
 .usecase-out {
   transform: translateY(0);
 }
+
+.explore-in {
+  width: 200;
+}
+
+.explore-out {
+  width: auto;
+}

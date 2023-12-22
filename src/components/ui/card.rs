@@ -23,8 +23,44 @@ pub fn Card(
         >
 
             {children()}
-            <div class="bg-gray-1 w-auto absolute left-5 bottom-5 rounded-full flex flex-row justify-center items-center">
-                <div class="flex gap-4 flex-row items-center py-3 px-3">
+            <div class=
+            {
+                let base_class = "bg-gray-1 w-auto absolute left-5 bottom-5 rounded-full flex flex-row justify-center items-center ease-out duration-700";
+                move || {
+                    if is_hovered.get() {
+                        format!("{} {}", base_class, "shadow-explore")
+                    } else {
+                        format!("{} {}", base_class, "shadow-none")
+                    }
+                }
+            }>
+
+                <div class="flex flex-row items-center py-3 px-3">
+                    <div class={
+                        let base_class = "transition-all duration-700 linear overflow-hidden";
+                        move || {
+                            if is_hovered.get() {
+                                format!(
+                                    "{} {}",
+                                    base_class,
+                                    "max-w-[200px] pl-3 pr-3 translate-x-0",
+                                )
+                            } else {
+                                format!("{} {}", base_class, "max-w-0 -translate-x-4")
+                            }
+                        }
+                    }>
+                        <span class={
+                            let base_class = "text-gray-9 font-medium text-lg md:text-2xl ease-out duration-500 transition-opacity";
+                            move || {
+                                if is_hovered.get() {
+                                    format!("{} {}", base_class, "opacity-100 delay-300")
+                                } else {
+                                    format!("{} {}", base_class, "opacity-0")
+                                }
+                            }
+                        }>{name}</span>
+                    </div>
                     <svg
                         width="48"
                         height="48"
@@ -54,11 +90,7 @@ pub fn Card(
                             </clipPath>
                         </defs>
                     </svg>
-                    <Show when=move || { is_hovered() }>
-                        <span class="text-gray-9 pr-3 font-medium text-lg md:text-2xl">
-                            explore
-                        </span>
-                    </Show>
+
                 </div>
             </div>
         </a>
