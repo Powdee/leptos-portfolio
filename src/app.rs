@@ -3,9 +3,9 @@ use leptos_meta::*;
 use leptos_router::*;
 
 use crate::pages::about::AboutPage;
-use crate::pages::case::UseCasePage;
 use crate::pages::home::HomePage;
-use crate::pages::notfound::NotFound;
+use crate::pages::not_found::NotFound;
+use crate::pages::use_cases::UseCasesPage;
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -13,7 +13,6 @@ pub fn App() -> impl IntoView {
 
     view! {
         <Stylesheet id="leptos" href="/pkg/leptos_start.css"/>
-        <Script src="https://unpkg.com/htmx.org@1.9.8"/>
         <Title text="Erik Kurjak"/>
 
         <Router>
@@ -23,7 +22,7 @@ pub fn App() -> impl IntoView {
                 <Route path="" view=HomePage/>
                 <Route path="/*any" view=NotFound/>
                 <Route path="/about" view=AboutPage/>
-                <Route path="/projects/:id" view=UseCasePage/>
+                <Route path="/projects/:id" view=UseCasesPage/>
             </Routes>
         </Router>
     }

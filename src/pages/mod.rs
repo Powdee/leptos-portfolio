@@ -1,5 +1,5 @@
 pub mod about;
-pub mod case;
 pub mod home;
-pub mod notfound;
+pub mod not_found;
+pub mod use_cases;
 

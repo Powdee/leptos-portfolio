@@ -12,20 +12,9 @@ pub fn Header() -> impl IntoView {
                     Hey, "I’m" Erik "👋"
                 </h4>
                 <div class="items-center justify-end gap-1 flex lg:flex-1">
-                    <h4
-                        hx-get="link.html"
-                        hx-trigger="click"
-                        hx-target="#see_more"
-                        class="cursor-pointer text-gray-6 text-sm sm:text-md"
-                    >
+                    <h4 class="text-gray-6 text-sm sm:text-md">
                         This website was build using Rust
                     </h4>
-                    <div
-                        id="see_more"
-                        class="items-center justify-end"
-                        hx-trigger="once"
-                        hx-get="link.html"
-                    ></div>
                 </div>
             </nav>
         </header>

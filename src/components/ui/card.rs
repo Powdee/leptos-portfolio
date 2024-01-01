@@ -4,16 +4,17 @@ use web_sys::MouseEvent;
 #[component]
 pub fn Card(
     children: Children,
-    name: &'static str,
-    #[prop(default = "")] class_name: &'static str,
-    #[prop(default = "")] style: &'static str,
+    name: String,
+    #[prop(into)] class_name: String,
+    #[prop(into)] style: String,
 ) -> impl IntoView {
     let (is_hovered, set_hovered) = create_signal(false);
     let spacer = " ";
+    let name_cloned = name.clone();
 
     view! {
         <a
-            href="projects/".to_owned() + name
+            href=format!("projects/{}", name)
             style=style
             on:mouseenter=move |_e: MouseEvent| set_hovered(true)
             on:mouseleave=move |_e: MouseEvent| set_hovered(false)
@@ -59,7 +60,7 @@ pub fn Card(
                                     format!("{} {}", base_class, "opacity-0")
                                 }
                             }
-                        }>{name}</span>
+                        }>{name_cloned}</span>
                     </div>
                     <svg
                         width="48"

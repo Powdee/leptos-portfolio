@@ -2,6 +2,10 @@ pub mod app;
 pub mod components;
 pub mod pages;
 
+pub mod types {
+    pub mod project;
+}
+
 use rand::Rng;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
@@ -217,12 +221,8 @@ pub fn draw_dots(
 
 #[wasm_bindgen]
 pub fn hydrate() {
-    use app::*;
-
     console_error_panic_hook::set_once();
-
-    leptos::mount_to_body(App);
-
+    leptos::leptos_dom::HydrationCtx::stop_hydrating();
     // let _ = initialize_webgl_context();
 }
 
