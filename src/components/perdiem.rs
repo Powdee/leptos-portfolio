@@ -12,7 +12,7 @@ pub fn Perdiem() -> impl IntoView {
                 philosophy
             </h1>
 
-            <div class="grid lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col gap-x-12 lg:gap-y-0 gap-y-12 mt-20 md:mt-40">
+            <div class="grid lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col gap-x-12 lg:gap-y-0 gap-y-8 mt-20 md:mt-40">
                 <div class="order-2 lg:order-1 lg:row-span-3 self-center col-span-1"></div>
                 <button
                     type="button"

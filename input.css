@@ -36,6 +36,7 @@
   }
 }
 
+/* ANIMATION */
 .usecase-in {
   transform: translateY(40);
 }
@@ -50,4 +51,59 @@
 
 .explore-out {
   width: auto;
+}
+
+/* FEATURES */
+.features {
+  display: grid;
+
+  @media (min-width: 1024px) {
+    min-height: 80svh;
+    gap: 1rem;
+    grid-template-areas:
+      "alt alt alt alt alt oms oms"
+      "alt alt alt alt alt oms oms"
+      "alt alt alt alt alt oms oms"
+      "alt alt alt alt alt oms oms"
+      "hel hel hel spl spl spl spl"
+      "hel hel hel spl spl spl spl"
+      "hel hel hel inv inv mad mad"
+      "hel hel hel inv inv mad mad";
+  }
+
+  gap: 0.5rem;
+  min-height: 70svh;
+  grid-template-areas:
+    "alt alt alt alt oms oms oms"
+    "alt alt alt alt oms oms oms"
+    "alt alt alt alt oms oms oms"
+    "alt alt alt alt oms oms oms"
+    "mad mad mad spl spl spl spl"
+    "mad mad mad spl spl spl spl"
+    "inv inv inv hel hel hel hel"
+    "inv inv inv hel hel hel hel";
+}
+
+.alt {
+  grid-area: alt;
+}
+
+.oms {
+  grid-area: oms;
+}
+
+.mad {
+  grid-area: mad;
+}
+
+.spl {
+  grid-area: spl;
+}
+
+.hel {
+  grid-area: hel;
+}
+
+.inv {
+  grid-area: inv;
 }

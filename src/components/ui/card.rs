@@ -20,13 +20,13 @@ pub fn Card(
             on:mouseleave=move |_e: MouseEvent| set_hovered(false)
             id=name
             class=class_name.to_owned() + spacer
-                + "cursor-pointer overflow-hidden relative bg-gray-9 rounded-[57px] duration-500 transition-shadow hover:shadow-md"
+                + "cursor-pointer overflow-hidden relative bg-gray-9 rounded-[47px] md:rounded-[57px] duration-500 transition-shadow hover:shadow-md min-h-[200px]"
         >
 
             {children()}
             <div class=
             {
-                let base_class = "bg-gray-1 w-auto absolute left-5 bottom-5 rounded-full flex flex-row justify-center items-center ease-out duration-700";
+                let base_class = "bg-gray-1 w-auto absolute left-5 bottom-5 rounded-full flex flex-row justify-center items-center ease-out duration-700 hidden lg:block";
                 move || {
                     if is_hovered.get() {
                         format!("{} {}", base_class, "shadow-explore")

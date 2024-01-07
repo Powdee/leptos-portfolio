@@ -44,7 +44,7 @@ fn FeaturedCards() -> impl IntoView {
     });
 
     view! {
-        <div class="grid gap-4 md:grid-cols-5 md:grid-rows-7 mt-20 md:mt-40">
+        <div class="features mt-20 md:mt-40">
             {move || {
                 projects
                     .get()
@@ -55,7 +55,7 @@ fn FeaturedCards() -> impl IntoView {
                             <Card
                                 name=project_clone.name.to_string()
                                 style=""
-                                class_name="md:col-span-2 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row"
+                                class_name=project.area.to_string()
                             >
                                 <div class="h-full flex justify-center items-center">
                                     {match project_clone.name.as_str() {
@@ -64,7 +64,7 @@ fn FeaturedCards() -> impl IntoView {
                                         "madesense" => view! { <MadesenseLogo/> }.into_view(),
                                         "splashsports" => view! { <SplashLogo/> }.into_view(),
                                         "invaders" => view! { <InvadersLogo/> }.into_view(),
-                                        "helpie-pomodoro" => view! { <HelpieLogo/> }.into_view(),
+                                        "helpie" => view! { <HelpieLogo/> }.into_view(),
                                         _ => view! {}.into_view(),
                                     }}
 
@@ -92,6 +92,10 @@ pub fn Features() -> impl IntoView {
         </Layout>
     }
 }
+
+
+
+
 
 
 

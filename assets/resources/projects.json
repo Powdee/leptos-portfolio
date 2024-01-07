@@ -2,6 +2,7 @@
   "data": [
     {
       "name": "alteryx",
+      "area": "alt",
       "description": "lorem ipsum",
       "information": { "about": "", "timeline": "", "responsibility": "" },
       "tags": ["web", "typescript", "react", "node"],
@@ -12,6 +13,7 @@
     },
     {
       "name": "oms",
+      "area": "oms",
       "description": "lorem ipsum",
       "information": { "about": "", "timeline": "", "responsibility": "" },
       "tags": ["web", "typescript", "gatsby", "firebase", "contentful"],
@@ -22,6 +24,7 @@
     },
     {
       "name": "madesense",
+      "area": "mad",
       "description": "lorem ipsum",
       "information": { "about": "", "timeline": "", "responsibility": "" },
       "tags": ["web", "typescript", "gatsby", "contentful"],
@@ -32,6 +35,7 @@
     },
     {
       "name": "splashsports",
+      "area": "spl",
       "description": "lorem ipsum",
       "information": { "about": "", "timeline": "", "responsibility": "" },
       "tags": ["web", "typescript", "react", "node"],
@@ -42,6 +46,7 @@
     },
     {
       "name": "invaders",
+      "area": "inv",
       "description": "lorem ipsum",
       "information": { "about": "", "timeline": "", "responsibility": "" },
       "tags": ["desktop", "rust"],
@@ -51,10 +56,11 @@
       }
     },
     {
-      "name": "helpie-pomodoro",
+      "name": "helpie",
+      "area": "hel",
       "description": "lorem ipsum",
       "information": { "about": "", "timeline": "", "responsibility": "" },
-      "tags": ["desktop", "rust", "tauri"],
+      "tags": ["desktop", "rust", "tauri", "axum"],
       "link": {
         "source": "github",
         "url": ""

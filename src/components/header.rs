@@ -12,7 +12,7 @@ pub fn Header() -> impl IntoView {
                     Hey, "I’m" Erik "👋"
                 </h4>
                 <div class="items-center justify-end gap-1 flex lg:flex-1">
-                    <h4 class="text-gray-6 text-sm sm:text-md">
+                    <h4 class="text-gray-7 text-sm sm:text-md">
                         This website was build using Rust
                     </h4>
                 </div>

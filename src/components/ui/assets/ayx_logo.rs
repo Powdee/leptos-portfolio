@@ -4,6 +4,7 @@ use leptos::*;
 pub fn AyxLogo() -> impl IntoView {
     view! {
         <svg
+            class="lg:w-[234px] w-[100px]"
             width="234"
             height="73"
             viewBox="0 0 234 73"

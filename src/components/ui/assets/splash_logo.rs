@@ -4,6 +4,7 @@ use leptos::*;
 pub fn SplashLogo() -> impl IntoView {
     view! {
         <svg
+            class="lg:w-[446px] w-[200px]"
             width="446"
             height="48"
             viewBox="0 0 446 48"

@@ -4,6 +4,7 @@ use leptos::*;
 pub fn HelpieLogo() -> impl IntoView {
     view! {
         <svg
+            class="lg:w-[204px] w-[100px]"
             width="204"
             height="54"
             viewBox="0 0 204 54"

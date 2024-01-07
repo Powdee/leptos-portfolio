@@ -4,6 +4,7 @@ use leptos::*;
 pub fn MadesenseLogo() -> impl IntoView {
     view! {
         <svg
+            class="lg:w-[108px] w-[60px]"
             width="108"
             height="96"
             viewBox="0 0 108 96"

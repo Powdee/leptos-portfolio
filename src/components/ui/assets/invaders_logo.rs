@@ -4,6 +4,7 @@ use leptos::*;
 pub fn InvadersLogo() -> impl IntoView {
     view! {
         <svg
+            class="lg:w-[100px] w-[50px]"
             width="100"
             height="100"
             viewBox="0 0 100 100"
