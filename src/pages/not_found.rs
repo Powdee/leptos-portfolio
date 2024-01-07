@@ -17,7 +17,7 @@ pub fn NotFound() -> impl IntoView {
                 404
             </h2>
             <Layout aria_label="Not Found" class_name="flex-col">
-                <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-tight text-gray-9 lg:leading-tighter">
+                <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-tight text-gray-9 leading-tighter">
                     Page <span class="font-light text-gray-9">not</span> <br/> not found
                 </h1>
                 <p class="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9 mt-10 lg:mt-20">
