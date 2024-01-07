@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y openssl
 COPY --from=build /app/target target
 
 ENV LEPTOS_SITE_ADDR=0.0.0.0:3000
+ENV RUST_ENV=production
 ARG UID=10001
 
 RUN adduser \
