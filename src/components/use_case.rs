@@ -11,7 +11,7 @@ use web_sys::MouseEvent;
 // TODO: project_name (optional) and use it here
 #[server(GetProjectByName, "/api", "GetJson", "v1/project")]
 pub async fn get_project_by_name(project_name: String) -> Result<Option<Project>, ServerFnError> {
-    let file_path = format!("{}/resources/projects.json", env!("CARGO_MANIFEST_DIR"));
+    let file_path = format!("{}/target/site/resources/projects.json", env!("CARGO_MANIFEST_DIR"));
 
     let file_content = match fs::read_to_string(file_path) {
         Ok(content) => content,
@@ -169,6 +169,9 @@ pub fn UseCase(name: String) -> impl IntoView {
         </main>
     }
 }
+
+
+
 
 
 

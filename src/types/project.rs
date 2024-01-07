@@ -23,7 +23,7 @@ pub struct Information {
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct Link {
-    source: String,
-    url: String,
+    pub source: String,
+    pub url: String,
 }
 

@@ -12,8 +12,8 @@ use leptos::*;
 
 #[server(GetProjects, "/api", "GetJson", "v1/projects")]
 pub async fn get_projects() -> Result<Vec<Project>, ServerFnError> {
-    let file_path = format!("{}/resources/projects.json", env!("CARGO_MANIFEST_DIR"));
-
+    let file_path = format!("{}/target/site/resources/projects.json", env!("CARGO_MANIFEST_DIR"));
+    
     let file_content = match fs::read_to_string(file_path) {
         Ok(content) => content,
         Err(e) => return Err(ServerFnError::ServerError(format!("Failed to read file: {}", e))),
@@ -92,6 +92,14 @@ pub fn Features() -> impl IntoView {
         </Layout>
     }
 }
+
+
+
+
+
+
+
+
 
 
 
