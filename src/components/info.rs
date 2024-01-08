@@ -56,7 +56,7 @@ pub fn Info() -> impl IntoView {
 
                     <button
                         type="button"
-                        class="w-full md:w-[680px] mt-20 lg:mt-40 rounded-full outline-none font-normal text-lg md:text-3xl px-4 py-8 md:py-12 lg:py-16 text-gray-9 bg-gray-1 shadow-sm hover:bg-gray-9 hover:text-gray-1 ring-gray-1 hover:ring-gray-1"
+                        class="w-full md:w-[680px] mt-20 lg:mt-40 rounded-full outline-none font-normal text-lg md:text-3xl px-4 py-8 md:py-12 lg:py-16 text-gray-9 bg-gray-1 shadow-sm hover:bg-gray-9 hover:text-gray-1 ring-1 ring-gray-1 hover:ring-gray-1"
                     >
                         "Let's schedule a call"
                     </button>
