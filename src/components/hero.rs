@@ -7,8 +7,31 @@ pub fn Hero() -> impl IntoView {
     view! {
         <Layout aria_label="Hero">
             <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-tight text-gray-9 leading-tighter text-center md:text-left">
-                I <span class="font-light text-gray-9">engineer</span> <br/> digital solutions <br/>
-                from scratch
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-9">I</span>
+                </div>
+                {' '}
+                <div class="animated-title">
+                    <em class="animated-title-element font-light text-gray-9">engineer</em>
+                </div>
+                {' '}
+                <br/>
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-9">digital</span>
+                </div>
+                {' '}
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-9">solutions</span>
+                </div>
+                {' '}
+                <br/>
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-9">from</span>
+                </div>
+                {' '}
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-9">scratch</span>
+                </div>
             </h1>
         </Layout>
     }

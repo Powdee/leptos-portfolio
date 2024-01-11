@@ -23,6 +23,7 @@ rand = "0.8.5"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 reqwest = { version = "0.11", features = ["rustls-tls"] }
+leptos-use = "0.9.0"
 
 [dependencies.web-sys]
 version = "0.3.65"
@@ -36,6 +37,7 @@ ssr = [
   "dep:actix-web",
   "dep:leptos_actix",
   "leptos/ssr",
+  "leptos-use/ssr",
   "leptos_meta/ssr",
   "leptos_router/ssr",
 ]

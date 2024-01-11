@@ -34,6 +34,32 @@
   body {
     @apply bg-gray-1;
   }
+  body {
+    /* @apply overflow-hidden;
+    @apply h-full;
+    @apply w-full; */
+  }
+}
+
+/* LENIS */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 /* ANIMATION */
@@ -106,4 +132,102 @@
 
 .inv {
   grid-area: inv;
+}
+
+/* Title animation */
+@keyframes slideTitleUp {
+  0% {
+    transform: translate(0px, 120%);
+  }
+  100% {
+    transform: translate(0px, 0%);
+  }
+}
+
+.animated-title {
+  position: relative;
+  display: inline-block;
+  margin: -0.15em;
+  padding: 0.15em;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.animated-title-element {
+  position: relative;
+  display: inline-block;
+  transform: translate(0px, 120%);
+  will-change: auto;
+  animation-name: slideTitleUp;
+  animation-duration: 1.2s;
+  animation-delay: 0.05s;
+  animation-timing-function: cubic-bezier(0.34, 0.34, 0, 0.97);
+  animation-fill-mode: forwards;
+}
+
+.animated-title:nth-of-type(1) .animated-title-element {
+  animation-delay: 0.15s;
+}
+
+.animated-title:nth-of-type(2) .animated-title-element {
+  animation-delay: 0.3s;
+}
+
+.animated-title:nth-of-type(3) .animated-title-element {
+  animation-delay: 0.45s;
+}
+
+.animated-title:nth-of-type(4) .animated-title-element {
+  animation-delay: 0.6s;
+}
+
+.animated-title:nth-of-type(5) .animated-title-element {
+  animation-delay: 0.7s;
+}
+
+.animated-title:nth-of-type(6) .animated-title-element {
+  animation-delay: 0.75s;
+}
+
+/* Cards Animation */
+@keyframes slideDown {
+  0% {
+    transform: translate(0px, 20%);
+  }
+  100% {
+    transform: translate(0px, 0%);
+  }
+}
+
+.features a {
+  transform: translate(0px, 20%);
+  will-change: auto;
+  animation-name: slideDown;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.features a:nth-of-type(1) {
+  animation-delay: 0.15s;
+}
+
+.features a:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+
+.features a:nth-of-type(3) {
+  animation-delay: 0.45s;
+}
+
+.features a:nth-of-type(5) {
+  animation-delay: 0.45s;
+}
+
+.features a:nth-of-type(4) {
+  animation-delay: 0.3s;
+}
+
+.features a:nth-of-type(6) {
+  animation-delay: 0.3s;
 }

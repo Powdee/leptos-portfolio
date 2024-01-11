@@ -19,6 +19,8 @@ pub fn App() -> impl IntoView {
     view! {
         <Stylesheet id="leptos" href="/pkg/leptos_start.css"/>
         <Title text="Erik Kurjak"/>
+        <Script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"/>
+        <Script src="/pkg/init_lenis.js"/>
 
         <Router>
             <Show when=move || env == "development" fallback=SoonPage>

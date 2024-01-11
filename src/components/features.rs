@@ -9,6 +9,8 @@ use crate::components::ui::{card::Card, layout::Layout};
 use crate::types::project::{Project, ProjectData};
 
 use leptos::*;
+use leptos::html::Div;
+use leptos_use::use_element_visibility;
 
 #[server(GetProjects, "/api", "GetJson", "v1/projects")]
 pub async fn get_projects() -> Result<Vec<Project>, ServerFnError> {
@@ -27,9 +29,33 @@ pub async fn get_projects() -> Result<Vec<Project>, ServerFnError> {
     Ok(le_json.data)
 }
 
+#[component]
+fn FeaturedVisibility(children: ChildrenFn) -> impl IntoView {
+    let el = create_node_ref::<Div>();
+    let is_element_visible = use_element_visibility(el);
+    let (is_user_in_viewport, set_visibility) = create_signal(false);
+
+    let is_users_first_time = create_memo(move |_| {
+        is_element_visible.get() && !is_user_in_viewport.get()
+    });
+
+    create_effect(move |_| {
+        if is_users_first_time.get() {
+            set_visibility(true);
+        }
+    });
+
+    view! {
+        <div node_ref=el>
+            <Show when=move || {
+                is_users_first_time.get() || is_user_in_viewport.get()
+            }>{children()}</Show>
+        </div>
+    }
+}
+
 #[island]
 fn FeaturedCards() -> impl IntoView {
-
     let (projects, write_projects) = create_signal(Vec::<Project>::new());
 
     create_effect(move |_| {
@@ -79,19 +105,253 @@ fn FeaturedCards() -> impl IntoView {
     }
 }
 
-#[component]
+#[island]
 pub fn Features() -> impl IntoView {
     view! {
         <Layout aria_label="Features" class_name="flex-col">
-            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight text-gray-9 leading-tighter">
-                Featured <br/> <span class="font-light">work</span> experience <br/> and
-                <span class="font-light">projects</span>
-            </h1>
-
-            <FeaturedCards/>
+            <FeaturedVisibility>
+                <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight text-gray-9 leading-tighter">
+                    <div class="animated-title">
+                        <span class="animated-title-element text-gray-9">Featured</span>
+                    </div>
+                    <br/>
+                    <div class="animated-title">
+                        <em class="animated-title-element font-light text-gray-9">work</em>
+                    </div>
+                    {' '}
+                    <div class="animated-title">
+                        <span class="animated-title-element text-gray-9">experience</span>
+                    </div>
+                    <br/>
+                    <div class="animated-title">
+                        <span class="animated-title-element text-gray-9">and</span>
+                    </div>
+                    {' '}
+                    <div class="animated-title">
+                        <em class="animated-title-element font-light text-gray-9">projects</em>
+                    </div>
+                </h1>
+                <FeaturedCards/>
+            </FeaturedVisibility>
         </Layout>
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
