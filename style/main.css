@@ -659,10 +659,6 @@ body {
   height: 2px;
 }
 
-.h-\[3070px\] {
-  height: 3070px;
-}
-
 .h-full {
   height: 100%;
 }
@@ -838,10 +834,6 @@ body {
 
 .overflow-visible {
   overflow: visible;
-}
-
-.overflow-scroll {
-  overflow: scroll;
 }
 
 .overflow-x-scroll {
@@ -1113,12 +1105,6 @@ body {
   transition-duration: 150ms;
 }
 
-.transition-transform {
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .delay-300 {
   transition-delay: 300ms;
 }
@@ -1147,8 +1133,8 @@ body {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-.will-change-transform {
-  will-change: transform;
+.will-change-auto {
+  will-change: auto;
 }
 
 @font-face {

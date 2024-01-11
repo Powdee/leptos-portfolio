@@ -19,31 +19,50 @@ pub fn MeCircle() -> impl IntoView {
                 ></path>
             </defs>
 
-            <text font-family="Jokker" font-size="30" fill="#000">
+            <text
+                font-family="Jokker"
+                font-size="30"
+                font-weight="light"
+                letter-spacing="6px"
+                fill="#ADB5BD"
+            >
                 <textPath xlink:href="#textPath">Open to new challenges</textPath>
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
                     from="0 192 192"
                     to="360 192 192"
-                    dur="10s"
+                    dur="13s"
                     repeatCount="indefinite"
                 ></animateTransform>
             </text>
 
-            <text font-family="Jokker" font-size="30" fill="#000">
+            <text
+                font-family="Jokker"
+                font-size="30"
+                font-weight="light"
+                letter-spacing="6px"
+                fill="#ADB5BD"
+            >
                 <textPath xlink:href="#textPath">Open to new challenges</textPath>
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
                     from="192 192 192"
                     to="552 192 192"
-                    dur="10s"
+                    dur="13s"
                     repeatCount="indefinite"
                 ></animateTransform>
             </text>
 
-            <circle stroke-width="2px" cx="192" cy="192" r="180" fill="none" stroke="#000"></circle>
+            <circle
+                stroke-width="2px"
+                cx="192"
+                cy="192"
+                r="180"
+                fill="none"
+                stroke="#ADB5BD"
+            ></circle>
         </svg>
     }
 }
@@ -67,31 +86,50 @@ pub fn MeCircleTablet() -> impl IntoView {
                 ></path>
             </defs>
 
-            <text font-family="Jokker" font-size="21" fill="#000">
+            <text
+                font-family="Jokker"
+                font-size="21"
+                font-weight="light"
+                letter-spacing="6px"
+                fill="#ADB5BD"
+            >
                 <textPath xlink:href="#textPathTablet">Open to new challenges</textPath>
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
                     from="0 120 120"
                     to="360 120 120"
-                    dur="10s"
+                    dur="13s"
                     repeatCount="indefinite"
                 ></animateTransform>
             </text>
 
-            <text font-family="Jokker" font-size="21" fill="#000">
+            <text
+                font-family="Jokker"
+                font-size="21"
+                font-weight="light"
+                letter-spacing="6px"
+                fill="#ADB5BD"
+            >
                 <textPath xlink:href="#textPathTablet">Open to new challenges</textPath>
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
                     from="192 120 120"
                     to="552 120 120"
-                    dur="10s"
+                    dur="13s"
                     repeatCount="indefinite"
                 ></animateTransform>
             </text>
 
-            <circle stroke-width="1px" cx="120" cy="120" r="110" fill="none" stroke="#000"></circle>
+            <circle
+                stroke-width="1px"
+                cx="120"
+                cy="120"
+                r="110"
+                fill="none"
+                stroke="#ADB5BD"
+            ></circle>
         </svg>
     }
 }

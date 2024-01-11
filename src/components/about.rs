@@ -3,6 +3,42 @@ use crate::components::ui::me_circle::MeCircle;
 use crate::components::ui::me_circle::MeCircleTablet;
 
 use leptos::*;
+use leptos_use::use_window_scroll;
+
+fn map_y_to_value(y: f64) -> f64 {
+    let start_y = 0.0;
+    let end_y = 920.0;
+    let start_value = -58.0;
+    let end_value = 0.0;
+
+    if y < start_y {
+        return start_value;
+    }
+    if y > end_y {
+        return end_value;
+    }
+
+    let scale = (y - start_y) / (end_y - start_y);
+    start_value + scale * (end_value - start_value)
+}
+
+#[island]
+pub fn ScrollWatchImage() -> impl IntoView {
+    let (_, y) = use_window_scroll();
+
+    view! {
+        <img
+            width="400"
+            height="400"
+            style=move || format!("object-position: 0px {}px", map_y_to_value(y.get()))
+            loading="lazy"
+            class="rounded-full object-cover w-48 h-48 md:w-72 md:h-72 will-change-auto"
+            decoding="async"
+            alt="erik kurjak"
+            src="https://leptoscv.s3.eu-central-1.amazonaws.com/me.jpg"
+        />
+    }
+}
 
 #[component]
 pub fn About() -> impl IntoView {
@@ -16,15 +52,7 @@ pub fn About() -> impl IntoView {
                                 type="image/webp"
                                 srcset="https://leptoscv.s3.eu-central-1.amazonaws.com/me.webp"
                             />
-                            <img
-                                width="400"
-                                height="400"
-                                loading="lazy"
-                                class="rounded-full object-cover w-48 h-48 md:w-72 md:h-72"
-                                decoding="async"
-                                alt="erik kurjak"
-                                src="https://leptoscv.s3.eu-central-1.amazonaws.com/me.jpg"
-                            />
+                            <ScrollWatchImage/>
                         </picture>
                         <MeCircle/>
                         <MeCircleTablet/>
