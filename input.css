@@ -58,7 +58,7 @@
   display: grid;
 
   @media (min-width: 1024px) {
-    min-height: 80svh;
+    min-height: 90svh;
     gap: 1rem;
     grid-template-areas:
       "alt alt alt alt alt oms oms"

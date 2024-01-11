@@ -101,6 +101,9 @@ pub fn UseCase(name: String) -> impl IntoView {
                 {move || match project.get() {
                     None => view! {}.into_view(),
                     Some(data) => {
+                        let timeline = data.information.timeline.clone();
+                        let role = data.information.role.clone();
+                        let responsibility = data.information.responsibility.clone();
                         view! {
                             <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-normal text-gray-9 leading-tighter font-regular mb-4 mt-8 md:mb-10 md:mt-20">
                                 {data.name}
@@ -128,16 +131,26 @@ pub fn UseCase(name: String) -> impl IntoView {
 
                                     </div>
                                 </div>
-                                <div class="flex flex-col gap-2 md:gap-8">
-                                    <p class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-gray-9">
-                                        {data.information.timeline}
-                                    </p>
-                                    <p class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-gray-9">
-                                        {data.information.about}
-                                    </p>
-                                    <p class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-gray-9">
-                                        {data.information.responsibility}
-                                    </p>
+                                <div class="flex flex-col">
+                                    <Show when=move || data.information.role.is_some()>
+                                        <p class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-gray-9 font-bold">
+                                            // <b>Role:</b>
+                                            // {' '}
+                                            {role.clone()}
+                                        </p>
+                                    </Show>
+                                    <Show when=move || data.information.timeline.is_some()>
+                                        <p class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-gray-6 font-light">
+                                            // <b>Timeline:</b>
+                                            // {' '}
+                                            {timeline.clone()}
+                                        </p>
+                                    </Show>
+                                    <Show when=move || data.information.responsibility.is_some()>
+                                        <p class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-gray-9 mt-2 md:mt-8">
+                                            {responsibility.clone()}
+                                        </p>
+                                    </Show>
                                 </div>
                             </div>
                             <div class="grid gap-4 md:grid-cols-5 md:grid-rows-7 mt-10 md:mt-20">
@@ -169,6 +182,61 @@ pub fn UseCase(name: String) -> impl IntoView {
         </main>
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

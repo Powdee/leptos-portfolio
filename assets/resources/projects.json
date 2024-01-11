@@ -3,8 +3,12 @@
     {
       "name": "alteryx",
       "area": "alt",
-      "description": "lorem ipsum",
-      "information": { "about": "", "timeline": "", "responsibility": "" },
+      "description": "A data analytics platform that enables easy data blending and analysis for actionable insights.",
+      "information": {
+        "role": "Tech Lead Engineer",
+        "timeline": "02/2019 - 02/2023",
+        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential, wasn't launched. Subsequently, I contributed to a project similar to what is now Alteryx's Platform 1.0, focusing on both frontend and backend scheduling. \n With the shift to Platform 2.0, we embraced a micro-frontend architecture, enhancing feature documentation with detailed diagrams and documents, where I focused on scheduling.  \n My time at Alteryx was rewarding, leading a talented team of engineers. Embracing the need for new challenges, I made the decision to advance my career journey.  \n"
+      },
       "tags": ["web", "typescript", "react", "node"],
       "link": {
         "source": "alteryx",
@@ -14,8 +18,11 @@
     {
       "name": "oms",
       "area": "oms",
-      "description": "lorem ipsum",
-      "information": { "about": "", "timeline": "", "responsibility": "" },
+      "description": "A data analytics platform that enables easy data",
+      "information": {
+        "timeline": "Took 3 months",
+        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential"
+      },
       "tags": ["web", "typescript", "gatsby", "firebase", "contentful"],
       "link": {
         "source": "oms",
@@ -25,8 +32,11 @@
     {
       "name": "madesense",
       "area": "mad",
-      "description": "lorem ipsum",
-      "information": { "about": "", "timeline": "", "responsibility": "" },
+      "description": "A data analytics platform that enables easy data",
+      "information": {
+        "timeline": "Took 6 months",
+        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential"
+      },
       "tags": ["web", "typescript", "gatsby", "contentful"],
       "link": {
         "source": "madesense",
@@ -36,8 +46,12 @@
     {
       "name": "splashsports",
       "area": "spl",
-      "description": "lorem ipsum",
-      "information": { "about": "", "timeline": "", "responsibility": "" },
+      "description": "A data analytics platform that enables easy data",
+      "information": {
+        "role": "Senior Software engineer",
+        "timeline": "02/2023 - current",
+        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential"
+      },
       "tags": ["web", "typescript", "react", "node"],
       "link": {
         "source": "splashsports",
@@ -47,8 +61,11 @@
     {
       "name": "invaders",
       "area": "inv",
-      "description": "lorem ipsum",
-      "information": { "about": "", "timeline": "", "responsibility": "" },
+      "description": "A data analytics platform that enables easy data",
+      "information": {
+        "timeline": "Took 1 day",
+        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential"
+      },
       "tags": ["desktop", "rust"],
       "link": {
         "source": "github",
@@ -58,8 +75,11 @@
     {
       "name": "helpie",
       "area": "hel",
-      "description": "lorem ipsum",
-      "information": { "about": "", "timeline": "", "responsibility": "" },
+      "description": "A data analytics platform that enables easy data",
+      "information": {
+        "timeline": "Took few days",
+        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential"
+      },
       "tags": ["desktop", "rust", "tauri", "axum"],
       "link": {
         "source": "github",

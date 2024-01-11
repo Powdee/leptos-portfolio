@@ -17,9 +17,9 @@ pub struct Project {
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct Information {
-    pub about: String,
-    pub timeline: String,
-    pub responsibility: String,
+    pub role: Option<String>,
+    pub timeline: Option<String>,
+    pub responsibility: Option<String>,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
