@@ -4,7 +4,7 @@ use leptos::*;
 pub fn Layout(
     children: Children,
     aria_label: &'static str,
-    #[prop(default = "")] class_name: &'static str,
+    class_name: String,
 ) -> impl IntoView {
     let spacer = " ";
 

@@ -95,7 +95,7 @@ pub fn UseCase(name: String) -> impl IntoView {
                 }
             }
         }>
-            <Layout aria_label="Usecase" class_name="flex-col">
+            <Layout aria_label="Usecase" class_name="flex-col".to_string()>
                 // TODO: Figure out how to display data
                 // TODO: Skeleton or loading information for user - perhaps an overkill?
                 {move || match project.get() {
@@ -182,6 +182,7 @@ pub fn UseCase(name: String) -> impl IntoView {
         </main>
     }
 }
+
 
 
 

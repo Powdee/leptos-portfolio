@@ -5,12 +5,10 @@ use crate::components::ui::assets::{
     ayx_logo::AyxLogo, helpie_logo::HelpieLogo, invaders_logo::InvadersLogo,
     madesense_logo::MadesenseLogo, oms_logo::OmsLogo, splash_logo::SplashLogo,
 };
-use crate::components::ui::{card::Card, layout::Layout};
+use crate::components::ui::{card::Card, layout::Layout, viewport_visiblity::ViewportVisibility};
 use crate::types::project::{Project, ProjectData};
 
 use leptos::*;
-use leptos::html::Div;
-use leptos_use::use_element_visibility;
 
 #[server(GetProjects, "/api", "GetJson", "v1/projects")]
 pub async fn get_projects() -> Result<Vec<Project>, ServerFnError> {
@@ -27,31 +25,6 @@ pub async fn get_projects() -> Result<Vec<Project>, ServerFnError> {
     };
 
     Ok(le_json.data)
-}
-
-#[component]
-fn FeaturedVisibility(children: ChildrenFn) -> impl IntoView {
-    let el = create_node_ref::<Div>();
-    let is_element_visible = use_element_visibility(el);
-    let (is_user_in_viewport, set_visibility) = create_signal(false);
-
-    let is_users_first_time = create_memo(move |_| {
-        is_element_visible.get() && !is_user_in_viewport.get()
-    });
-
-    create_effect(move |_| {
-        if is_users_first_time.get() {
-            set_visibility(true);
-        }
-    });
-
-    view! {
-        <div node_ref=el>
-            <Show when=move || {
-                is_users_first_time.get() || is_user_in_viewport.get()
-            }>{children()}</Show>
-        </div>
-    }
 }
 
 #[island]
@@ -108,8 +81,8 @@ fn FeaturedCards() -> impl IntoView {
 #[island]
 pub fn Features() -> impl IntoView {
     view! {
-        <Layout aria_label="Features" class_name="flex-col">
-            <FeaturedVisibility>
+        <Layout aria_label="Features" class_name="flex-col".to_string()>
+            <ViewportVisibility>
                 <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight text-gray-9 leading-tighter">
                     <div class="animated-title">
                         <span class="animated-title-element text-gray-9">Featured</span>
@@ -132,10 +105,15 @@ pub fn Features() -> impl IntoView {
                     </div>
                 </h1>
                 <FeaturedCards/>
-            </FeaturedVisibility>
+            </ViewportVisibility>
         </Layout>
     }
 }
+
+
+
+
+
 
 
 
