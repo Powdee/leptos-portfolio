@@ -1,15 +1,17 @@
-use crate::components::ui::layout::Layout;
-use crate::components::ui::me_circle::MeCircle;
-use crate::components::ui::me_circle::MeCircleTablet;
+use crate::components::ui::{
+    button::Button, layout::Layout, me_circle::MeCircle,
+    me_circle::MeCircleTablet,
+};
 
 use leptos::*;
 use leptos_use::use_window_scroll;
 
+// TODO: Move to util function - used in other places
 fn map_y_to_value(y: f64) -> f64 {
     let start_y = 0.0;
-    let end_y = 920.0;
-    let start_value = -58.0;
-    let end_value = 0.0;
+    let end_y = 1200.0;
+    let start_value = 0.8;
+    let end_value = 1.05;
 
     if y < start_y {
         return start_value;
@@ -30,12 +32,12 @@ pub fn ScrollWatchImage() -> impl IntoView {
         <img
             width="400"
             height="400"
-            style=move || format!("object-position: 0px {}px", map_y_to_value(y.get()))
+            style=move || format!("scale: {}", map_y_to_value(y.get()))
             loading="lazy"
-            class="rounded-full object-cover w-48 h-48 md:w-72 md:h-72 will-change-auto"
+            class="rounded-full object-cover w-48 h-48 md:w-72 md:h-72 will-change-auto bg-gray-3"
             decoding="async"
             alt="erik kurjak"
-            src="https://leptoscv.s3.eu-central-1.amazonaws.com/me.jpg"
+            src="https://leptoscv.s3.eu-central-1.amazonaws.com/me.png"
         />
     }
 }
@@ -61,12 +63,7 @@ pub fn About() -> impl IntoView {
                 <p class="lg:col-span-2 order-1 min-w-full lg:order-2 text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9">
                     A team player with a passion for building modern digital solutions. With a strong affinity for functional programming and a natural problem-solving ability.
                 </p>
-                <button
-                    type="button"
-                    class="lg:row-span-1 lg:col-span-2 order-3 w-full lg:mt-12 rounded-full self-end outline-none font-normal text-lg md:text-3xl px-4 py-8 md:py-12 lg:py-16 text-gray-9 bg-gray-1 shadow-sm ring-1 ring-inset ring-gray-9 hover:bg-gray-9 hover:text-gray-1"
-                >
-                    "Let's connect"
-                </button>
+                <Button label="Get in touch".to_string()/>
             </div>
         </Layout>
     }

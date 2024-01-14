@@ -1,5 +1,5 @@
-use leptos::*;
-use web_sys::MouseEvent;
+use leptos::{html::A, *};
+use leptos_use::use_element_hover;
 
 #[component]
 pub fn Card(
@@ -8,7 +8,9 @@ pub fn Card(
     #[prop(into)] class_name: String,
     #[prop(into)] style: String,
 ) -> impl IntoView {
-    let (is_hovered, set_hovered) = create_signal(false);
+    let el = create_node_ref::<A>();
+    let is_hovered = use_element_hover(el);
+
     let spacer = " ";
     let name_cloned = name.clone();
 
@@ -16,9 +18,8 @@ pub fn Card(
         <a
             href=format!("projects/{}", name)
             style=style
-            on:mouseenter=move |_e: MouseEvent| set_hovered(true)
-            on:mouseleave=move |_e: MouseEvent| set_hovered(false)
             id=name
+            node_ref=el
             class=class_name.to_owned() + spacer
                 + "cursor-pointer overflow-hidden relative bg-gray-9 rounded-[47px] md:rounded-[57px] duration-500 transition-shadow hover:shadow-md min-h-[200px]"
         >

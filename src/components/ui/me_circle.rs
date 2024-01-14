@@ -4,65 +4,65 @@ use leptos::*;
 pub fn MeCircle() -> impl IntoView {
     view! {
         <svg
-            viewBox="0 0 384 384"
-            width="384"
-            height="384"
+            viewBox="0 0 340 340"
+            width="340"
+            height="340"
             class="overflow-visible hidden lg:block"
         >
             <defs>
                 <path
                     id="textPath"
-                    d="M 192, 192
-                    m -192, 0
-                    a 192, 192 0 1,1 384,0
-                    a 192,192 0 1,1 -384, 0"
+                    d="M 170, 170
+                    m -170, 0
+                    a 170, 170 0 1,1 340,0
+                    a 170,170 0 1,1 -340, 0"
                 ></path>
             </defs>
 
             <text
                 font-family="Jokker"
-                font-size="30"
-                font-weight="light"
-                letter-spacing="6px"
-                fill="#ADB5BD"
+                font-size="24"
+                font-weight="medium"
+                letter-spacing="34px"
+                fill="#6C757D"
             >
                 <textPath xlink:href="#textPath">Open to new challenges</textPath>
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
-                    from="0 192 192"
-                    to="360 192 192"
+                    from="0 170 170"
+                    to="360 170 170"
                     dur="13s"
                     repeatCount="indefinite"
                 ></animateTransform>
             </text>
 
-            <text
-                font-family="Jokker"
-                font-size="30"
-                font-weight="light"
-                letter-spacing="6px"
-                fill="#ADB5BD"
-            >
-                <textPath xlink:href="#textPath">Open to new challenges</textPath>
-                <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    from="192 192 192"
-                    to="552 192 192"
-                    dur="13s"
-                    repeatCount="indefinite"
-                ></animateTransform>
-            </text>
+        // <text
+        // font-family="Jokker"
+        // font-size="30"
+        // font-weight="light"
+        // letter-spacing="6px"
+        // fill="#212529"
+        // >
+        // <textPath xlink:href="#textPath">Open to new challenges</textPath>
+        // <animateTransform
+        // attributeName="transform"
+        // type="rotate"
+        // from="150 150 150"
+        // to="552 150 150"
+        // dur="13s"
+        // repeatCount="indefinite"
+        // ></animateTransform>
+        // </text>
 
-            <circle
-                stroke-width="2px"
-                cx="192"
-                cy="192"
-                r="180"
-                fill="none"
-                stroke="#ADB5BD"
-            ></circle>
+        // <circle
+        // stroke-width="2px"
+        // cx="170"
+        // cy="170"
+        // r="150"
+        // fill="none"
+        // stroke="#212529"
+        // ></circle>
         </svg>
     }
 }

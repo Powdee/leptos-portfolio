@@ -1,101 +1,92 @@
-use crate::components::ui::viewport_visiblity::ViewportVisibility;
+use crate::components::ui::{
+    button::Button, viewport_visiblity::ViewportVisibility,
+};
 
-use leptos::*;
-use leptos_use::use_window_scroll;
+use leptos::{html::Section, *};
+use leptos_use::{use_element_visibility, use_window_scroll};
 
-#[island]
+#[component]
 pub fn InfoSocials() -> impl IntoView {
     view! {
-        <ViewportVisibility>
-            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight leading-tighter mb-28">
-                <div class="animated-title">
-                    <span class="animated-title-element text-gray-1">Get</span>
-                </div>
-                {' '}
-                <div class="animated-title">
-                    <span class="animated-title-element text-gray-1">to</span>
-                </div>
-                {' '}
-                <div class="animated-title">
-                    <span class="animated-title-element text-gray-1">know</span>
-                </div>
-                <br/>
-                <div class="animated-title">
-                    <em class="animated-title-element font-light text-gray-1">me</em>
-                </div>
-            </h1>
+        <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight leading-tighter mb-28">
+            <div class="animated-title">
+                <span class="animated-title-element text-gray-1">Get</span>
+            </div>
+            {' '}
+            <div class="animated-title">
+                <span class="animated-title-element text-gray-1">to</span>
+            </div>
+            {' '}
+            <div class="animated-title">
+                <span class="animated-title-element text-gray-1">know</span>
+            </div>
+            <br/>
+            <div class="animated-title">
+                <em class="animated-title-element font-light text-gray-1">me</em>
+            </div>
+        </h1>
+
+        <div class="flex flex-col gap-8 md:gap-10">
+            <div class="flex flex-col gap-8 md:gap-10">
+                <a
+                    target="_blank"
+                    class="text-2xl md:text-3xl lg:text-4xl text-gray-1"
+                    href="https://github.com/Powdee"
+                >
+                    Github
+                </a>
+                <div class="w-full h-[2px] bg-gray-1"></div>
+            </div>
 
             <div class="flex flex-col gap-8 md:gap-10">
-                <div class="flex flex-col gap-8 md:gap-10">
-                    <a
-                        target="_blank"
-                        class="text-2xl md:text-3xl lg:text-4xl text-gray-1"
-                        href="https://github.com/Powdee"
-                    >
-                        Github
-                    </a>
-                    <div class="w-full h-[2px] bg-gray-1"></div>
-                </div>
-
-                <div class="flex flex-col gap-8 md:gap-10">
-                    <a
-                        target="_blank"
-                        class="text-2xl md:text-3xl lg:text-4xl text-gray-1"
-                        href="https://www.instagram.com/erik.kurjak/"
-                    >
-                        Instagram
-                    </a>
-                    <div class="w-full h-[2px] bg-gray-1"></div>
-                </div>
-
-                <div class="flex flex-col gap-8 md:gap-10">
-                    <a
-                        target="_blank"
-                        class="text-2xl md:text-3xl lg:text-4xl text-gray-1"
-                        href="#"
-                    >
-                        Download CV
-                    </a>
-                    <div class="w-full h-[2px] bg-gray-1"></div>
-                </div>
+                <a
+                    target="_blank"
+                    class="text-2xl md:text-3xl lg:text-4xl text-gray-1"
+                    href="https://www.instagram.com/erik.kurjak/"
+                >
+                    Instagram
+                </a>
+                <div class="w-full h-[2px] bg-gray-1"></div>
             </div>
-        </ViewportVisibility>
+
+            <div class="flex flex-col gap-8 md:gap-10">
+                <a target="_blank" class="text-2xl md:text-3xl lg:text-4xl text-gray-1" href="#">
+                    Download CV
+                </a>
+                <div class="w-full h-[2px] bg-gray-1"></div>
+            </div>
+        </div>
     }
 }
 
-#[island]
+#[component]
 pub fn InfoAction() -> impl IntoView {
     view! {
-        <ViewportVisibility>
-            <div class="mt-40 lg:mt-64 flex flex-col items-center justify-center">
-                <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-tight leading-tighter text-center">
-                    <div class="animated-title">
-                        <span class="animated-title-element font-light text-gray-1">Want</span>
-                    </div>
-                    {' '}
-                    <div class="animated-title">
-                        <span class="animated-title-element font-light text-gray-1">to</span>
-                    </div>
+        <div class="mt-40 lg:mt-64 flex flex-col items-center justify-center">
+            // <ViewportVisibility>
+            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-tight leading-tighter text-center">
+                <div class="animated-title">
+                    <span class="animated-title-element font-light text-gray-1">Want</span>
+                </div>
+                {' '}
+                <div class="animated-title">
+                    <span class="animated-title-element font-light text-gray-1">to</span>
+                </div>
 
-                    <br/>
-                    <div class="animated-title">
-                        <span class="animated-title-element font-light text-gray-1">chat?</span>
-                    </div>
-                </h1>
-                <button
-                    type="button"
-                    class="w-full md:w-[680px] mt-20 lg:mt-40 rounded-full outline-none font-normal text-lg md:text-3xl px-4 py-8 md:py-12 lg:py-16 text-gray-9 bg-gray-1 shadow-sm hover:bg-gray-9 hover:text-gray-1 ring-1 ring-gray-1 hover:ring-gray-1"
-                >
-                    "Let's schedule a call"
-                </button>
-            </div>
-        </ViewportVisibility>
+                <br/>
+                <div class="animated-title">
+                    <span class="animated-title-element font-light text-gray-1">chat?</span>
+                </div>
+            </h1>
+        // <Button label="Let's schedule a call".to_string()/>
+        // </ViewportVisibility>
+        </div>
     }
 }
 
-fn map_y_to_value(y: f64) -> f64 {
-    let start_y = 3600.0;
-    let end_y = 4300.0;
+fn map_y_to_value(y: f64, y_visible_coord: f64) -> f64 {
+    let start_y = y_visible_coord;
+    let end_y = y_visible_coord + 500.0;
     let start_value = 120.0;
     let end_value = 0.0;
 
@@ -112,17 +103,28 @@ fn map_y_to_value(y: f64) -> f64 {
 
 #[island]
 pub fn Info() -> impl IntoView {
+    let el = create_node_ref::<Section>();
+    let is_element_visible = use_element_visibility(el);
     let (_, y) = use_window_scroll();
+
+    let (y_visible_coord, set_y_visible_coord) = create_signal::<f64>(0.0);
+
+    create_effect(move |_| {
+        if is_element_visible.get() && y_visible_coord.get() == 0.0 {
+            set_y_visible_coord(y.get());
+        }
+    });
 
     view! {
         <section
+            node_ref=el
             aria_label="Info"
             class="bg-gray-9 max-w-full py-28 lg:py-64 relative w-full isolate lg:mx-auto lg:mx-0 lg:flex mx-auto max-w-8xl 2xl:max-w-10xl px-4 md:px-6"
             style=move || {
                 format!(
                     "border-top-left-radius: {}px;border-top-right-radius: {}px",
-                    map_y_to_value(y.get()),
-                    map_y_to_value(y.get()),
+                    map_y_to_value(y.get(), y_visible_coord.get()),
+                    map_y_to_value(y.get(), y_visible_coord.get()),
                 )
             }
         >

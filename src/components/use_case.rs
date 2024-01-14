@@ -5,7 +5,8 @@ use crate::components::ui::layout::Layout;
 use crate::types::project::{Project, ProjectData};
 
 use leptos::*;
-use web_sys::MouseEvent;
+use leptos::svg::Svg;
+use leptos_use::use_element_hover;
 
 // TODO: Remove this function and update get_projects to take a param 
 // TODO: project_name (optional) and use it here
@@ -43,15 +44,15 @@ pub fn UseCase(name: String) -> impl IntoView {
 		});
 	});
 
-    let (is_hovered, set_hovered) = create_signal(false);
+    let el = create_node_ref::<Svg>();
+    let is_hovered = use_element_hover(el);
 
     view! {
         <header class="mx-auto max-w-full py-6 px-10 md:py-12 md:px-16">
             <nav class="gap-2 md:flex-row flex-col flex items-center justify-center" aria-label="X">
                 <a href="/">
                     <svg
-                        on:mouseenter=move |_e: MouseEvent| set_hovered(true)
-                        on:mouseleave=move |_e: MouseEvent| set_hovered(false)
+                        node_ref=el
                         width="61"
                         height="61"
                         class="cursor-pointer hover:scale-105 ease-out duration-300 close-x"
@@ -182,23 +183,6 @@ pub fn UseCase(name: String) -> impl IntoView {
         </main>
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
