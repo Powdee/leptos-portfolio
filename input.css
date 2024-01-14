@@ -248,10 +248,14 @@ html.lenis {
 .button {
   @apply relative;
   @apply overflow-hidden;
-  @apply lg:row-span-1 lg:col-span-2 order-3 w-full rounded-full self-start outline-none font-normal text-lg md:text-3xl px-4 py-8 md:py-12 lg:py-16 bg-gray-1 shadow-sm ring-1 ring-inset ring-gray-9;
+  @apply lg:row-span-1 lg:col-span-2 w-full rounded-full outline-none font-normal text-lg md:text-3xl px-4 py-8 md:py-12 lg:py-16 bg-gray-1 shadow-sm ring-1 ring-inset ring-gray-9;
 
   transform: translateZ(0);
   transition: transform 0.3s;
+}
+
+.inverse.button {
+  @apply bg-gray-9;
 }
 
 .button:hover {
@@ -269,7 +273,12 @@ html.lenis {
   bottom: 1px;
   z-index: 3;
   border: 1px solid;
+  @apply border-gray-9;
   border-radius: 1000px;
+}
+
+.inverse .button-cta-border {
+  @apply border-gray-1;
 }
 
 .button-cta-ripple {
@@ -296,6 +305,10 @@ html.lenis {
     border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
 }
 
+.inverse .button-cta-ripple span {
+  @apply bg-gray-1;
+}
+
 .button-cta:hover .button-cta-ripple span {
   border-radius: 0;
   transform: translateY(0);
@@ -313,6 +326,11 @@ html.lenis {
 .button-cta-title span {
   display: block;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  @apply text-gray-9;
+}
+
+.inverse .button-cta-title span {
+  @apply text-gray-1;
 }
 
 .button-cta:hover .button-cta-title span {
@@ -327,4 +345,8 @@ html.lenis {
   top: 110%;
   left: 0;
   @apply text-gray-1;
+}
+
+.inverse .button-cta-title span:after {
+  @apply text-gray-9;
 }

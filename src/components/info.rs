@@ -78,7 +78,10 @@ pub fn InfoAction() -> impl IntoView {
                     <span class="animated-title-element font-light text-gray-1">chat?</span>
                 </div>
             </h1>
-        // <Button label="Let's schedule a call".to_string()/>
+            <Button
+                label="Let's schedule a call".to_string()
+                class_name="mt-16 lg:mt-32 md:w-[680px] inverse".to_string()
+            />
         // </ViewportVisibility>
         </div>
     }

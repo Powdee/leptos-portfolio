@@ -63,7 +63,7 @@ pub fn About() -> impl IntoView {
                 <p class="lg:col-span-2 order-1 min-w-full lg:order-2 text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9">
                     A team player with a passion for building modern digital solutions. With a strong affinity for functional programming and a natural problem-solving ability.
                 </p>
-                <Button label="Get in touch".to_string()/>
+                <Button class_name="order-2 self-end".to_string() label="Get in touch".to_string()/>
             </div>
         </Layout>
     }
