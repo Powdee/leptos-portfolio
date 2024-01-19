@@ -3,200 +3,203 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "jokker";
-  font-weight: 500;
-  src: url("fonts/jokker/jokker-medium/jokker-medium.woff2") format("woff2"),
-    url("fonts/jokker/jokker-medium/jokker-medium.woff") format("woff");
+    font-family: "jokker";
+    font-weight: 500;
+    src:
+        url("fonts/jokker/jokker-medium/jokker-medium.woff2") format("woff2"),
+        url("fonts/jokker/jokker-medium/jokker-medium.woff") format("woff");
 }
 
 @font-face {
-  font-family: "jokker";
-  font-weight: 400;
-  src: url("fonts/jokker/jokker-regular/jokker.woff2") format("woff2"),
-    url("fonts/jokker/jokker-regular/jokker.woff") format("woff");
+    font-family: "jokker";
+    font-weight: 400;
+    src:
+        url("fonts/jokker/jokker-regular/jokker.woff2") format("woff2"),
+        url("fonts/jokker/jokker-regular/jokker.woff") format("woff");
 }
 
 @font-face {
-  font-family: "jokker";
-  font-weight: 300;
-  font-style: "italic";
-  src: url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff2")
-      format("woff2"),
-    url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff")
-      format("woff");
+    font-family: "jokker";
+    font-weight: 300;
+    font-style: "italic";
+    src:
+        url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff2")
+            format("woff2"),
+        url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff")
+            format("woff");
 }
 
 @layer base {
-  html {
-    font-family: "jokker", Averta, system-ui, sans-serif;
-  }
-  html,
-  body {
-    @apply bg-gray-1;
-  }
-  body {
-    /* @apply overflow-hidden;
+    html {
+        font-family: "jokker", Averta, system-ui, sans-serif;
+    }
+    html,
+    body {
+        @apply bg-gray-1;
+    }
+    body {
+        /* @apply overflow-hidden;
     @apply h-full;
     @apply w-full; */
-  }
+    }
 }
 
 /* LENIS */
 html.lenis {
-  height: auto;
+    height: auto;
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto;
+    scroll-behavior: auto;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+    overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .lenis.lenis-scrolling iframe {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 /* ANIMATION */
 .usecase-in {
-  transform: translateY(40);
+    transform: translateY(40);
 }
 
 .usecase-out {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 .explore-in {
-  width: 200;
+    width: 200;
 }
 
 .explore-out {
-  width: auto;
+    width: auto;
 }
 
 /* FEATURES */
 .features {
-  display: grid;
+    display: grid;
 
-  @media (min-width: 1024px) {
-    min-height: 90svh;
-    gap: 1rem;
+    @media (min-width: 1024px) {
+        min-height: 100svh;
+        gap: 1rem;
+        grid-template-areas:
+            "alt alt alt alt alt oms oms"
+            "alt alt alt alt alt oms oms"
+            "alt alt alt alt alt oms oms"
+            "alt alt alt alt alt oms oms"
+            "hel hel hel spl spl spl spl"
+            "hel hel hel spl spl spl spl"
+            "hel hel hel inv inv mad mad"
+            "hel hel hel inv inv mad mad";
+    }
+
+    gap: 0.5rem;
+    min-height: 70svh;
     grid-template-areas:
-      "alt alt alt alt alt oms oms"
-      "alt alt alt alt alt oms oms"
-      "alt alt alt alt alt oms oms"
-      "alt alt alt alt alt oms oms"
-      "hel hel hel spl spl spl spl"
-      "hel hel hel spl spl spl spl"
-      "hel hel hel inv inv mad mad"
-      "hel hel hel inv inv mad mad";
-  }
-
-  gap: 0.5rem;
-  min-height: 70svh;
-  grid-template-areas:
-    "alt alt alt alt oms oms oms"
-    "alt alt alt alt oms oms oms"
-    "alt alt alt alt oms oms oms"
-    "alt alt alt alt oms oms oms"
-    "mad mad mad spl spl spl spl"
-    "mad mad mad spl spl spl spl"
-    "inv inv inv hel hel hel hel"
-    "inv inv inv hel hel hel hel";
+        "alt alt alt alt oms oms oms"
+        "alt alt alt alt oms oms oms"
+        "alt alt alt alt oms oms oms"
+        "alt alt alt alt oms oms oms"
+        "mad mad mad spl spl spl spl"
+        "mad mad mad spl spl spl spl"
+        "inv inv inv hel hel hel hel"
+        "inv inv inv hel hel hel hel";
 }
 
 .alt {
-  grid-area: alt;
+    grid-area: alt;
 }
 
 .oms {
-  grid-area: oms;
+    grid-area: oms;
 }
 
 .mad {
-  grid-area: mad;
+    grid-area: mad;
 }
 
 .spl {
-  grid-area: spl;
+    grid-area: spl;
 }
 
 .hel {
-  grid-area: hel;
+    grid-area: hel;
 }
 
 .inv {
-  grid-area: inv;
+    grid-area: inv;
 }
 
 /* Title animation */
 @keyframes slideTitleUp {
-  0% {
-    transform: translate(0px, 120%);
-  }
-  100% {
-    transform: translate(0px, 0%);
-  }
+    0% {
+        transform: translate(0px, 120%);
+    }
+    100% {
+        transform: translate(0px, 0%);
+    }
 }
 
 .animated-title {
-  position: relative;
-  display: inline-block;
-  margin: -0.15em;
-  padding: 0.15em;
-  vertical-align: top;
-  overflow: hidden;
+    position: relative;
+    display: inline-block;
+    margin: -0.15em;
+    padding: 0.15em;
+    vertical-align: top;
+    overflow: hidden;
 }
 
 .animated-title-element {
-  position: relative;
-  display: inline-block;
-  transform: translate(0px, 120%);
-  will-change: auto;
-  animation-name: slideTitleUp;
-  animation-duration: 1.2s;
-  animation-delay: 0.05s;
-  animation-timing-function: cubic-bezier(0.34, 0.34, 0, 0.97);
-  animation-fill-mode: forwards;
+    position: relative;
+    display: inline-block;
+    transform: translate(0px, 120%);
+    will-change: auto;
+    animation-name: slideTitleUp;
+    animation-duration: 1.2s;
+    animation-delay: 0.05s;
+    animation-timing-function: cubic-bezier(0.34, 0.34, 0, 0.97);
+    animation-fill-mode: forwards;
 }
 
 .animated-title:nth-of-type(1) .animated-title-element {
-  animation-delay: 0.15s;
+    animation-delay: 0.15s;
 }
 
 .animated-title:nth-of-type(2) .animated-title-element {
-  animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
 
 .animated-title:nth-of-type(3) .animated-title-element {
-  animation-delay: 0.45s;
+    animation-delay: 0.45s;
 }
 
 .animated-title:nth-of-type(4) .animated-title-element {
-  animation-delay: 0.6s;
+    animation-delay: 0.6s;
 }
 
 .animated-title:nth-of-type(5) .animated-title-element {
-  animation-delay: 0.7s;
+    animation-delay: 0.7s;
 }
 
 .animated-title:nth-of-type(6) .animated-title-element {
-  animation-delay: 0.75s;
+    animation-delay: 0.75s;
 }
 
 /* Cards Animation */
 @keyframes slideDown {
-  0% {
-    transform: translate(0px, 20%);
-  }
-  100% {
-    transform: translate(0px, 0%);
-  }
+    0% {
+        transform: translate(0px, 20%);
+    }
+    100% {
+        transform: translate(0px, 0%);
+    }
 }
 
 /* .features a {
@@ -209,144 +212,166 @@ html.lenis {
 } */
 
 .features a {
-  will-change: transform;
-  transform: translateZ(0);
-  transition: transform 0.3s;
+    will-change: transform;
+    transform: translateZ(0);
+    transition: transform 0.3s;
 }
 
 .features a:hover {
-  transform: scaleX(1.008);
-  transition: transform 0.6s cubic-bezier(0.34, 5.56, 0.64, 1);
+    transform: scaleX(1.008);
+    transition: transform 0.6s cubic-bezier(0.34, 5.56, 0.64, 1);
 }
 
 .features a:nth-of-type(1) {
-  animation-delay: 0.15s;
+    animation-delay: 0.15s;
 }
 
 .features a:nth-of-type(2) {
-  animation-delay: 0.15s;
+    animation-delay: 0.15s;
 }
 
 .features a:nth-of-type(3) {
-  animation-delay: 0.45s;
+    animation-delay: 0.45s;
 }
 
 .features a:nth-of-type(5) {
-  animation-delay: 0.45s;
+    animation-delay: 0.45s;
 }
 
 .features a:nth-of-type(4) {
-  animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
 
 .features a:nth-of-type(6) {
-  animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
 
 /* ANIMATED BUTTON */
 
 .button {
-  @apply relative;
-  @apply overflow-hidden;
-  @apply lg:row-span-1 lg:col-span-2 w-full rounded-full outline-none font-normal text-lg md:text-3xl px-4 py-8 md:py-12 lg:py-16 bg-gray-1 shadow-sm ring-1 ring-inset ring-gray-9;
+    @apply relative;
+    @apply overflow-hidden;
+    @apply bg-gray-1 ring-gray-9 w-full rounded-full px-4 py-8 text-lg font-normal shadow-sm outline-none ring-1 ring-inset md:py-12 md:text-3xl lg:col-span-2 lg:row-span-1 lg:py-16;
 
-  transform: translateZ(0);
-  transition: transform 0.3s;
+    transform: translateZ(0);
+    transition: transform 0.3s;
 }
 
 .inverse.button {
-  @apply bg-gray-9;
+    @apply bg-gray-9;
 }
 
 .button:hover {
-  transform: scaleX(1.02);
-  transition: transform 0.6s cubic-bezier(0.34, 5.56, 0.64, 1);
+    transform: scaleX(1.02);
+    transition: transform 0.6s cubic-bezier(0.34, 5.56, 0.64, 1);
 }
 
 .button-cta-border {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 1px;
-  z-index: 3;
-  border: 1px solid;
-  @apply border-gray-9;
-  border-radius: 1000px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    z-index: 3;
+    border: 1px solid;
+    @apply border-gray-9;
+    border-radius: 1000px;
 }
 
 .inverse .button-cta-border {
-  @apply border-gray-1;
+    @apply border-gray-1;
 }
 
 .button-cta-ripple {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  overflow: hidden;
-  transform: translateZ(0);
-  border-radius: inherit;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateZ(0);
+    border-radius: inherit;
 }
 
 .button-cta-ripple span {
-  display: block;
-  width: 100%;
-  height: 100%;
-  transform: translateY(101%);
-  @apply bg-gray-9;
-  border-radius: 50% 50% 0 0;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1),
-    border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: translateY(101%);
+    @apply bg-gray-9;
+    border-radius: 50% 50% 0 0;
+    transition:
+        transform 0.5s cubic-bezier(0.4, 0, 0, 1),
+        border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
 }
 
 .inverse .button-cta-ripple span {
-  @apply bg-gray-1;
+    @apply bg-gray-1;
 }
 
 .button-cta:hover .button-cta-ripple span {
-  border-radius: 0;
-  transform: translateY(0);
-  transition-duration: 0.5s, 0.9s;
+    border-radius: 0;
+    transform: translateY(0);
+    transition-duration: 0.5s, 0.9s;
 }
 
 .button-cta-title {
-  position: relative;
-  display: block;
-  padding: 0 0.16em 0 0;
-  overflow: hidden;
-  z-index: 2;
+    position: relative;
+    display: block;
+    padding: 0 0.16em 0 0;
+    overflow: hidden;
+    z-index: 2;
 }
 
 .button-cta-title span {
-  display: block;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  @apply text-gray-9;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    @apply text-gray-9;
 }
 
 .inverse .button-cta-title span {
-  @apply text-gray-1;
+    @apply text-gray-1;
 }
 
 .button-cta:hover .button-cta-title span {
-  transform: translateY(-110%);
+    transform: translateY(-110%);
 }
 
 .button-cta-title span:after {
-  content: attr(data-text);
-  display: block;
-  width: 100%;
-  position: absolute;
-  top: 110%;
-  left: 0;
-  @apply text-gray-1;
+    content: attr(data-text);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    @apply text-gray-1;
 }
 
 .inverse .button-cta-title span:after {
-  @apply text-gray-9;
+    @apply text-gray-9;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Animation Fade In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards 0.2s;
 }
