@@ -9,7 +9,7 @@ pub fn Header() -> impl IntoView {
                 aria-label="Global"
             >
                 <h4 class="text-gray-9 tracking-wide text-2xl flex lg:flex-1">
-                    Hey, "I’m" Erik "👋"
+                    Hey, "I’m" Erik Kurjak "👋"
                 </h4>
                 <div class="items-center justify-end gap-1 flex lg:flex-1">
                     <h4 class="text-gray-7 text-sm sm:text-md">

@@ -5,7 +5,10 @@ use leptos_use::use_element_visibility;
 // because of possibility of rendering multiples children
 // I needed to use ChildrenFn instead of Children
 #[component]
-pub fn ViewportVisibility(children: ChildrenFn) -> impl IntoView {
+pub fn ViewportVisibility(
+    children: ChildrenFn,
+    #[prop(optional, into)] fallback: Option<ViewFn>,
+) -> impl IntoView {
     let el = create_node_ref::<Div>();
     let is_element_visible = use_element_visibility(el);
     let (is_user_in_viewport, set_visibility) = create_signal(false);
@@ -22,9 +25,12 @@ pub fn ViewportVisibility(children: ChildrenFn) -> impl IntoView {
 
     view! {
         <div node_ref=el>
-            <Show when=move || {
-                is_users_first_time.get() || is_user_in_viewport.get()
-            }>{children()}</Show>
+            <Show
+                when=move || { is_users_first_time.get() || is_user_in_viewport.get() }
+                fallback=fallback.unwrap_or_default()
+            >
+                {children()}
+            </Show>
         </div>
     }
 }

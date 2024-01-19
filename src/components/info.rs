@@ -8,24 +8,25 @@ use leptos_use::{use_element_visibility, use_window_scroll};
 #[component]
 pub fn InfoSocials() -> impl IntoView {
     view! {
-        <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight leading-tighter mb-28">
-            <div class="animated-title">
-                <span class="animated-title-element text-gray-1">Get</span>
-            </div>
-            {' '}
-            <div class="animated-title">
-                <span class="animated-title-element text-gray-1">to</span>
-            </div>
-            {' '}
-            <div class="animated-title">
-                <span class="animated-title-element text-gray-1">know</span>
-            </div>
-            <br/>
-            <div class="animated-title">
-                <em class="animated-title-element font-light text-gray-1">me</em>
-            </div>
-        </h1>
-
+        <ViewportVisibility>
+            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight leading-tighter mb-28">
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-1">Get</span>
+                </div>
+                {' '}
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-1">to</span>
+                </div>
+                {' '}
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-1">know</span>
+                </div>
+                <br/>
+                <div class="animated-title">
+                    <em class="animated-title-element font-light text-gray-1">me</em>
+                </div>
+            </h1>
+        </ViewportVisibility>
         <div class="flex flex-col gap-8 md:gap-10">
             <div class="flex flex-col gap-8 md:gap-10">
                 <a
@@ -62,28 +63,30 @@ pub fn InfoSocials() -> impl IntoView {
 #[component]
 pub fn InfoAction() -> impl IntoView {
     view! {
-        <div class="mt-40 lg:mt-64 flex flex-col items-center justify-center">
-            // <ViewportVisibility>
-            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-tight leading-tighter text-center">
-                <div class="animated-title">
-                    <span class="animated-title-element font-light text-gray-1">Want</span>
-                </div>
-                {' '}
-                <div class="animated-title">
-                    <span class="animated-title-element font-light text-gray-1">to</span>
-                </div>
+        <ViewportVisibility fallback=|| {
+            view! { <div class="min-h-[270px] md:min-h-[850px]"></div> }
+        }>
+            <div class="mt-40 lg:mt-64 flex flex-col items-center justify-center">
+                <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-tight leading-tighter text-center">
+                    <div class="animated-title">
+                        <span class="animated-title-element font-light text-gray-1">Want</span>
+                    </div>
+                    {' '}
+                    <div class="animated-title">
+                        <span class="animated-title-element font-light text-gray-1">to</span>
+                    </div>
 
-                <br/>
-                <div class="animated-title">
-                    <span class="animated-title-element font-light text-gray-1">chat?</span>
-                </div>
-            </h1>
-            <Button
-                label="Let's schedule a call".to_string()
-                class_name="mt-16 lg:mt-32 md:w-[680px] inverse".to_string()
-            />
-        // </ViewportVisibility>
-        </div>
+                    <br/>
+                    <div class="animated-title">
+                        <span class="animated-title-element font-light text-gray-1">chat?</span>
+                    </div>
+                </h1>
+                <Button
+                    label="Let's schedule a call".to_string()
+                    class_name="mt-16 lg:mt-32 md:w-[680px] inverse".to_string()
+                />
+            </div>
+        </ViewportVisibility>
     }
 }
 

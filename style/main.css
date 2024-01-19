@@ -439,7 +439,7 @@ html {
 }
 
 html,
-  body {
+    body {
   --tw-bg-opacity: 1;
   background-color: rgb(248 249 250 / var(--tw-bg-opacity));
 }
@@ -619,6 +619,10 @@ body {
   margin-top: 2.5rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -633,10 +637,6 @@ body {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
 }
 
 .block {
@@ -667,8 +667,16 @@ body {
   height: 100%;
 }
 
+.min-h-\[100svh\] {
+  min-height: 100svh;
+}
+
 .min-h-\[200px\] {
   min-height: 200px;
+}
+
+.min-h-\[270px\] {
+  min-height: 270px;
 }
 
 .min-h-card_1_row_mobile {
@@ -757,10 +765,6 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.resize {
-  resize: both;
 }
 
 .flex-row {
@@ -1107,8 +1111,9 @@ body {
 
   font-weight: 500;
 
-  src: url("fonts/jokker/jokker-medium/jokker-medium.woff2") format("woff2"),
-    url("fonts/jokker/jokker-medium/jokker-medium.woff") format("woff");
+  src:
+        url("fonts/jokker/jokker-medium/jokker-medium.woff2") format("woff2"),
+        url("fonts/jokker/jokker-medium/jokker-medium.woff") format("woff");
 }
 
 @font-face {
@@ -1116,8 +1121,9 @@ body {
 
   font-weight: 400;
 
-  src: url("fonts/jokker/jokker-regular/jokker.woff2") format("woff2"),
-    url("fonts/jokker/jokker-regular/jokker.woff") format("woff");
+  src:
+        url("fonts/jokker/jokker-regular/jokker.woff2") format("woff2"),
+        url("fonts/jokker/jokker-regular/jokker.woff") format("woff");
 }
 
 @font-face {
@@ -1127,10 +1133,11 @@ body {
 
   font-style: "italic";
 
-  src: url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff2")
-      format("woff2"),
-    url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff")
-      format("woff");
+  src:
+        url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff2")
+            format("woff2"),
+        url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff")
+            format("woff");
 }
 
 /* LENIS */
@@ -1178,31 +1185,31 @@ html.lenis {
 .features {
   display: grid;
   @media (min-width: 1024px) {
-    min-height: 90svh;
+    min-height: 100svh;
 
     gap: 1rem;
 
     grid-template-areas:
-      "alt alt alt alt alt oms oms"
-      "alt alt alt alt alt oms oms"
-      "alt alt alt alt alt oms oms"
-      "alt alt alt alt alt oms oms"
-      "hel hel hel spl spl spl spl"
-      "hel hel hel spl spl spl spl"
-      "hel hel hel inv inv mad mad"
-      "hel hel hel inv inv mad mad";
+            "alt alt alt alt alt oms oms"
+            "alt alt alt alt alt oms oms"
+            "alt alt alt alt alt oms oms"
+            "alt alt alt alt alt oms oms"
+            "hel hel hel spl spl spl spl"
+            "hel hel hel spl spl spl spl"
+            "hel hel hel inv inv mad mad"
+            "hel hel hel inv inv mad mad";
   }
   gap: 0.5rem;
   min-height: 70svh;
   grid-template-areas:
-    "alt alt alt alt oms oms oms"
-    "alt alt alt alt oms oms oms"
-    "alt alt alt alt oms oms oms"
-    "alt alt alt alt oms oms oms"
-    "mad mad mad spl spl spl spl"
-    "mad mad mad spl spl spl spl"
-    "inv inv inv hel hel hel hel"
-    "inv inv inv hel hel hel hel";
+        "alt alt alt alt oms oms oms"
+        "alt alt alt alt oms oms oms"
+        "alt alt alt alt oms oms oms"
+        "alt alt alt alt oms oms oms"
+        "mad mad mad spl spl spl spl"
+        "mad mad mad spl spl spl spl"
+        "inv inv inv hel hel hel hel"
+        "inv inv inv hel hel hel hel";
 }
 
 .alt {
@@ -1445,8 +1452,9 @@ html.lenis {
   --tw-bg-opacity: 1;
   background-color: rgb(33 37 41 / var(--tw-bg-opacity));
   border-radius: 50% 50% 0 0;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1),
-    border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
+  transition:
+        transform 0.5s cubic-bezier(0.4, 0, 0, 1),
+        border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
 }
 
 .inverse .button-cta-ripple span {
@@ -1498,6 +1506,29 @@ html.lenis {
 .inverse .button-cta-title span:after {
   --tw-text-opacity: 1;
   color: rgb(33 37 41 / var(--tw-text-opacity));
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Animation Fade In */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 0.2s;
 }
 
 .hover\:scale-105:hover {
@@ -1570,6 +1601,10 @@ html.lenis {
 
   .md\:h-72 {
     height: 18rem;
+  }
+
+  .md\:min-h-\[850px\] {
+    min-height: 850px;
   }
 
   .md\:min-h-card_1_row {
@@ -1686,20 +1721,16 @@ html.lenis {
     margin-top: 5rem;
   }
 
+  .lg\:mt-32 {
+    margin-top: 8rem;
+  }
+
   .lg\:mt-4 {
     margin-top: 1rem;
   }
 
   .lg\:mt-64 {
     margin-top: 16rem;
-  }
-
-  .lg\:mt-40 {
-    margin-top: 10rem;
-  }
-
-  .lg\:mt-32 {
-    margin-top: 8rem;
   }
 
   .lg\:block {

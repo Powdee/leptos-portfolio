@@ -19,12 +19,16 @@ pub fn App() -> impl IntoView {
     view! {
         <Stylesheet id="leptos" href="/pkg/leptos_start.css"/>
         <Title text="Erik Kurjak"/>
-        <Script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"/>
-        <Script src="/pkg/init_lenis.js"/>
+        <Script
+            fetchpriority="low"
+            defer="defer"
+            src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"
+        />
+        <Script fetchpriority="low" defer="defer" src="/pkg/init_lenis.js"/>
 
         <Router>
             <Show when=move || env == "development" fallback=SoonPage>
-                // <canvas id="canvas" width="800" height="600" class="absolute" />
+                <canvas id="canvas" width="800" height="600" class="absolute"></canvas>
                 // <Header/>
                 <Routes>
                     <Route path="" view=HomePage/>
@@ -35,4 +39,3 @@ pub fn App() -> impl IntoView {
         </Router>
     }
 }
-

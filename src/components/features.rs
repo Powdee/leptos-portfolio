@@ -104,11 +104,19 @@ pub fn Features() -> impl IntoView {
                         <em class="animated-title-element font-light text-gray-9">projects</em>
                     </div>
                 </h1>
+            </ViewportVisibility>
+            <ViewportVisibility fallback=|| view! { <div class="min-h-[100svh]"></div> }>
                 <FeaturedCards/>
             </ViewportVisibility>
         </Layout>
     }
 }
+
+
+
+
+
+
 
 
 
