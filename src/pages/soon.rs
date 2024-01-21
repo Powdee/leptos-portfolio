@@ -27,7 +27,7 @@ pub fn SoonPage() -> impl IntoView {
                 </h1>
                 <p class="min-w-full fade-in text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9 mt-10 lg:mt-20">
                     Mark your calendars for <i>
-                        <b>20th January 2024</b>
+                        <b>31th January 2024</b>
                     </i> , when this digital canvas
                     transforms into a complete showcase of my <i>
                         <b>engineering</b>
