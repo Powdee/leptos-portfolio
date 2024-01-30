@@ -21,7 +21,11 @@ pub fn Perdiem() -> impl IntoView {
             </ViewportVisibility>
 
             <div class="grid lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col gap-x-12 lg:gap-y-0 gap-y-8 mt-20 md:mt-40">
-                <div class="order-2 lg:order-1 lg:row-span-3 self-center col-span-1"></div>
+                <div class="min-h-[150px] md:min-h-[auto] flex justify-center items-center order-2 lg:order-1 lg:row-span-3 self-center col-span-1">
+                    <h3 class="text-gray-4 text-center text-2xl md:text-4xl">
+                        3D animation <br/> coming soon
+                    </h3>
+                </div>
                 <Button
                     class_name="order-3 self-start".to_string()
                     label="Have an idea?".to_string()

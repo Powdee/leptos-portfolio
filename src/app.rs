@@ -4,6 +4,7 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
+use crate::pages::download_cv::DownloadCVPage;
 use crate::pages::home::HomePage;
 use crate::pages::not_found::NotFound;
 use crate::pages::soon::SoonPage;
@@ -28,12 +29,13 @@ pub fn App() -> impl IntoView {
 
         <Router>
             <Show when=move || env == "development" fallback=SoonPage>
-                <canvas id="canvas" width="800" height="600" class="absolute"></canvas>
+                // <canvas id="canvas" width="800" height="600" class="absolute"></canvas>
                 // <Header/>
                 <Routes>
                     <Route path="" view=HomePage/>
                     <Route path="/*any" view=NotFound/>
                     <Route path="/projects/:id" view=UseCasesPage/>
+                    <Route path="/resume" view=DownloadCVPage/>
                 </Routes>
             </Show>
         </Router>

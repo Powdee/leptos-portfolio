@@ -12,4 +12,3 @@ pub fn UseCasesPage() -> impl IntoView {
 
     view! { <UseCase name=id()/> }
 }
-

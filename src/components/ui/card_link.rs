@@ -14,7 +14,7 @@ pub fn CardLink(
             class=class_name.to_owned() + spacer
                 + "overflow-hidden relative bg-gray-9 rounded-[57px] duration-500 transition-shadow hover:shadow-md"
         >
-            <div class="bg-gray-1 w-auto absolute left-5 bottom-5 rounded-full flex flex-row justify-center items-center">
+            <div class="w-full h-full rounded-full flex flex-row justify-center items-center">
                 {children()}
             </div>
         </div>

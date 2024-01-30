@@ -439,7 +439,7 @@ html {
 }
 
 html,
-    body {
+  body {
   --tw-bg-opacity: 1;
   background-color: rgb(248 249 250 / var(--tw-bg-opacity));
 }
@@ -578,6 +578,10 @@ body {
   top: 50%;
 }
 
+.top-4 {
+  top: 1rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -639,6 +643,10 @@ body {
   margin-top: 2rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -685,6 +693,14 @@ body {
 
 .min-h-card_2_row_mobile {
   min-height: 18rem;
+}
+
+.min-h-\[300px\] {
+  min-height: 300px;
+}
+
+.min-h-\[150px\] {
+  min-height: 150px;
 }
 
 .w-48 {
@@ -737,6 +753,14 @@ body {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.basis-\[40\%\] {
+  flex-basis: 40%;
+}
+
+.basis-\[60\%\] {
+  flex-basis: 60%;
 }
 
 .-translate-x-1\/2 {
@@ -813,6 +837,10 @@ body {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-16 {
+  gap: 4rem;
 }
 
 .gap-x-12 {
@@ -1036,6 +1064,16 @@ body {
   color: rgb(33 37 41 / var(--tw-text-opacity));
 }
 
+.text-gray-4 {
+  --tw-text-opacity: 1;
+  color: rgb(206 212 218 / var(--tw-text-opacity));
+}
+
+.text-gray-5 {
+  --tw-text-opacity: 1;
+  color: rgb(173 181 189 / var(--tw-text-opacity));
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -1111,9 +1149,8 @@ body {
 
   font-weight: 500;
 
-  src:
-        url("fonts/jokker/jokker-medium/jokker-medium.woff2") format("woff2"),
-        url("fonts/jokker/jokker-medium/jokker-medium.woff") format("woff");
+  src: url("fonts/jokker/jokker-medium/jokker-medium.woff2") format("woff2"),
+    url("fonts/jokker/jokker-medium/jokker-medium.woff") format("woff");
 }
 
 @font-face {
@@ -1121,9 +1158,8 @@ body {
 
   font-weight: 400;
 
-  src:
-        url("fonts/jokker/jokker-regular/jokker.woff2") format("woff2"),
-        url("fonts/jokker/jokker-regular/jokker.woff") format("woff");
+  src: url("fonts/jokker/jokker-regular/jokker.woff2") format("woff2"),
+    url("fonts/jokker/jokker-regular/jokker.woff") format("woff");
 }
 
 @font-face {
@@ -1133,11 +1169,10 @@ body {
 
   font-style: "italic";
 
-  src:
-        url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff2")
-            format("woff2"),
-        url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff")
-            format("woff");
+  src: url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff2")
+      format("woff2"),
+    url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff")
+      format("woff");
 }
 
 /* LENIS */
@@ -1190,26 +1225,26 @@ html.lenis {
     gap: 1rem;
 
     grid-template-areas:
-            "alt alt alt alt alt oms oms"
-            "alt alt alt alt alt oms oms"
-            "alt alt alt alt alt oms oms"
-            "alt alt alt alt alt oms oms"
-            "hel hel hel spl spl spl spl"
-            "hel hel hel spl spl spl spl"
-            "hel hel hel inv inv mad mad"
-            "hel hel hel inv inv mad mad";
+      "alt alt alt alt alt oms oms"
+      "alt alt alt alt alt oms oms"
+      "alt alt alt alt alt oms oms"
+      "alt alt alt alt alt oms oms"
+      "hel hel hel spl spl spl spl"
+      "hel hel hel spl spl spl spl"
+      "hel hel hel inv inv mad mad"
+      "hel hel hel inv inv mad mad";
   }
   gap: 0.5rem;
   min-height: 70svh;
   grid-template-areas:
-        "alt alt alt alt oms oms oms"
-        "alt alt alt alt oms oms oms"
-        "alt alt alt alt oms oms oms"
-        "alt alt alt alt oms oms oms"
-        "mad mad mad spl spl spl spl"
-        "mad mad mad spl spl spl spl"
-        "inv inv inv hel hel hel hel"
-        "inv inv inv hel hel hel hel";
+    "alt alt alt alt oms oms oms"
+    "alt alt alt alt oms oms oms"
+    "alt alt alt alt oms oms oms"
+    "alt alt alt alt oms oms oms"
+    "mad mad mad spl spl spl spl"
+    "mad mad mad spl spl spl spl"
+    "inv inv inv hel hel hel hel"
+    "inv inv inv hel hel hel hel";
 }
 
 .alt {
@@ -1452,9 +1487,8 @@ html.lenis {
   --tw-bg-opacity: 1;
   background-color: rgb(33 37 41 / var(--tw-bg-opacity));
   border-radius: 50% 50% 0 0;
-  transition:
-        transform 0.5s cubic-bezier(0.4, 0, 0, 1),
-        border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1),
+    border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
 }
 
 .inverse .button-cta-ripple span {
@@ -1531,6 +1565,63 @@ canvas {
   animation: fadeIn 1s ease-out forwards 0.2s;
 }
 
+.iframe {
+  width: 100vw;
+  max-width: 100%;
+  max-height: 11in;
+  aspect-ratio: 8.5/11;
+}
+
+/* ANIMATION SCROLL ICON */
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    transform: translateY(0.75em);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+.scroll-icon__dot {
+  display: block;
+  position: absolute;
+  left: 50%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(33 37 41 / var(--tw-bg-opacity));
+  height: 0.5em;
+  width: 0.5em;
+  top: 0.6em;
+  margin-left: -0.25em;
+  border-radius: 50%;
+  transform-origin: top center;
+  backface-visibility: hidden;
+  animation: scroll 2s ease-out infinite;
+}
+
+.scroll-icon {
+  display: block;
+  position: relative;
+  height: 3em;
+  width: 1.5em;
+  border: 2px solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(33 37 41 / var(--tw-border-opacity));
+  border-radius: 1em;
+}
+
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -1599,6 +1690,10 @@ canvas {
     margin-top: 2rem;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:h-72 {
     height: 18rem;
   }
@@ -1613,6 +1708,10 @@ canvas {
 
   .md\:min-h-card_2_row {
     min-height: 39rem;
+  }
+
+  .md\:min-h-\[auto\] {
+    min-height: auto;
   }
 
   .md\:w-72 {
@@ -1683,6 +1782,11 @@ canvas {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -1793,6 +1897,10 @@ canvas {
     grid-template-rows: repeat(2, minmax(0, 1fr));
   }
 
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
   .lg\:gap-20 {
     gap: 5rem;
   }
@@ -1836,6 +1944,10 @@ canvas {
 }
 
 @media (min-width: 1280px) {
+  .xl\:mb-28 {
+    margin-bottom: 7rem;
+  }
+
   .xl\:mt-28 {
     margin-top: 7rem;
   }

@@ -1,27 +1,43 @@
 use std::fs;
 
 use crate::components::ui::card_link::CardLink;
+use crate::components::ui::close::Close;
 use crate::components::ui::layout::Layout;
 use crate::types::project::{Project, ProjectData};
 
-use leptos::*;
 use leptos::svg::Svg;
+use leptos::*;
 use leptos_use::use_element_hover;
 
-// TODO: Remove this function and update get_projects to take a param 
+// TODO: Remove this function and update get_projects to take a param
 // TODO: project_name (optional) and use it here
 #[server(GetProjectByName, "/api", "GetJson", "v1/project")]
-pub async fn get_project_by_name(project_name: String) -> Result<Option<Project>, ServerFnError> {
-    let file_path = format!("{}/target/site/resources/projects.json", env!("CARGO_MANIFEST_DIR"));
+pub async fn get_project_by_name(
+    project_name: String,
+) -> Result<Option<Project>, ServerFnError> {
+    let file_path = format!(
+        "{}/target/site/resources/projects.json",
+        env!("CARGO_MANIFEST_DIR")
+    );
 
     let file_content = match fs::read_to_string(file_path) {
         Ok(content) => content,
-        Err(e) => return Err(ServerFnError::ServerError(format!("Failed to read file: {}", e))),
+        Err(e) => {
+            return Err(ServerFnError::ServerError(format!(
+                "Failed to read file: {}",
+                e
+            )))
+        }
     };
 
     let le_json: ProjectData = match serde_json::from_str(&file_content) {
         Ok(json) => json,
-        Err(e) => return Err(ServerFnError::ServerError(format!("Failed to parse JSON: {}", e))),
+        Err(e) => {
+            return Err(ServerFnError::ServerError(format!(
+                "Failed to parse JSON: {}",
+                e
+            )))
+        }
     };
 
     let project = le_json.data.into_iter().find(|p| p.name == project_name);
@@ -32,60 +48,23 @@ pub async fn get_project_by_name(project_name: String) -> Result<Option<Project>
 pub fn UseCase(name: String) -> impl IntoView {
     let (project, write_project) = create_signal(None::<Project>);
 
-	create_effect(move |_| {
-		let name_clone = name.clone();
-		spawn_local(async move {
-			match get_project_by_name(name_clone).await {
-				Ok(value) => {
-					write_project(value);
-				}
-				Err(_) => {}
-			}
-		});
-	});
+    create_effect(move |_| {
+        let name_clone = name.clone();
+        spawn_local(async move {
+            match get_project_by_name(name_clone).await {
+                Ok(value) => {
+                    write_project(value);
+                }
+                Err(_) => {}
+            }
+        });
+    });
 
     let el = create_node_ref::<Svg>();
     let is_hovered = use_element_hover(el);
 
     view! {
-        <header class="mx-auto max-w-full py-6 px-10 md:py-12 md:px-16">
-            <nav class="gap-2 md:flex-row flex-col flex items-center justify-center" aria-label="X">
-                <a href="/">
-                    <svg
-                        node_ref=el
-                        width="61"
-                        height="61"
-                        class="cursor-pointer hover:scale-105 ease-out duration-300 close-x"
-                        viewBox="0 0 61 61"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <rect
-                            width="61"
-                            height="61"
-                            rx="30.5"
-                            class="fill-gray-2 hover:fill-gray-3 ease-out duration-300"
-                        ></rect>
-                        <g clip-path="url(#clip0_615_114)">
-                            <path
-                                d="M38.7751 24.0174L36.9825 22.2248L29.8756 29.3317L22.7687 22.2248L20.9761 24.0174L28.083 31.1243L20.9761 38.2312L22.7687 40.0238L29.8756 32.9169L36.9825 40.0238L38.7751 38.2312L31.6682 31.1243L38.7751 24.0174Z"
-                                fill="#212529"
-                            ></path>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_615_114">
-                                <rect
-                                    width="51.7791"
-                                    height="51.7791"
-                                    fill="white"
-                                    transform="translate(4.25586 4.96509)"
-                                ></rect>
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </a>
-            </nav>
-        </header>
+        <Close el=el/>
         <main class={
             let base_class = "flex delay-75 duration-1000 mb-16 ease-out";
             move || {
@@ -142,8 +121,8 @@ pub fn UseCase(name: String) -> impl IntoView {
                                     </Show>
                                     <Show when=move || data.information.timeline.is_some()>
                                         <p class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-gray-6 font-light">
-                                            // <b>Timeline:</b>
-                                            // {' '}
+                                            <b>Timeline:</b>
+                                            {' '}
                                             {timeline.clone()}
                                         </p>
                                     </Show>
@@ -156,22 +135,32 @@ pub fn UseCase(name: String) -> impl IntoView {
                             </div>
                             <div class="grid gap-4 md:grid-cols-5 md:grid-rows-7 mt-10 md:mt-20">
                                 <CardLink class_name="md:col-span-3 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row">
-                                    <span></span>
+                                    <h3 class="text-gray-1 text-lg md:text-2xl">
+                                        Screens coming soon
+                                    </h3>
                                 </CardLink>
                                 <CardLink class_name="md:col-span-2 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row">
-                                    <span></span>
+                                    <h3 class="text-gray-1 text-lg md:text-2xl">
+                                        Screens coming soon
+                                    </h3>
                                 </CardLink>
                                 <CardLink class_name="md:col-span-2 md:row-span-4 min-h-card_2_row_mobile md:min-h-card_2_row">
-                                    <span></span>
+                                    <h3 class="text-gray-1 text-lg md:text-2xl">
+                                        Screens coming soon
+                                    </h3>
                                 </CardLink>
                                 <CardLink class_name="md:col-span-3 md:row-span-2 min-h-card_2_row_mobile">
-                                    <span></span>
+                                    <h3 class="text-gray-1 text-lg md:text-2xl">
+                                        Screens coming soon
+                                    </h3>
                                 </CardLink>
                                 <CardLink class_name="md:col-span-1 md:row-span-2 bg-gray-8 min-h-card_2_row_mobile">
-                                    <span></span>
+                                    <h3 class="text-gray-1 text-lg">Screens coming soon</h3>
                                 </CardLink>
                                 <CardLink class_name="md:col-span-2 md:row-span-2 min-h-card_2_row_mobile">
-                                    <span></span>
+                                    <h3 class="text-gray-1 text-lg md:text-2xl">
+                                        Screens coming soon
+                                    </h3>
                                 </CardLink>
                             </div>
                         }
@@ -183,99 +172,6 @@ pub fn UseCase(name: String) -> impl IntoView {
         </main>
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

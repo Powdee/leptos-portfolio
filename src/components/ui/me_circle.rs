@@ -26,7 +26,7 @@ pub fn MeCircle() -> impl IntoView {
                 letter-spacing="34px"
                 fill="#6C757D"
             >
-                <textPath xlink:href="#textPath">Open to new challenges</textPath>
+                <textPath xlink:href="#textPath">Not actively looking</textPath>
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
@@ -36,33 +36,6 @@ pub fn MeCircle() -> impl IntoView {
                     repeatCount="indefinite"
                 ></animateTransform>
             </text>
-
-        // <text
-        // font-family="Jokker"
-        // font-size="30"
-        // font-weight="light"
-        // letter-spacing="6px"
-        // fill="#212529"
-        // >
-        // <textPath xlink:href="#textPath">Open to new challenges</textPath>
-        // <animateTransform
-        // attributeName="transform"
-        // type="rotate"
-        // from="150 150 150"
-        // to="552 150 150"
-        // dur="13s"
-        // repeatCount="indefinite"
-        // ></animateTransform>
-        // </text>
-
-        // <circle
-        // stroke-width="2px"
-        // cx="170"
-        // cy="170"
-        // r="150"
-        // fill="none"
-        // stroke="#212529"
-        // ></circle>
         </svg>
     }
 }
@@ -93,7 +66,7 @@ pub fn MeCircleTablet() -> impl IntoView {
                 letter-spacing="6px"
                 fill="#ADB5BD"
             >
-                <textPath xlink:href="#textPathTablet">Open to new challenges</textPath>
+                <textPath xlink:href="#textPathTablet">Not actively looking</textPath>
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
@@ -111,7 +84,7 @@ pub fn MeCircleTablet() -> impl IntoView {
                 letter-spacing="6px"
                 fill="#ADB5BD"
             >
-                <textPath xlink:href="#textPathTablet">Open to new challenges</textPath>
+                <textPath xlink:href="#textPathTablet">Not actively looking</textPath>
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
@@ -133,4 +106,3 @@ pub fn MeCircleTablet() -> impl IntoView {
         </svg>
     }
 }
-

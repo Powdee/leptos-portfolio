@@ -51,8 +51,8 @@ pub fn InfoSocials() -> impl IntoView {
             </div>
 
             <div class="flex flex-col gap-8 md:gap-10">
-                <a target="_blank" class="text-2xl md:text-3xl lg:text-4xl text-gray-1" href="#">
-                    Download CV
+                <a class="text-2xl md:text-3xl lg:text-4xl text-gray-1" href="/resume">
+                    Résumé
                 </a>
                 <div class="w-full h-[2px] bg-gray-1"></div>
             </div>
@@ -142,4 +142,3 @@ pub fn Info() -> impl IntoView {
         </section>
     }
 }
-
