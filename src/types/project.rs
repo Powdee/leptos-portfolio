@@ -13,13 +13,14 @@ pub struct Project {
     pub information: Information,
     pub tags: Vec<String>,
     pub link: Link,
+    pub cards: Vec<String>,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct Information {
     pub role: Option<String>,
     pub timeline: Option<String>,
-    pub responsibility: Option<String>,
+    pub responsibility: String,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug)]

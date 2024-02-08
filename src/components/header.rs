@@ -3,7 +3,7 @@ use leptos::*;
 #[component]
 pub fn Header() -> impl IntoView {
     view! {
-        <header class="mx-auto max-w-full py-6 px-10 md:py-12 md:px-16">
+        <header class="mx-auto max-w-full py-6 px-10 md:py-12 md:px-16 selection:bg-gray-9 selection:text-gray-1">
             <nav
                 class="gap-2 md:flex-row flex-col flex items-center justify-between"
                 aria-label="Global"

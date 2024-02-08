@@ -27,6 +27,7 @@ pub fn Perdiem() -> impl IntoView {
                     </h3>
                 </div>
                 <Button
+                    href="mailto:contact@erikkurjak.com".to_string()
                     class_name="order-3 self-start".to_string()
                     label="Have an idea?".to_string()
                 />

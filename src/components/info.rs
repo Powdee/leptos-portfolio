@@ -82,6 +82,7 @@ pub fn InfoAction() -> impl IntoView {
                     </div>
                 </h1>
                 <Button
+                    href="mailto:contact@erikkurjak.com".to_string()
                     label="Let's schedule a call".to_string()
                     class_name="mt-16 lg:mt-32 md:w-[680px] inverse".to_string()
                 />
@@ -125,7 +126,7 @@ pub fn Info() -> impl IntoView {
         <section
             node_ref=el
             aria_label="Info"
-            class="bg-gray-9 max-w-full py-28 lg:py-64 relative w-full isolate lg:mx-auto lg:mx-0 lg:flex mx-auto max-w-8xl 2xl:max-w-10xl px-4 md:px-6"
+            class="selection:bg-gray-1 selection:text-gray-9 bg-gray-9 max-w-full py-28 lg:py-64 relative w-full isolate lg:mx-auto lg:mx-0 lg:flex mx-auto max-w-8xl 2xl:max-w-10xl px-4 md:px-6"
             style=move || {
                 format!(
                     "border-top-left-radius: {}px;border-top-right-radius: {}px",
@@ -142,3 +143,4 @@ pub fn Info() -> impl IntoView {
         </section>
     }
 }
+

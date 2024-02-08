@@ -66,8 +66,11 @@ pub fn DownloadCVPage() -> impl IntoView {
                         </p>
                         <br/>
                         <br/>
-                        <Button class_name="".to_string() label="Download PDF".to_string()/>
-                    // target="_blank" href="https://resume.erikkurjak.com/resume.pdf" download="erikkurjak_resume.pdf"
+                        <Button
+                            href="https://resume.erikkurjak.com/resume.pdf".to_string()
+                            class_name="".to_string()
+                            label="Download PDF".to_string()
+                        />
                     </div>
                 </div>
             </Layout>

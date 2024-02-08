@@ -4,6 +4,13 @@
 
 @font-face {
   font-family: "jokker";
+  font-weight: "bold";
+  src: url("fonts/jokker/jokker-bold/jokker-bold.woff2") format("woff2"),
+    url("fonts/jokker/jokker-bold/jokker-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "jokker";
   font-weight: 500;
   src: url("fonts/jokker/jokker-medium/jokker-medium.woff2") format("woff2"),
     url("fonts/jokker/jokker-medium/jokker-medium.woff") format("woff");
@@ -33,6 +40,7 @@
   html,
   body {
     @apply bg-gray-1;
+    background-image: url("https://www.les-arbres-fruitiers.fr/wp-content/themes/les-arbres-fruitiers/images/grain.png");
   }
   body {
     /* @apply overflow-hidden;
@@ -421,4 +429,9 @@ canvas {
   border: 2px solid;
   @apply border-gray-9;
   border-radius: 1em;
+}
+
+.em {
+  -webkit-text-stroke: 0.01em #212529;
+  color: transparent;
 }

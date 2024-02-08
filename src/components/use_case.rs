@@ -1,9 +1,9 @@
-use std::fs;
 
 use crate::components::ui::card_link::CardLink;
 use crate::components::ui::close::Close;
 use crate::components::ui::layout::Layout;
-use crate::types::project::{Project, ProjectData};
+use crate::types::project::Project;
+use leptos::prelude::*;
 
 use leptos::svg::Svg;
 use leptos::*;
@@ -15,6 +15,9 @@ use leptos_use::use_element_hover;
 pub async fn get_project_by_name(
     project_name: String,
 ) -> Result<Option<Project>, ServerFnError> {
+    use std::fs;
+    use crate::types::project::ProjectData;
+
     let file_path = format!(
         "{}/target/site/resources/projects.json",
         env!("CARGO_MANIFEST_DIR")
@@ -83,19 +86,25 @@ pub fn UseCase(name: String) -> impl IntoView {
                     Some(data) => {
                         let timeline = data.information.timeline.clone();
                         let role = data.information.role.clone();
-                        let responsibility = data.information.responsibility.clone();
                         view! {
-                            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-normal text-gray-9 leading-tighter font-regular mb-4 mt-8 md:mb-10 md:mt-20">
+                            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-normal text-gray-9 leading-tighter font-bold mb-4 mt-8 md:mb-10 md:mt-20">
                                 {data.name}
                             </h1>
                             <div class="flex flex-col md:flex-row gap-8 md:gap-10 lg:gap-20">
-                                <div class="flex flex-col gap-8">
+                                <div class="md:w-2/6 flex flex-col gap-8">
                                     <p class="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9">
                                         {data.description}
                                     </p>
 
-                                    <div class="flex flex-row gap-2 md:gap-4 overflow-x-scroll md:overflow-x-hidden">
+                                    <div class="flex flex-row flex-wrap gap-2 md:gap-4 overflow-x-scroll md:overflow-x-hidden">
 
+                                        <a
+                                            href=data.link.url
+                                            target="_blank"
+                                            class="cursor-pointer bg-gray-9 font-medium text-md rounded-full px-6 py-2 text-gray-2"
+                                        >
+                                            visit
+                                        </a>
                                         {move || {
                                             data.tags
                                                 .iter()
@@ -111,11 +120,9 @@ pub fn UseCase(name: String) -> impl IntoView {
 
                                     </div>
                                 </div>
-                                <div class="flex flex-col">
+                                <div class="md:w-4/6 flex flex-col">
                                     <Show when=move || data.information.role.is_some()>
                                         <p class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-gray-9 font-bold">
-                                            // <b>Role:</b>
-                                            // {' '}
                                             {role.clone()}
                                         </p>
                                     </Show>
@@ -126,42 +133,32 @@ pub fn UseCase(name: String) -> impl IntoView {
                                             {timeline.clone()}
                                         </p>
                                     </Show>
-                                    <Show when=move || data.information.responsibility.is_some()>
-                                        <p class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-gray-9 mt-2 md:mt-8">
-                                            {responsibility.clone()}
-                                        </p>
-                                    </Show>
+                                    <p
+                                        inner_html=ammonia::Builder::new()
+                                            .clean(&data.information.responsibility.clone())
+                                            .to_string()
+                                        class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-gray-9 mt-2 md:mt-8"
+                                    ></p>
                                 </div>
                             </div>
-                            <div class="grid gap-4 md:grid-cols-5 md:grid-rows-7 mt-10 md:mt-20">
-                                <CardLink class_name="md:col-span-3 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row">
-                                    <h3 class="text-gray-1 text-lg md:text-2xl">
-                                        Screens coming soon
-                                    </h3>
-                                </CardLink>
-                                <CardLink class_name="md:col-span-2 md:row-span-3 min-h-card_1_row_mobile md:min-h-card_1_row">
-                                    <h3 class="text-gray-1 text-lg md:text-2xl">
-                                        Screens coming soon
-                                    </h3>
-                                </CardLink>
-                                <CardLink class_name="md:col-span-2 md:row-span-4 min-h-card_2_row_mobile md:min-h-card_2_row">
-                                    <h3 class="text-gray-1 text-lg md:text-2xl">
-                                        Screens coming soon
-                                    </h3>
-                                </CardLink>
-                                <CardLink class_name="md:col-span-3 md:row-span-2 min-h-card_2_row_mobile">
-                                    <h3 class="text-gray-1 text-lg md:text-2xl">
-                                        Screens coming soon
-                                    </h3>
-                                </CardLink>
-                                <CardLink class_name="md:col-span-1 md:row-span-2 bg-gray-8 min-h-card_2_row_mobile">
-                                    <h3 class="text-gray-1 text-lg">Screens coming soon</h3>
-                                </CardLink>
-                                <CardLink class_name="md:col-span-2 md:row-span-2 min-h-card_2_row_mobile">
-                                    <h3 class="text-gray-1 text-lg md:text-2xl">
-                                        Screens coming soon
-                                    </h3>
-                                </CardLink>
+                            <div class="features mt-20 md:mt-40">
+                                {move || {
+                                    data.cards
+                                        .iter()
+                                        .map(|area| {
+                                            view! {
+                                                <CardLink class_name=area.to_string()>
+                                                    <div class="h-full flex justify-center items-center">
+                                                        <h3 class="text-gray-1 text-xs sm:text-lg md:text-2xl">
+                                                            screens coming soon
+                                                        </h3>
+                                                    </div>
+                                                </CardLink>
+                                            }
+                                        })
+                                        .collect_view()
+                                }}
+
                             </div>
                         }
                             .into_view()
@@ -172,6 +169,155 @@ pub fn UseCase(name: String) -> impl IntoView {
         </main>
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

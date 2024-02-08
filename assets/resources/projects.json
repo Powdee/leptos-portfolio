@@ -3,88 +3,98 @@
     {
       "name": "alteryx",
       "area": "alt",
-      "description": "A data analytics platform that enables easy data blending and analysis for actionable insights.",
+      "description": "A data analytics platform that enables easy data blending and analysis for actionable insights",
       "information": {
         "role": "Tech Lead Engineer",
         "timeline": "02/2019 - 02/2023",
-        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential, wasn't launched. Subsequently, I contributed to a project similar to what is now Alteryx's Platform 1.0, focusing on both frontend and backend scheduling. \n With the shift to Platform 2.0, we embraced a micro-frontend architecture, enhancing feature documentation with detailed diagrams and documents, where I focused on scheduling.  \n My time at Alteryx was rewarding, leading a talented team of engineers. Embracing the need for new challenges, I made the decision to advance my career journey.  \n"
+        "responsibility": "At Alteryx, I made several impactful contributions by leading a group of 8 engineers to deliver multiple features for the <b>Alteryx Platform</b>. One of the engineers responsible for the micro-frontend architecture, documentation, diagrams, etc... <br /> <br />  My main focus was on two features, one of which was the <b>Alteryx Plans</b> feature. The goal was to enable anyone to operationalize and automate data workflows, with options for parallel or conditional execution, as well as pre- and post-processing. We used <b>Go.JS</b> and <b>React</b> for displaying tools on the canvas and <b>NodeJS</b> on the backend. There was a significant amount of refactoring as we reverse-engineered the Alteryx Cloud canvas. The team <b>successfully delivered</b> all promised features within Alteryx Plans. <br /><br /> The second significant feature was the <b>Platform Common</b>, which allowed other teams/micro-frontends to use best practices, components, utils, etc... Additionally, we were responsible for maintaining the main repository where all micro-frontends were embedded."
       },
-      "tags": ["web", "typescript", "react", "node"],
+      "tags": ["web", "typescript", "react", "node", "micro-FE", "GoJS"],
       "link": {
         "source": "alteryx",
-        "url": ""
-      }
+        "url": "https://www.alteryx.com/"
+      },
+      "cards": ["alt", "oms", "mad", "spl", "inv", "hel"]
     },
     {
       "name": "oms",
       "area": "oms",
-      "description": "A data analytics platform that enables easy data",
+      "description": "The purpose of the endowment fund is to help people who have found themselves in a difficult life situation",
       "information": {
-        "timeline": "Took 3 months",
-        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential"
+        "role": "Built from scratch",
+        "timeline": "Took me 3 months",
+        "responsibility": "The task was to design and implement a web application where users can contribute any amount to the OMS foundation, gain more information about the foundation, create an account where users can set up a subscription (this feature was built but never released) and blog (this feature was built but never released). The initial meeting involved <b>pricing and a rough estimate</b> based on designs and client criteria. <br /><br /> After the estimation and pricing, I started working on the project. I chose to use <b>Firebase</b> DB and <b>Gatsby</b> React on the client side. For the headless CMS, I opted for <b>Contentful</b>. The client was able to manage the website content using Contentful. The website was deployed on <b>Netlify</b>.<br /><br /> Upon launching the website, we collected over approximately <b>$300,000</b> in donations in a single day <b>without any issues or downtime</b>. The client was satisfied, and the website continues to run smoothly to this day. The website was launched in 2019 and has been functioning flawlessly ever since."
       },
       "tags": ["web", "typescript", "gatsby", "firebase", "contentful"],
       "link": {
         "source": "oms",
-        "url": ""
-      }
+        "url": "https://omsfoundation.cz/"
+      },
+      "cards": ["alt", "oms", "mad", "spl", "inv", "hel"]
     },
     {
       "name": "madesense",
       "area": "mad",
-      "description": "A data analytics platform that enables easy data",
+      "description": "Digital agency specializing in brand, mobile, and web development, and user-centric innovation",
       "information": {
-        "timeline": "Took 6 months",
-        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential"
+        "role": "Built from scratch",
+        "timeline": "Took me 3 months on and off",
+        "responsibility": "I was approached by an agency to create a <b>fast, reliable, and visually appealing website</b> to showcase their portfolio and values. We scheduled a meeting to discuss the designs and estimated a completion timeline. <br /><br /> Within one month, I completed the base website, incorporating animations, content and even made it as <b>progressive web app</b>. The site was built using <b>Gatsby</b>, <b>Contentful</b>, and <b>Material UI</b>, allowing the client to modify and add sections through Contentful, a headless CMS, and deployed on <b>Netlify</b>. After revisiting the website, we decided to enhance it with <b>Three.js animations</b> on multiple pages and introduce new animations for other sections. <br /><br />As the deadline approached, the evolving requirements from the client made it impossible to meet all the project's needs. Unfortunately, the project <b>was not completed</b> and remains abandoned to this day. <i><q>The only real mistake is the one from which we learn nothing.</q></i> - Henry Ford"
       },
-      "tags": ["web", "typescript", "gatsby", "contentful"],
+      "tags": ["web", "typescript", "gatsby", "contentful", "threeJS"],
       "link": {
         "source": "madesense",
-        "url": ""
-      }
+        "url": "https://madesense.netlify.app/"
+      },
+      "cards": ["alt", "oms", "mad", "spl", "inv", "hel"]
     },
     {
       "name": "splashsports",
       "area": "spl",
-      "description": "A data analytics platform that enables easy data",
+      "description": "Premier sports gaming platform, revolutionizing the realm of peer-to-peer contests",
       "information": {
-        "role": "Senior Software engineer",
-        "timeline": "02/2023 - current",
-        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential"
+        "role": "Senior Software Engineer",
+        "timeline": "02/2023 - present",
+        "responsibility": "A startup called Splash, formerly known as <b>Betterpool</b>, caught my attention with it's rapidly growing pace. I jumped on the moving train and have no regrets. We managed to withstand a large influx of people during the multiple sports seasons. <br/><br/> As a team, we succeeded in integrating Coldfusion with React applications, thereby ensuring the <b>rapid development</b> of features in a short time. Initially, I was responsible for writing code in React and Coldfusion. Refactoring not only the frontend code into React but also optimizing DB queries directly in Coldfusion. <br /> <br />Later, I moved to the Splash application, which was written in <b>React/TypeScript</b> and <b>NodeJS/NestJS</b>, primarily focused on developing core gameplay functionality on the frontend. I was responsible for many features, from design, through documentation, automated testing, up to deployment. "
       },
-      "tags": ["web", "typescript", "react", "node"],
+      "tags": ["web", "typescript", "react", "node", "docker", "aws"],
       "link": {
         "source": "splashsports",
-        "url": ""
-      }
+        "url": "https://splashsports.com/"
+      },
+      "cards": ["alt", "oms", "mad", "spl", "inv", "hel"]
     },
     {
       "name": "invaders",
       "area": "inv",
-      "description": "A data analytics platform that enables easy data",
+      "description": "A game in the terminal written in Rust for fun and educational purposes",
       "information": {
-        "timeline": "Took 1 day",
-        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential"
+        "role": "Built from scratch",
+        "timeline": "Took me few days",
+        "responsibility": "A simple game that you can play in the <b>terminal</b> with just one command line was both fun and a pleasant diversion for me, as I don't usually engage in such activities at work. I learned <b>new techniques</b> and <b>best practices</b> in Rust. <br /> <br /> It involves not just using the terminal as a canvas but also working with <b>audio</b> that I recorded myself and used directly in the game. You can find the <b>source code</b> under the link in the description of the game Invaders and play the game. Have fun 😉"
       },
-      "tags": ["desktop", "rust"],
+      "tags": ["desktop", "rust", "cli"],
       "link": {
         "source": "github",
-        "url": ""
-      }
+        "url": "https://github.com/Powdee/rusty-invaders"
+      },
+      "cards": ["alt", "oms", "mad", "spl", "inv", "hel"]
     },
     {
       "name": "helpie",
       "area": "hel",
-      "description": "A data analytics platform that enables easy data",
+      "description": "An application that helps you focus using the Pomodoro technique",
       "information": {
-        "timeline": "Took few days",
-        "responsibility": "At Alteryx, I was a member of the frontend and TypeScript lead group, shaping company-wide standards. \n I played a pivotal role in four main projects. Initially, I worked on a platform hub for credentials and connections, which, despite its potential"
+        "role": "Built from scratch",
+        "timeline": "Took me few weeks",
+        "responsibility": "Have you ever heard of the <b>Pomodoro technique</b>? I have, and it occurred to me to create a simple <b>desktop</b> application that would track my work and rest periods. There are already such applications in the world, but I thought, why not? <br /> <br /> I chose Rust with <b>Tauri</b> to create the desktop application. For the UI, I'm using <b>Svelte with TailwindCSS</b>, and for API and DB communication, I use <b>Axum</b> in Rust. Unfortunately, the application is <b>not yet fully functional</b>. As soon as it is, I will publish the <b>source code</b>, so you can review it and possibly install it."
       },
       "tags": ["desktop", "rust", "tauri", "axum"],
       "link": {
         "source": "github",
         "url": ""
-      }
+      },
+      "cards": ["alt", "oms", "mad", "spl", "inv", "hel"]
     }
   ]
 }
