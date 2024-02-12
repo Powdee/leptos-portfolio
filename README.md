@@ -81,7 +81,6 @@ Other prefixes or commit without prefix won't do deploy and will fail CI pipelin
 
 - update favicon.ico
 - update avatar image from png to webp and jpg support
-- update some use case's text (helpie etc..)
 - use wGPU for basic 2D/3D animation
 - write an article about my journey using Rust for my portfolio
 
