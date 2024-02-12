@@ -14,13 +14,13 @@ Before I began implementing my website, I sketched the design, including typogra
 
 ## Why Rust - Leptos 🤷 ?
 
-I've built a few applications in Rust and really falling in love with the language.
+I've built a few applications in Rust and really fell in love with the language.
 
-When I decided to create my portfolio for the fifth time, I was torn between using NextJS, Gatsby, Svelte, or other JavaScript frameworks. Then it hit me that Rust is compatible with wasm, and there's a framework called Yew. After some research, I opted for `Leptos`.
+When I decided to create my portfolio for the fifth time, I was torn between using NextJS, Gatsby, Svelte, or other JavaScript frameworks. Then it hit me that Rust is compatible with wasm. After some research, I opted for `Leptos`.
 
 It's a full-stack, isomorphic Rust web framework that utilizes fine-grained reactivity to construct declarative user interfaces.
 
-It might be considered over-engineering at its best—what do you think? 😄 Anyway, I went for it, and here are the results.
+It might be considered over-engineering at its best. 😄 Anyway, I went for it.
 
 ## Installing dependencies
 
@@ -79,8 +79,11 @@ Other prefixes or commit without prefix won't do deploy and will fail CI pipelin
 
 ## TODO
 
-- Use wGPU for basic 2D/3D animation
-- Write an article about my journey using Rust for my portfolio
+- update favicon.ico
+- update avatar image from png to webp and jpg support
+- update some use case's text (helpie etc..)
+- use wGPU for basic 2D/3D animation
+- write an article about my journey using Rust for my portfolio
 
 ## 🔏 License
 

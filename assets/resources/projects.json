@@ -25,7 +25,7 @@
       "information": {
         "role": "Built from scratch",
         "timeline": "Took me 3 months",
-        "responsibility": "The task was to design and implement a web application where users can contribute any amount to the OMS foundation, gain more information about the foundation, create an account where users can set up a subscription (this feature was built but never released) and blog (this feature was built but never released). The initial meeting involved <b>pricing and a rough estimate</b> based on designs and client criteria. <br /><br /> After the estimation and pricing, I started working on the project. I chose to use <b>Firebase</b> DB and <b>Gatsby</b> React on the client side. For the headless CMS, I opted for <b>Contentful</b>. The client was able to manage the website content using Contentful. The website was deployed on <b>Netlify</b>.<br /><br /> Upon launching the website, we collected over approximately <b>$300,000</b> in donations in a single day <b>without any issues or downtime</b>. The client was satisfied, and the website continues to run smoothly to this day. The website was launched in 2019 and has been functioning flawlessly ever since."
+        "responsibility": "The task was to design and implement a web application where users can contribute any amount to the OMS foundation, gain more information about the foundation, create an account where users can set up a subscription (this feature was built but never released) and blog (this feature was built but never released). The initial meeting involved <b>pricing and a rough estimate</b> based on designs and client criteria. <br /><br /> After the estimation and pricing, I started working on the project. I chose to use <b>Firebase</b> DB and <b>Gatsby</b> React on the client side. Client wanted to manage website content by themself. Thus I opted for <b>Contentful</b> for headless CMS. The website was deployed on <b>Netlify</b>.<br /><br /> Upon launching the website, we collected over approximately <b>$300,000</b> in donations in a single day <b>without any issues or downtime</b>. The client was satisfied, and the website continues to run smoothly to this day. The website was launched in 2019 and has been functioning flawlessly ever since."
       },
       "tags": ["web", "typescript", "gatsby", "firebase", "contentful"],
       "link": {
@@ -92,8 +92,8 @@
       "description": "An application that helps you focus using the Pomodoro technique",
       "information": {
         "role": "Built from scratch",
-        "timeline": "Took me few weeks",
-        "responsibility": "Have you ever heard of the <b>Pomodoro technique</b>? I have, and it occurred to me to create a simple <b>desktop</b> application that would track my work and rest periods. There are already such applications in the world, but I thought, why not? <br /> <br /> I chose Rust with <b>Tauri</b> to create the desktop application. For the UI, I'm using <b>Svelte with TailwindCSS</b>, and for API and DB communication, I use <b>Axum</b> in Rust. Unfortunately, the application is <b>not yet fully functional</b>. As soon as it is, I will publish the <b>source code</b>, so you can review it and possibly install it."
+        "timeline": "Still in progress",
+        "responsibility": "Have you ever heard of the <b>Pomodoro technique</b>? I decided to write my own simple <b>desktop</b> application that would track my work and rest periods with pomodoro on mind. <br /> <br /> I chose Rust with <b>Tauri</b> to create the desktop application which can be run on MacOS and Window. For the UI, I'm using <b>Svelte with TailwindCSS</b>, and for API and DB communication, I use <b>Axum</b> in Rust. Unfortunately, the application is <b>not yet fully functional</b>. As soon as it is, I will publish the <b>source code</b>, so you can review it and possibly install it."
       },
       "tags": ["desktop", "rust", "tauri", "axum"],
       "link": {
