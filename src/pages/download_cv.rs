@@ -57,7 +57,12 @@ pub fn DownloadCVPage() -> impl IntoView {
                         <p class="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9 fade-y-trans">
                             This is my résumé. It is generated from a LaTex template using a Github actions and hosted on
                             <i>fly.io</i> .
-                            You can find the source code <a href="" class="font-bold">
+                            You can find the source code
+                            <a
+                                href="https://github.com/Powdee/leptos-cv-resume"
+                                target="_blank"
+                                class="font-bold"
+                            >
                                 here
                             </a> .
                         </p>
