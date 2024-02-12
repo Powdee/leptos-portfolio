@@ -52,12 +52,12 @@ fn FeaturedCards() -> impl IntoView {
                         let project_clone = project.clone();
                         view! {
                             <Card
-                                name=project_clone.name.to_string()
+                                name=project_clone.slug.to_string()
                                 style=""
                                 class_name=project.area.to_string()
                             >
                                 <div class="h-full flex justify-center items-center">
-                                    {match project_clone.name.as_str() {
+                                    {match project_clone.slug.as_str() {
                                         "oms" => view! { <OmsLogo/> }.into_view(),
                                         "alteryx" => view! { <AyxLogo/> }.into_view(),
                                         "madesense" => view! { <MadesenseLogo/> }.into_view(),
@@ -111,6 +111,8 @@ pub fn Features() -> impl IntoView {
         </Layout>
     }
 }
+
+
 
 
 

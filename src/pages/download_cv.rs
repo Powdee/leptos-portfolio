@@ -1,7 +1,6 @@
-use leptos::html::Iframe;
 use leptos::svg::Svg;
 use leptos::*;
-use leptos_use::{use_element_hover, use_scroll, UseScrollReturn};
+use leptos_use::use_element_hover;
 
 use crate::components::ui::button::Button;
 use crate::components::ui::close::Close;
@@ -26,7 +25,7 @@ pub fn DownloadCVPage() -> impl IntoView {
         }>
             <Layout aria_label="resume" class_name="flex-col mb-10 xl:mb-28".to_string()>
                 <div class="flex flex-col lg:flex-row gap-16 md:gap-28">
-                    <div class="relative order-2 lg:order-1 basis-[60%]">
+                    <div class="relative order-2 lg:order-1 basis-[60%] fade-y-trans">
                         <div class="absolute hidden md:block left-1/2 top-4 transform -translate-x-1/2">
                             <section class="example example--2">
                                 <span class="scroll-icon">
@@ -53,7 +52,7 @@ pub fn DownloadCVPage() -> impl IntoView {
                             </div>
                         </h1>
                         <br/>
-                        <p class="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9">
+                        <p class="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9 fade-y-trans">
                             This is my résumé. It is generated from a LaTex template using a Github actions and hosted on
                             <i>fly.io</i> .
                             You can find the source code <a href="" class="font-bold">
@@ -61,7 +60,7 @@ pub fn DownloadCVPage() -> impl IntoView {
                             </a> .
                         </p>
                         <br/>
-                        <p class="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9">
+                        <p class="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9 fade-y-trans">
                             If you desire to download a PDF version of my résumé, you can do so by clicking the button below.
                         </p>
                         <br/>

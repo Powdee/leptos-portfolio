@@ -40,12 +40,7 @@
   html,
   body {
     @apply bg-gray-1;
-    background-image: url("https://www.les-arbres-fruitiers.fr/wp-content/themes/les-arbres-fruitiers/images/grain.png");
-  }
-  body {
-    /* @apply overflow-hidden;
-    @apply h-full;
-    @apply w-full; */
+    background-image: url("https://leptoscv.s3.eu-central-1.amazonaws.com/grain.avif");
   }
 }
 
@@ -380,6 +375,25 @@ canvas {
   animation: fadeIn 1s ease-out forwards 0.2s;
 }
 
+/* Animation FadeYTrans Case */
+@keyframes fadeYTrans {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-y-trans {
+  will-change: transform;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeYTrans 1.4s cubic-bezier(0.34, 0.34, 0, 0.97) forwards 0.15s;
+}
+
 .iframe {
   width: 100vw;
   max-width: 100%;
@@ -429,9 +443,4 @@ canvas {
   border: 2px solid;
   @apply border-gray-9;
   border-radius: 1em;
-}
-
-.em {
-  -webkit-text-stroke: 0.01em #212529;
-  color: transparent;
 }

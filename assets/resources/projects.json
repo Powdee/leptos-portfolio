@@ -1,7 +1,8 @@
 {
   "data": [
     {
-      "name": "alteryx",
+      "slug": "alteryx",
+      "name": "Alteryx",
       "area": "alt",
       "description": "A data analytics platform that enables easy data blending and analysis for actionable insights",
       "information": {
@@ -9,7 +10,7 @@
         "timeline": "02/2019 - 02/2023",
         "responsibility": "At Alteryx, I made several impactful contributions by leading a group of 8 engineers to deliver multiple features for the <b>Alteryx Platform</b>. One of the engineers responsible for the micro-frontend architecture, documentation, diagrams, etc... <br /> <br />  My main focus was on two features, one of which was the <b>Alteryx Plans</b> feature. The goal was to enable anyone to operationalize and automate data workflows, with options for parallel or conditional execution, as well as pre- and post-processing. We used <b>Go.JS</b> and <b>React</b> for displaying tools on the canvas and <b>NodeJS</b> on the backend. There was a significant amount of refactoring as we reverse-engineered the Alteryx Cloud canvas. The team <b>successfully delivered</b> all promised features within Alteryx Plans. <br /><br /> The second significant feature was the <b>Platform Common</b>, which allowed other teams/micro-frontends to use best practices, components, utils, etc... Additionally, we were responsible for maintaining the main repository where all micro-frontends were embedded."
       },
-      "tags": ["web", "typescript", "react", "node", "micro-FE", "GoJS"],
+      "tags": ["web", "typescript", "react", "node", "GoJS"],
       "link": {
         "source": "alteryx",
         "url": "https://www.alteryx.com/"
@@ -17,7 +18,8 @@
       "cards": ["alt", "oms", "mad", "spl", "inv", "hel"]
     },
     {
-      "name": "oms",
+      "slug": "oms",
+      "name": "One Man Show Foundation",
       "area": "oms",
       "description": "The purpose of the endowment fund is to help people who have found themselves in a difficult life situation",
       "information": {
@@ -33,7 +35,8 @@
       "cards": ["alt", "oms", "mad", "spl", "inv", "hel"]
     },
     {
-      "name": "madesense",
+      "slug": "madesense",
+      "name": "Madesense Digital",
       "area": "mad",
       "description": "Digital agency specializing in brand, mobile, and web development, and user-centric innovation",
       "information": {
@@ -49,7 +52,8 @@
       "cards": ["alt", "oms", "mad", "spl", "inv", "hel"]
     },
     {
-      "name": "splashsports",
+      "slug": "splashsports",
+      "name": "Splash Sports",
       "area": "spl",
       "description": "Premier sports gaming platform, revolutionizing the realm of peer-to-peer contests",
       "information": {
@@ -65,7 +69,8 @@
       "cards": ["alt", "oms", "mad", "spl", "inv", "hel"]
     },
     {
-      "name": "invaders",
+      "slug": "invaders",
+      "name": "Invaders",
       "area": "inv",
       "description": "A game in the terminal written in Rust for fun and educational purposes",
       "information": {
@@ -81,7 +86,8 @@
       "cards": ["alt", "oms", "mad", "spl", "inv", "hel"]
     },
     {
-      "name": "helpie",
+      "slug": "helpie",
+      "name": "Helpie",
       "area": "hel",
       "description": "An application that helps you focus using the Pomodoro technique",
       "information": {

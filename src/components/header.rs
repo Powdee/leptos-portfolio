@@ -8,7 +8,7 @@ pub fn Header() -> impl IntoView {
                 class="gap-2 md:flex-row flex-col flex items-center justify-between"
                 aria-label="Global"
             >
-                <h4 class="text-gray-9 tracking-wide text-2xl flex lg:flex-1">
+                <h4 class="text-gray-9 tracking-wide text-xl md:text-2xl flex lg:flex-1">
                     Hey, "I’m" Erik Kurjak "👋"
                 </h4>
                 <div class="items-center justify-end gap-1 flex lg:flex-1">

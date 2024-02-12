@@ -7,6 +7,7 @@ pub struct ProjectData {
 
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct Project {
+    pub slug: String,
     pub name: String,
     pub area: String,
     pub description: String,

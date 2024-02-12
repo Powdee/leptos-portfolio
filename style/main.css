@@ -442,13 +442,7 @@ html,
   body {
   --tw-bg-opacity: 1;
   background-color: rgb(248 249 250 / var(--tw-bg-opacity));
-  background-image: url("https://www.les-arbres-fruitiers.fr/wp-content/themes/les-arbres-fruitiers/images/grain.png");
-}
-
-body {
-  /* @apply overflow-hidden;
-    @apply h-full;
-    @apply w-full; */
+  background-image: url("https://leptoscv.s3.eu-central-1.amazonaws.com/grain.avif");
 }
 
 *, ::before, ::after {
@@ -660,10 +654,6 @@ body {
   display: grid;
 }
 
-.contents {
-  display: contents;
-}
-
 .hidden {
   display: none;
 }
@@ -694,14 +684,6 @@ body {
 
 .min-h-\[270px\] {
   min-height: 270px;
-}
-
-.min-h-card_1_row_mobile {
-  min-height: 18rem;
-}
-
-.min-h-card_2_row_mobile {
-  min-height: 18rem;
 }
 
 .w-48 {
@@ -736,30 +718,6 @@ body {
   width: 100%;
 }
 
-.w-\[400px\] {
-  width: 400px;
-}
-
-.w-\[50\%\] {
-  width: 50%;
-}
-
-.w-1\/6 {
-  width: 16.666667%;
-}
-
-.w-5\/6 {
-  width: 83.333333%;
-}
-
-.w-2\/6 {
-  width: 33.333333%;
-}
-
-.w-4\/6 {
-  width: 66.666667%;
-}
-
 .min-w-full {
   min-width: 100%;
 }
@@ -786,22 +744,6 @@ body {
 
 .basis-\[60\%\] {
   flex-basis: 60%;
-}
-
-.basis-2\/6 {
-  flex-basis: 33.333333%;
-}
-
-.basis-4\/6 {
-  flex-basis: 66.666667%;
-}
-
-.basis-1\/6 {
-  flex-basis: 16.666667%;
-}
-
-.basis-5\/6 {
-  flex-basis: 83.333333%;
 }
 
 .-translate-x-1\/2 {
@@ -880,10 +822,6 @@ body {
   gap: 7rem;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
 .gap-8 {
   gap: 2rem;
 }
@@ -925,20 +863,16 @@ body {
   overflow-x: scroll;
 }
 
+.rounded-\[20px\] {
+  border-radius: 20px;
+}
+
 .rounded-\[47px\] {
   border-radius: 47px;
 }
 
-.rounded-\[57px\] {
-  border-radius: 57px;
-}
-
 .rounded-full {
   border-radius: 9999px;
-}
-
-.rounded-\[20px\] {
-  border-radius: 20px;
 }
 
 .bg-gray-1 {
@@ -954,11 +888,6 @@ body {
 .bg-gray-3 {
   --tw-bg-opacity: 1;
   background-color: rgb(222 226 230 / var(--tw-bg-opacity));
-}
-
-.bg-gray-8 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(52 58 64 / var(--tw-bg-opacity));
 }
 
 .bg-gray-9 {
@@ -1023,6 +952,10 @@ body {
   padding-right: 0.75rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1034,6 +967,11 @@ body {
 
 .text-5xl {
   font-size: 3rem;
+  line-height: 1;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
   line-height: 1;
 }
 
@@ -1627,6 +1565,27 @@ canvas {
   animation: fadeIn 1s ease-out forwards 0.2s;
 }
 
+/* Animation FadeYTrans Case */
+
+@keyframes fadeYTrans {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-y-trans {
+  will-change: transform;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeYTrans 1.4s cubic-bezier(0.34, 0.34, 0, 0.97) forwards 0.15s;
+}
+
 .iframe {
   width: 100vw;
   max-width: 100%;
@@ -1684,19 +1643,14 @@ canvas {
   border-radius: 1em;
 }
 
-.em {
-  -webkit-text-stroke: 0.01em #212529;
-  color: transparent;
+.selection\:bg-gray-1 *::-moz-selection {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 249 250 / var(--tw-bg-opacity));
 }
 
-.selection\:bg-pink-300 *::-moz-selection {
+.selection\:bg-gray-1 *::selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(249 168 212 / var(--tw-bg-opacity));
-}
-
-.selection\:bg-pink-300 *::selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 168 212 / var(--tw-bg-opacity));
+  background-color: rgb(248 249 250 / var(--tw-bg-opacity));
 }
 
 .selection\:bg-gray-9 *::-moz-selection {
@@ -1707,16 +1661,6 @@ canvas {
 .selection\:bg-gray-9 *::selection {
   --tw-bg-opacity: 1;
   background-color: rgb(33 37 41 / var(--tw-bg-opacity));
-}
-
-.selection\:bg-gray-1 *::-moz-selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 249 250 / var(--tw-bg-opacity));
-}
-
-.selection\:bg-gray-1 *::selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 249 250 / var(--tw-bg-opacity));
 }
 
 .selection\:text-gray-1 *::-moz-selection {
@@ -1739,14 +1683,14 @@ canvas {
   color: rgb(33 37 41 / var(--tw-text-opacity));
 }
 
-.selection\:bg-pink-300::-moz-selection {
+.selection\:bg-gray-1::-moz-selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(249 168 212 / var(--tw-bg-opacity));
+  background-color: rgb(248 249 250 / var(--tw-bg-opacity));
 }
 
-.selection\:bg-pink-300::selection {
+.selection\:bg-gray-1::selection {
   --tw-bg-opacity: 1;
-  background-color: rgb(249 168 212 / var(--tw-bg-opacity));
+  background-color: rgb(248 249 250 / var(--tw-bg-opacity));
 }
 
 .selection\:bg-gray-9::-moz-selection {
@@ -1757,16 +1701,6 @@ canvas {
 .selection\:bg-gray-9::selection {
   --tw-bg-opacity: 1;
   background-color: rgb(33 37 41 / var(--tw-bg-opacity));
-}
-
-.selection\:bg-gray-1::-moz-selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 249 250 / var(--tw-bg-opacity));
-}
-
-.selection\:bg-gray-1::selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 249 250 / var(--tw-bg-opacity));
 }
 
 .selection\:text-gray-1::-moz-selection {
@@ -1818,30 +1752,6 @@ canvas {
 }
 
 @media (min-width: 768px) {
-  .md\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
-  .md\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
-  .md\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-
-  .md\:row-span-2 {
-    grid-row: span 2 / span 2;
-  }
-
-  .md\:row-span-3 {
-    grid-row: span 3 / span 3;
-  }
-
-  .md\:row-span-4 {
-    grid-row: span 4 / span 4;
-  }
-
   .md\:mb-10 {
     margin-bottom: 2.5rem;
   }
@@ -1878,22 +1788,6 @@ canvas {
     min-height: auto;
   }
 
-  .md\:min-h-card_1_row {
-    min-height: 22rem;
-  }
-
-  .md\:min-h-card_2_row {
-    min-height: 39rem;
-  }
-
-  .md\:w-72 {
-    width: 18rem;
-  }
-
-  .md\:w-\[680px\] {
-    width: 680px;
-  }
-
   .md\:w-2\/6 {
     width: 33.333333%;
   }
@@ -1902,8 +1796,12 @@ canvas {
     width: 66.666667%;
   }
 
-  .md\:grid-cols-5 {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+  .md\:w-72 {
+    width: 18rem;
+  }
+
+  .md\:w-\[680px\] {
+    width: 680px;
   }
 
   .md\:flex-row {
@@ -1943,10 +1841,6 @@ canvas {
   .md\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
-  }
-
-  .md\:text-left {
-    text-align: left;
   }
 
   .md\:text-2xl {

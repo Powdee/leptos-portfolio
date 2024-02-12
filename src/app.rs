@@ -34,10 +34,11 @@ pub fn App() -> impl IntoView {
                 <Routes>
                     <Route path="" view=HomePage/>
                     <Route path="/*any" view=NotFound/>
-                    <Route path="/projects/:id" view=UseCasesPage/>
+                    <Route path="/projects/:slug" view=UseCasesPage/>
                     <Route path="/resume" view=DownloadCVPage/>
                 </Routes>
             </Show>
         </Router>
     }
 }
+

@@ -46,7 +46,7 @@ pub fn ScrollWatchImage() -> impl IntoView {
 pub fn About() -> impl IntoView {
     view! {
         <Layout aria_label="About" class_name="".to_string()>
-            <div class="grid lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col gap-x-12 lg:gap-y-0 gap-y-12">
+            <div class="grid lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col gap-x-12 lg:gap-y-0 gap-y-12 fade-in">
                 <div class="order-2 lg:order-1 lg:row-span-3 self-center col-span-1">
                     <div class="w-full h-full lg:w-96 lg:h-96 flex justify-center items-center">
                         <picture class="absolute flex items-center">
