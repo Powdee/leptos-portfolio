@@ -1,5 +1,6 @@
 use leptos::svg::Svg;
 use leptos::*;
+use leptos_meta::*;
 use leptos_use::use_element_hover;
 
 use crate::components::ui::button::Button;
@@ -12,6 +13,7 @@ pub fn DownloadCVPage() -> impl IntoView {
     let is_hovered = use_element_hover(closeIcon);
 
     view! {
+        <Title text="Erik Kurjak - Résumé"/>
         <Close el=closeIcon/>
         <main class={
             let base_class = "grid gap-20 md:gap-28 lg:gap-64 mt-10 xl:mt-28 delay-75 duration-1000 ease-out";

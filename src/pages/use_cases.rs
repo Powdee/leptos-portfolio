@@ -1,6 +1,7 @@
 use crate::components::use_case::UseCase;
 
 use leptos::*;
+use leptos_meta::*;
 use leptos_router::use_params_map;
 
 #[component]
@@ -10,6 +11,9 @@ pub fn UseCasesPage() -> impl IntoView {
         params.with(|params| params.get("slug").cloned().unwrap_or_default())
     };
 
-    view! { <UseCase slug=slug()/> }
+    view! {
+        <Title text=format!("Erik Kurjak - {}", slug())/>
+        <UseCase slug=slug()/>
+    }
 }
 

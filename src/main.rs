@@ -25,6 +25,8 @@ async fn main() -> std::io::Result<()> {
             .service(Files::new("/assets", site_root))
             // serve the favicon from /favicon.ico
             .service(favicon)
+            .service(sitemap)
+            .service(robots)
             .service(get_project_json)
             .leptos_routes(leptos_options.to_owned(), routes.to_owned(), App)
             .app_data(web::Data::new(leptos_options.to_owned()))
@@ -44,6 +46,30 @@ async fn favicon(
     let site_root = &leptos_options.site_root;
     Ok(actix_files::NamedFile::open(format!(
         "{site_root}/favicon.ico"
+    ))?)
+}
+
+#[cfg(feature = "ssr")]
+#[actix_web::get("robots.txt")]
+async fn robots(
+    leptos_options: actix_web::web::Data<leptos::LeptosOptions>,
+) -> actix_web::Result<actix_files::NamedFile> {
+    let leptos_options = leptos_options.into_inner();
+    let site_root = &leptos_options.site_root;
+    Ok(actix_files::NamedFile::open(format!(
+        "{site_root}/robots.txt"
+    ))?)
+}
+
+#[cfg(feature = "ssr")]
+#[actix_web::get("sitemap.xml")]
+async fn sitemap(
+    leptos_options: actix_web::web::Data<leptos::LeptosOptions>,
+) -> actix_web::Result<actix_files::NamedFile> {
+    let leptos_options = leptos_options.into_inner();
+    let site_root = &leptos_options.site_root;
+    Ok(actix_files::NamedFile::open(format!(
+        "{site_root}/sitemap.xml"
     ))?)
 }
 
@@ -80,6 +106,10 @@ pub fn main() {
 
     leptos::mount_to_body(App);
 }
+
+
+
+
 
 
 

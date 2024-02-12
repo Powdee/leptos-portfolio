@@ -1,4 +1,5 @@
 use leptos::*;
+use leptos_meta::*;
 
 use crate::components::{header::Header, ui::layout::Layout};
 
@@ -11,6 +12,7 @@ pub fn NotFound() -> impl IntoView {
     }
 
     view! {
+        <Title text="Erik Kurjak - Page Not Found"/>
         <Header/>
         <main class="grid gap-28 lg:gap-64 mt-10 md:mt-28">
             <h2 class="text-[520px] text-gray-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-medium">

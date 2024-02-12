@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://erikkurjak.com/sitemap.xml
