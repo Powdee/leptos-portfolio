@@ -1,6 +1,6 @@
 # Erik Kurjak - Curriculum Vitae 🧑🏼‍💻
 
-My personal website build with Rust (leptos), wasm bindgen, tailwind css for styling, little bit of HTMX (just for the sake of being cool) and deployed to cloud using fly.io with CI github actions.
+My personal website build with Rust (leptos), wasm bindgen, tailwind css for styling and deployed to cloud using fly.io with CI github actions.
 
 ## Design ✍️
 
@@ -14,7 +14,7 @@ Before I began implementing my website, I sketched the design, including typogra
 
 ## Why Rust - Leptos 🤷 ?
 
-I've built a few applications in Rust, solving LeetCode issues and really falling in love with the language.
+I've built a few applications in Rust and really falling in love with the language.
 
 When I decided to create my portfolio for the fifth time, I was torn between using NextJS, Gatsby, Svelte, or other JavaScript frameworks. Then it hit me that Rust is compatible with wasm, and there's a framework called Yew. After some research, I opted for `Leptos`.
 
@@ -81,4 +81,7 @@ Other prefixes or commit without prefix won't do deploy and will fail CI pipelin
 
 - Use wGPU for basic 2D/3D animation
 - Write an article about my journey using Rust for my portfolio
-- Create custom Headless CMS to handle displaying projects
+
+## 🔏 License
+
+This project is [MIT](./LICENSE) licensed. You are within your rights to fork my porfolio website and use it as your own, although you should probably change my name to yours!
