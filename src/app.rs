@@ -29,7 +29,7 @@ pub fn App() -> impl IntoView {
         <Script fetchpriority="low" defer="defer" src="/pkg/init_lenis.js"/>
 
         <Router>
-            <Show when=move || env == "development" fallback=SoonPage>
+            <Show when=move || env == "production" fallback=SoonPage>
                 // <canvas id="canvas" width="800" height="600" class="absolute"></canvas>
                 <Routes>
                     <Route path="" view=HomePage/>
