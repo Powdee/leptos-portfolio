@@ -14,8 +14,7 @@ use crate::pages::use_cases::UseCasesPage;
 pub fn App() -> impl IntoView {
     provide_meta_context();
 
-    let env =
-        env::var("RUST_ENV").unwrap_or_else(|_| "production".to_string());
+    let env = env::var("RUST_ENV").unwrap_or_else(|_| "production".to_string());
 
     view! {
         <Stylesheet id="leptos" href="/pkg/leptos_start.css"/>
