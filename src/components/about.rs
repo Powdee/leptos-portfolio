@@ -34,10 +34,10 @@ pub fn ScrollWatchImage() -> impl IntoView {
             height="400"
             style=move || format!("scale: {}", map_y_to_value(y.get()))
             loading="lazy"
-            class="rounded-full object-cover w-48 h-48 md:w-72 md:h-72 will-change-auto bg-gray-3"
+            class="rounded-full object-cover w-48 h-48 md:w-64 md:h-64 will-change-auto bg-gray-3"
             decoding="async"
             alt="erik kurjak"
-            src="https://leptoscv.s3.eu-central-1.amazonaws.com/me.png"
+            src="https://leptoscv.s3.eu-central-1.amazonaws.com/me.jpg"
         />
     }
 }
