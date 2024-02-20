@@ -25,7 +25,11 @@ pub fn DownloadCVPage() -> impl IntoView {
                 }
             }
         }>
-            <Layout aria_label="resume" class_name="flex-col mb-10 xl:mb-28".to_string()>
+            <Layout
+                id="resume".to_string()
+                aria_label="resume"
+                class_name="flex-col mb-10 xl:mb-28".to_string()
+            >
                 <div class="flex flex-col lg:flex-row gap-16 md:gap-28">
                     <div class="relative order-2 lg:order-1 basis-[60%] fade-y-trans">
                         <div class="absolute hidden md:block left-1/2 top-4 transform -translate-x-1/2">

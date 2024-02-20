@@ -63,7 +63,7 @@ pub fn MeCircleTablet() -> impl IntoView {
                 font-family="Jokker"
                 font-size="21"
                 font-weight="light"
-                letter-spacing="6px"
+                letter-spacing="20px"
                 fill="#ADB5BD"
             >
                 <textPath xlink:href="#textPathTablet">Not actively looking</textPath>
@@ -72,24 +72,6 @@ pub fn MeCircleTablet() -> impl IntoView {
                     type="rotate"
                     from="0 120 120"
                     to="360 120 120"
-                    dur="13s"
-                    repeatCount="indefinite"
-                ></animateTransform>
-            </text>
-
-            <text
-                font-family="Jokker"
-                font-size="21"
-                font-weight="light"
-                letter-spacing="6px"
-                fill="#ADB5BD"
-            >
-                <textPath xlink:href="#textPathTablet">Not actively looking</textPath>
-                <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    from="192 120 120"
-                    to="552 120 120"
                     dur="13s"
                     repeatCount="indefinite"
                 ></animateTransform>
@@ -106,3 +88,4 @@ pub fn MeCircleTablet() -> impl IntoView {
         </svg>
     }
 }
+

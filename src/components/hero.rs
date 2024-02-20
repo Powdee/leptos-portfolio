@@ -5,7 +5,7 @@ use leptos::*;
 #[component]
 pub fn Hero() -> impl IntoView {
     view! {
-        <Layout aria_label="Hero" class_name="".to_string()>
+        <Layout id="home".to_string() aria_label="Hero" class_name="".to_string()>
             <h1 class="text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-tight text-gray-9 leading-tighter text-left">
                 <div class="animated-title">
                     <span class="animated-title-element text-gray-9 font-medium uppercase">I</span>

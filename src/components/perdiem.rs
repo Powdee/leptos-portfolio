@@ -1,24 +1,20 @@
-use crate::components::ui::{
-    button::Button, layout::Layout, viewport_visiblity::ViewportVisibility,
-};
+use crate::components::ui::{button::Button, layout::Layout};
 
 use leptos::*;
 
-#[island]
+#[component]
 pub fn Perdiem() -> impl IntoView {
     view! {
-        <Layout aria_label="Perdiem" class_name="flex-col".to_string()>
-            <ViewportVisibility>
-                <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight text-gray-9 leading-tighter">
-                    <div class="animated-title">
-                        <em class="animated-title-element text-gray-9 font-light">My</em>
-                    </div>
-                    <br/>
-                    <div class="animated-title">
-                        <span class="animated-title-element text-gray-9">philosophy</span>
-                    </div>
-                </h1>
-            </ViewportVisibility>
+        <Layout id="perdiem".to_string() aria_label="Perdiem" class_name="flex-col".to_string()>
+            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight text-gray-9 leading-tighter">
+                <div class="animated-title">
+                    <em class="animated-title-element text-gray-9 font-light">My</em>
+                </div>
+                <br/>
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-9">philosophy</span>
+                </div>
+            </h1>
 
             <div class="grid lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col gap-x-12 lg:gap-y-0 gap-y-8 mt-20 md:mt-40">
                 <div class="min-h-[150px] md:min-h-[auto] flex justify-center items-center order-2 lg:order-1 lg:row-span-3 self-center col-span-1">

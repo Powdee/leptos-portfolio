@@ -5,7 +5,7 @@ use crate::components::ui::assets::{
     ayx_logo::AyxLogo, helpie_logo::HelpieLogo, invaders_logo::InvadersLogo,
     madesense_logo::MadesenseLogo, oms_logo::OmsLogo, splash_logo::SplashLogo,
 };
-use crate::components::ui::{card::Card, layout::Layout, viewport_visiblity::ViewportVisibility};
+use crate::components::ui::{card::Card, layout::Layout};
 use crate::types::project::{Project, ProjectData};
 
 use leptos::*;
@@ -78,39 +78,40 @@ fn FeaturedCards() -> impl IntoView {
     }
 }
 
-#[island]
+#[component]
 pub fn Features() -> impl IntoView {
     view! {
-        <Layout aria_label="Features" class_name="flex-col".to_string()>
-            <ViewportVisibility>
-                <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight text-gray-9 leading-tighter">
-                    <div class="animated-title">
-                        <span class="animated-title-element text-gray-9">Featured</span>
-                    </div>
-                    <br/>
-                    <div class="animated-title">
-                        <em class="animated-title-element font-light text-gray-9">work</em>
-                    </div>
-                    {' '}
-                    <div class="animated-title">
-                        <span class="animated-title-element text-gray-9">experience</span>
-                    </div>
-                    <br/>
-                    <div class="animated-title">
-                        <span class="animated-title-element text-gray-9">and</span>
-                    </div>
-                    {' '}
-                    <div class="animated-title">
-                        <em class="animated-title-element font-light text-gray-9">projects</em>
-                    </div>
-                </h1>
-            </ViewportVisibility>
-            <ViewportVisibility fallback=|| view! { <div class="min-h-[100svh]"></div> }>
-                <FeaturedCards/>
-            </ViewportVisibility>
+        <Layout id="projects".to_string() aria_label="Features" class_name="flex-col".to_string()>
+            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight text-gray-9 leading-tighter">
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-9">Featured</span>
+                </div>
+                <br/>
+                <div class="animated-title">
+                    <em class="animated-title-element font-light text-gray-9">work</em>
+                </div>
+                {' '}
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-9">experience</span>
+                </div>
+                <br/>
+                <div class="animated-title">
+                    <span class="animated-title-element text-gray-9">and</span>
+                </div>
+                {' '}
+                <div class="animated-title">
+                    <em class="animated-title-element font-light text-gray-9">projects</em>
+                </div>
+            </h1>
+            <FeaturedCards/>
         </Layout>
     }
 }
+
+
+
+
+
 
 
 

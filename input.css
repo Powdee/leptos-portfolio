@@ -40,7 +40,9 @@
   html,
   body {
     @apply bg-gray-1;
-    background-image: url("https://leptoscv.s3.eu-central-1.amazonaws.com/grain.svg");
+    @media (min-width: 1024px) {
+      background-image: url("https://leptoscv.s3.eu-central-1.amazonaws.com/grain.svg");
+    }
   }
 }
 
@@ -257,10 +259,6 @@ html.lenis {
   transition: transform 0.3s;
 }
 
-.inverse.button {
-  @apply bg-gray-9;
-}
-
 .button:hover {
   transform: scaleX(1.02);
   transition: transform 0.6s cubic-bezier(0.34, 5.56, 0.64, 1);
@@ -278,10 +276,6 @@ html.lenis {
   border: 1px solid;
   @apply border-gray-9;
   border-radius: 1000px;
-}
-
-.inverse .button-cta-border {
-  @apply border-gray-1;
 }
 
 .button-cta-ripple {
@@ -308,10 +302,6 @@ html.lenis {
     border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
 }
 
-.inverse .button-cta-ripple span {
-  @apply bg-gray-1;
-}
-
 .button-cta:hover .button-cta-ripple span {
   border-radius: 0;
   transform: translateY(0);
@@ -332,10 +322,6 @@ html.lenis {
   @apply text-gray-9;
 }
 
-.inverse .button-cta-title span {
-  @apply text-gray-1;
-}
-
 .button-cta:hover .button-cta-title span {
   transform: translateY(-110%);
 }
@@ -347,6 +333,22 @@ html.lenis {
   position: absolute;
   top: 110%;
   left: 0;
+  @apply text-gray-1;
+}
+
+.inverse.button {
+  @apply bg-gray-9;
+}
+
+.inverse .button-cta-border {
+  @apply border-gray-1;
+}
+
+.inverse .button-cta-ripple span {
+  @apply bg-gray-1;
+}
+
+.inverse .button-cta-title span {
   @apply text-gray-1;
 }
 
@@ -443,4 +445,133 @@ canvas {
   border: 2px solid;
   @apply border-gray-9;
   border-radius: 1em;
+}
+
+.link {
+  position: relative;
+  will-change: transform;
+  transform: translateZ(0);
+  transition: transform 0.3s;
+}
+
+.link:hover {
+  transform: scaleX(1.02);
+  transition: transform 0.6s cubic-bezier(0.34, 5.56, 0.64, 1);
+  font-weight: 500;
+}
+
+.close {
+  position: relative;
+  will-change: transform;
+  transform: translateZ(0);
+  transition: transform 0.3s;
+}
+
+.close:hover {
+  transform: scaleX(1.04) scaleY(1.02);
+  transition: transform 0.6s cubic-bezier(0.34, 5.56, 0.64, 1);
+  font-weight: 500;
+}
+
+/* ANIMATED PILL */
+
+.pill {
+  @apply relative;
+  @apply overflow-hidden;
+  @apply bg-gray-2 font-medium rounded-full px-6 py-2 shadow-sm outline-none ring-gray-9 ring-1 ring-inset;
+
+  transform: translateZ(0);
+  transition: transform 0.3s;
+}
+
+.pill-cta-border {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  z-index: 3;
+  border: 1px solid;
+  @apply border-gray-9;
+  border-radius: 1000px;
+}
+
+.pill-cta-ripple {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+  transform: translateZ(0);
+  border-radius: inherit;
+}
+
+.pill-cta-ripple span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: translateY(101%);
+  @apply bg-gray-9;
+  border-radius: 50% 50% 0 0;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1),
+    border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.pill-cta:hover .pill-cta-ripple span {
+  border-radius: 0;
+  transform: translateY(0);
+  transition-duration: 0.5s, 0.9s;
+}
+
+.pill-cta-title {
+  position: relative;
+  display: block;
+  padding: 0 0.16em 0 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.pill-cta-title span {
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  @apply text-gray-9;
+}
+
+.pill-cta:hover .pill-cta-title span {
+  transform: translateY(-110%);
+}
+
+.pill-cta-title span:after {
+  content: attr(data-text);
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  @apply text-gray-2;
+}
+
+.inverse.pill {
+  @apply bg-gray-9;
+}
+
+.inverse .pill-cta-border {
+  @apply border-gray-2;
+}
+
+.inverse .pill-cta-ripple span {
+  @apply bg-gray-2;
+}
+
+.inverse .pill-cta-title span {
+  @apply text-gray-2;
+}
+
+.inverse .pill-cta-title span:after {
+  @apply text-gray-9;
 }

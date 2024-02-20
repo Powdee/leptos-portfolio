@@ -78,7 +78,7 @@ pub fn UseCase(slug: String) -> impl IntoView {
                 }
             }
         }>
-            <Layout aria_label="Usecase" class_name="flex-col".to_string()>
+            <Layout id="project".to_string() aria_label="Usecase" class_name="flex-col".to_string()>
                 // TODO: Figure out how to display data
                 // TODO: Skeleton or loading information for user - perhaps an overkill?
                 {move || match project.get() {
@@ -115,14 +115,18 @@ pub fn UseCase(slug: String) -> impl IntoView {
                                     </p>
 
                                     <div class="flex flex-row flex-wrap gap-2 md:gap-4 overflow-x-scroll md:overflow-x-hidden">
+                                        <button class="pill pill-cta" role="button">
+                                            <a target="_blank" href=data.link.url>
+                                                <span class="pill-cta-border"></span>
+                                                <span class="pill-cta-ripple">
+                                                    <span></span>
+                                                </span>
+                                                <span class="pill-cta-title">
+                                                    <span data-text="visit">visit</span>
+                                                </span>
+                                            </a>
+                                        </button>
 
-                                        <a
-                                            href=data.link.url
-                                            target="_blank"
-                                            class="cursor-pointer bg-gray-9 font-medium text-md rounded-full px-6 py-2 text-gray-2"
-                                        >
-                                            visit
-                                        </a>
                                         {move || {
                                             data.tags
                                                 .iter()
@@ -187,6 +191,18 @@ pub fn UseCase(slug: String) -> impl IntoView {
         </main>
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

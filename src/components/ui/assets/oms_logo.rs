@@ -4,7 +4,7 @@ use leptos::*;
 pub fn OmsLogo() -> impl IntoView {
     view! {
         <svg
-            class="lg:w-[121px] w-[80px]"
+            class="lg:w-[121px] w-[60px]"
             width="121"
             height="105"
             viewBox="0 0 121 105"
