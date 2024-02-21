@@ -6,12 +6,13 @@ pub fn Close(el: NodeRef<Svg>) -> impl IntoView {
     view! {
         <header class="mx-auto max-w-full py-6 px-10 md:py-12 md:px-16">
             <nav class="gap-2 md:flex-row flex-col flex items-center justify-center" aria-label="X">
-                <a href="/#projects">
+                <a
+                    href="/#projects"
+                    class="rounded-full close ring-gray-9 ring-2 w-[51px] h-[51px] md:w-[61px] md:h-[61px]"
+                >
                     <svg
                         node_ref=el
-                        width="61"
-                        height="61"
-                        class="cursor-pointer rounded-full close ring-gray-9 ring-1 w-[51px] h-[51px] md:w-[61px] md:h-[61px]"
+                        class="cursor-pointer"
                         viewBox="0 0 61 61"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"

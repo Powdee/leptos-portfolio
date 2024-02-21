@@ -37,7 +37,7 @@ pub fn ScrollWatchImage() -> impl IntoView {
             class="rounded-full object-cover w-48 h-48 md:w-64 md:h-64 will-change-auto bg-gray-3"
             decoding="async"
             alt="erik kurjak"
-            src="https://leptoscv.s3.eu-central-1.amazonaws.com/me.jpg"
+            src="https://leptoscv.s3.eu-central-1.amazonaws.com/me.webp"
         />
     }
 }
