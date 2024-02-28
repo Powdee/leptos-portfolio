@@ -48,17 +48,21 @@ pub fn DownloadCVPage() -> impl IntoView {
                     </div>
 
                     <div class="basis-[40%] order-1 lg:order-2">
-                        <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight text-gray-9 leading-tighter">
+                        <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight text-ek-white leading-tighter">
                             <div class="animated-title">
-                                <em class="animated-title-element text-gray-9 font-light">My</em>
+                                <em class="animated-title-element text-ek-white font-bold uppercase">
+                                    My
+                                </em>
                             </div>
                             <br/>
                             <div class="animated-title">
-                                <span class="animated-title-element text-gray-9">résumé</span>
+                                <span class="animated-title-element text-ek-white font-bold uppercase">
+                                    résumé
+                                </span>
                             </div>
                         </h1>
                         <br/>
-                        <p class="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9 fade-y-trans">
+                        <p class="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-ek-white fade-y-trans">
                             This is my résumé. It is generated from a LaTex template using a Github actions and hosted on
                             <i>fly.io</i> .
                             You can find the source code
@@ -71,7 +75,7 @@ pub fn DownloadCVPage() -> impl IntoView {
                             </a> .
                         </p>
                         <br/>
-                        <p class="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-gray-9 fade-y-trans">
+                        <p class="text-xl md:text-2xl lg:text-3xl lg:leading-relaxed leading-relaxed text-ek-white fade-y-trans">
                             If you desire to download a PDF version of my résumé, you can do so by clicking the button below.
                         </p>
                         <br/>

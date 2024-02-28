@@ -8,7 +8,7 @@ pub fn Close(el: NodeRef<Svg>) -> impl IntoView {
             <nav class="gap-2 md:flex-row flex-col flex items-center justify-center" aria-label="X">
                 <a
                     href="/#projects"
-                    class="rounded-full close ring-gray-9 ring-2 w-[51px] h-[51px] md:w-[61px] md:h-[61px]"
+                    class="rounded-full close ring-ek-white ring-2 w-[51px] h-[51px] md:w-[61px] md:h-[61px]"
                 >
                     <svg
                         node_ref=el
@@ -17,11 +17,11 @@ pub fn Close(el: NodeRef<Svg>) -> impl IntoView {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                     >
-                        <rect width="61" height="61" rx="30.5" class="fill-gray-1"></rect>
+                        <rect width="61" height="61" rx="30.5" class="fill-ek-dark"></rect>
                         <g clip-path="url(#clip0_615_114)">
                             <path
                                 d="M38.7751 24.0174L36.9825 22.2248L29.8756 29.3317L22.7687 22.2248L20.9761 24.0174L28.083 31.1243L20.9761 38.2312L22.7687 40.0238L29.8756 32.9169L36.9825 40.0238L38.7751 38.2312L31.6682 31.1243L38.7751 24.0174Z"
-                                fill="#212529"
+                                fill="#f8f9fa"
                             ></path>
                         </g>
                         <defs>

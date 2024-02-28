@@ -82,31 +82,49 @@ fn FeaturedCards() -> impl IntoView {
 pub fn Features() -> impl IntoView {
     view! {
         <Layout id="projects".to_string() aria_label="Features" class_name="flex-col".to_string()>
-            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight text-gray-9 leading-tighter">
+            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl">
                 <div class="animated-title">
-                    <span class="animated-title-element text-gray-9">Featured</span>
+                    <span class="animated-title-element text-ek-white font-bold uppercase">
+                        Featured
+                    </span>
                 </div>
                 <br/>
                 <div class="animated-title">
-                    <em class="animated-title-element font-light text-gray-9">work</em>
+                    <span class="animated-title-element font-light text-ek-white uppercase">
+                        work
+                    </span>
                 </div>
                 {' '}
                 <div class="animated-title">
-                    <span class="animated-title-element text-gray-9">experience</span>
+                    <span class="animated-title-element text-ek-white font-bold uppercase">
+                        experience
+                    </span>
                 </div>
                 <br/>
                 <div class="animated-title">
-                    <span class="animated-title-element text-gray-9">and</span>
+                    <span class="animated-title-element text-ek-white font-bold uppercase">
+                        and
+                    </span>
                 </div>
                 {' '}
                 <div class="animated-title">
-                    <em class="animated-title-element font-light text-gray-9">projects</em>
+                    <span class="animated-title-element font-light text-ek-white uppercase">
+                        projects
+                    </span>
                 </div>
             </h1>
             <FeaturedCards/>
         </Layout>
     }
 }
+
+
+
+
+
+
+
+
 
 
 

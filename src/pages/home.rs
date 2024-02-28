@@ -11,7 +11,7 @@ use leptos::*;
 pub fn HomePage() -> impl IntoView {
     view! {
         <Header/>
-        <main class="grid gap-20 md:gap-28 lg:gap-64 mt-10 xl:mt-28">
+        <main class="grid gap-20 md:gap-28 lg:gap-64 mt-12 md:mt-20 xl:mt-28">
             <Hero/>
             <About/>
             <Features/>

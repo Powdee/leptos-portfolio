@@ -1,4 +1,6 @@
-use crate::components::ui::button::Button;
+use crate::{
+    components::ui::button::Button, utils::map_y_to_value::map_y_to_value,
+};
 
 use leptos::{html::Section, *};
 use leptos_use::{use_element_visibility, use_window_scroll};
@@ -6,54 +8,54 @@ use leptos_use::{use_element_visibility, use_window_scroll};
 #[component]
 pub fn InfoSocials() -> impl IntoView {
     view! {
-        <h1
-            class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight leading-tighter mb-28"
-            id="socials"
-        >
+        <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl mb-28" id="socials">
             <div class="animated-title">
-                <span class="animated-title-element text-gray-1">Get</span>
+                <span class="animated-title-element text-ek-dark font-bold uppercase">Get</span>
             </div>
             {' '}
             <div class="animated-title">
-                <span class="animated-title-element text-gray-1">to</span>
+                <span class="animated-title-element text-ek-dark font-bold uppercase">to</span>
             </div>
             {' '}
-            <div class="animated-title">
-                <span class="animated-title-element text-gray-1">know</span>
-            </div>
             <br/>
             <div class="animated-title">
-                <em class="animated-title-element font-light text-gray-1">me</em>
+                <span class="animated-title-element text-ek-dark font-bold uppercase">know</span>
+            </div>
+            {' '}
+            <div class="animated-title">
+                <span class="animated-title-element font-light text-ek-dark font-regular uppercase">
+                    me
+                </span>
             </div>
         </h1>
         <div class="flex flex-col gap-8 md:gap-10">
             <div class="flex flex-col gap-8 md:gap-10">
                 <a
                     target="_blank"
-                    class="text-2xl md:text-3xl lg:text-4xl text-gray-1"
+                    class="text-2xl md:text-3xl lg:text-4xl text-ek-dark font-[400]"
                     href="https://github.com/Powdee"
                 >
-                    Github
+                    github
                 </a>
-                <div class="w-full h-[2px] bg-gray-1"></div>
+                <div class="w-full h-[2px] bg-ek-dark"></div>
             </div>
 
             <div class="flex flex-col gap-8 md:gap-10">
                 <a
                     target="_blank"
-                    class="text-2xl md:text-3xl lg:text-4xl text-gray-1"
-                    href="https://www.linkedin.com/in/erik-kurjak-4768a2115/"
+                    class="text-2xl md:text-3xl lg:text-4xl text-ek-dark font-[400]"
+                    href="https://www.linkedin.com/in/erik-kurjak/"
                 >
-                    LinkedIn
+                    linkedIn
                 </a>
-                <div class="w-full h-[2px] bg-gray-1"></div>
+                <div class="w-full h-[2px] bg-ek-dark"></div>
             </div>
 
             <div class="flex flex-col gap-8 md:gap-10">
-                <a class="text-2xl md:text-3xl lg:text-4xl text-gray-1" href="/resume">
-                    Résumé
+                <a class="text-2xl md:text-3xl lg:text-4xl text-ek-dark font-[400]" href="/resume">
+                    résumé
                 </a>
-                <div class="w-full h-[2px] bg-gray-1"></div>
+                <div class="w-full h-[2px] bg-ek-dark"></div>
             </div>
         </div>
     }
@@ -63,18 +65,22 @@ pub fn InfoSocials() -> impl IntoView {
 pub fn InfoAction() -> impl IntoView {
     view! {
         <div class="mt-40 lg:mt-64 flex flex-col items-center justify-center" id="contact">
-            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-tight leading-tighter text-center">
+            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl text-center">
                 <div class="animated-title">
-                    <span class="animated-title-element font-light text-gray-1">Want</span>
+                    <span class="animated-title-element text-ek-dark font-bold uppercase">
+                        Want
+                    </span>
                 </div>
                 {' '}
                 <div class="animated-title">
-                    <span class="animated-title-element font-light text-gray-1">to</span>
+                    <span class="animated-title-element text-ek-dark font-bold uppercase">to</span>
                 </div>
 
                 <br/>
                 <div class="animated-title">
-                    <span class="animated-title-element font-light text-gray-1">chat?</span>
+                    <span class="animated-title-element text-ek-dark font-bold uppercase">
+                        chat?
+                    </span>
                 </div>
             </h1>
             <Button
@@ -84,23 +90,6 @@ pub fn InfoAction() -> impl IntoView {
             />
         </div>
     }
-}
-
-fn map_y_to_value(y: f64, y_visible_coord: f64) -> f64 {
-    let start_y = y_visible_coord;
-    let end_y = y_visible_coord + 500.0;
-    let start_value = 120.0;
-    let end_value = 0.0;
-
-    if y < start_y {
-        return start_value;
-    }
-    if y > end_y {
-        return end_value;
-    }
-
-    let scale = (y - start_y) / (end_y - start_y);
-    start_value + scale * (end_value - start_value)
 }
 
 #[island]
@@ -122,17 +111,17 @@ pub fn Info() -> impl IntoView {
             node_ref=el
             aria_label="Info"
             id="footer".to_string()
-            class="selection:bg-gray-1 selection:text-gray-9 bg-gray-9 max-w-full py-28 lg:py-64 relative w-full isolate lg:mx-auto lg:mx-0 lg:flex mx-auto max-w-8xl 2xl:max-w-10xl px-4 md:px-6"
+            class="selection:bg-ek-dark selection:text-ek-white bg-ek-white max-w-full py-28 lg:py-64 relative w-full isolate lg:mx-auto lg:mx-0 lg:flex mx-auto max-w-auto 2xl:max-w-10xl px-4 md:px-6"
             style=move || {
                 format!(
                     "border-top-left-radius: {}px;border-top-right-radius: {}px",
-                    map_y_to_value(y.get(), y_visible_coord.get()),
-                    map_y_to_value(y.get(), y_visible_coord.get()),
+                    map_y_to_value(y.get(), y_visible_coord.get() + 140.0),
+                    map_y_to_value(y.get(), y_visible_coord.get() + 140.0),
                 )
             }
         >
 
-            <div class="flex-col relative w-full isolate lg:mx-auto lg:mx-0 lg:flex mx-auto max-w-8xl 2xl:max-w-10xl px-4 md:px-6">
+            <div class="flex-col relative w-full isolate lg:mx-auto lg:mx-0 lg:flex mx-auto max-w-auto 2xl:max-w-10xl px-4 md:px-6">
                 <InfoSocials/>
                 <InfoAction/>
             </div>

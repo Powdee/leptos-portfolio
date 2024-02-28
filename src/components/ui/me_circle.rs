@@ -4,34 +4,34 @@ use leptos::*;
 pub fn MeCircle() -> impl IntoView {
     view! {
         <svg
-            viewBox="0 0 340 340"
-            width="340"
-            height="340"
+            viewBox="0 0 160 160"
+            width="160"
+            height="160"
             class="overflow-visible hidden lg:block"
         >
             <defs>
                 <path
                     id="textPath"
-                    d="M 170, 170
-                    m -170, 0
-                    a 170, 170 0 1,1 340,0
-                    a 170,170 0 1,1 -340, 0"
+                    d="M 80, 80
+                    m -80, 0
+                    a 80, 80 0 1,1 160,0
+                    a 80,80 0 1,1 -160, 0"
                 ></path>
             </defs>
 
             <text
-                font-family="Jokker"
-                font-size="24"
+                font-family="almarena"
+                font-size="18"
                 font-weight="medium"
-                letter-spacing="34px"
-                fill="#6C757D"
+                letter-spacing="12px"
+                fill="#0e0306"
             >
-                <textPath xlink:href="#textPath">Not actively looking</textPath>
+                <textPath xlink:href="#textPath">Open to new challanges</textPath>
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
-                    from="0 170 170"
-                    to="360 170 170"
+                    from="0 80 80"
+                    to="360 80 80"
                     dur="13s"
                     repeatCount="indefinite"
                 ></animateTransform>
@@ -60,13 +60,13 @@ pub fn MeCircleTablet() -> impl IntoView {
             </defs>
 
             <text
-                font-family="Jokker"
+                font-family="almarena"
                 font-size="21"
                 font-weight="light"
                 letter-spacing="20px"
-                fill="#ADB5BD"
+                fill="#dad6ca"
             >
-                <textPath xlink:href="#textPathTablet">Not actively looking</textPath>
+                <textPath xlink:href="#textPathTablet">Open to new challanges</textPath>
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
@@ -83,7 +83,7 @@ pub fn MeCircleTablet() -> impl IntoView {
                 cy="120"
                 r="110"
                 fill="none"
-                stroke="#ADB5BD"
+                stroke="#837e80"
             ></circle>
         </svg>
     }

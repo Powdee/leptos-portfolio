@@ -21,13 +21,13 @@ pub fn Card(
             id=name
             node_ref=el
             class=class_name.to_owned() + spacer
-                + "cursor-pointer overflow-hidden relative bg-gray-9 rounded-[47px] md:rounded-[57px] duration-500 transition-shadow hover:shadow-md min-h-[200px]"
+                + "cursor-pointer overflow-hidden relative bg-ek-white rounded-[47px] md:rounded-[57px] duration-500 transition-shadow hover:shadow-md min-h-[200px]"
         >
 
             {children()}
             <div class=
             {
-                let base_class = "bg-gray-1 w-auto absolute left-5 bottom-5 rounded-full flex flex-row justify-center items-center ease-out duration-700 hidden lg:block";
+                let base_class = "bg-ek-dark w-auto absolute left-5 bottom-5 rounded-full flex flex-row justify-center items-center ease-out duration-700 hidden lg:block";
                 move || {
                     if is_hovered.get() {
                         format!("{} {}", base_class, "shadow-explore")
@@ -53,7 +53,7 @@ pub fn Card(
                         }
                     }>
                         <span class={
-                            let base_class = "text-gray-9 font-medium text-lg md:text-2xl ease-out duration-500 transition-opacity";
+                            let base_class = "uppercase text-ek-white font-[400] text-lg md:text-2xl ease-out duration-500 transition-opacity";
                             move || {
                                 if is_hovered.get() {
                                     format!("{} {}", base_class, "opacity-100 delay-300")
@@ -73,14 +73,14 @@ pub fn Card(
                         <g clip-path="url(#clip0_359_60)">
                             <path
                                 d="M40.9647 17.0386L17.0385 40.9648"
-                                stroke="#212529"
+                                stroke="#f8f9fa"
                                 stroke-width="2"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                             ></path>
                             <path
                                 d="M24.1677 16.9177L40.9647 17.0353L41.0854 33.8323"
-                                stroke="#212529"
+                                stroke="#f8f9fa"
                                 stroke-width="2"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
@@ -88,7 +88,7 @@ pub fn Card(
                         </g>
                         <defs>
                             <clipPath id="clip0_359_60">
-                                <rect width="48" height="48" fill="#F8F9FA"></rect>
+                                <rect width="48" height="48" fill="#0e0306"></rect>
                             </clipPath>
                         </defs>
                     </svg>
