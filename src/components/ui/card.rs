@@ -53,7 +53,7 @@ pub fn Card(
                         }
                     }>
                         <span class={
-                            let base_class = "uppercase text-ek-white font-[400] text-lg md:text-2xl ease-out duration-500 transition-opacity";
+                            let base_class = "text-ek-white font-[400] text-lg md:text-2xl ease-out duration-500 transition-opacity";
                             move || {
                                 if is_hovered.get() {
                                     format!("{} {}", base_class, "opacity-100 delay-300")
@@ -73,14 +73,14 @@ pub fn Card(
                         <g clip-path="url(#clip0_359_60)">
                             <path
                                 d="M40.9647 17.0386L17.0385 40.9648"
-                                stroke="#f8f9fa"
+                                stroke="#0e0306"
                                 stroke-width="2"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                             ></path>
                             <path
                                 d="M24.1677 16.9177L40.9647 17.0353L41.0854 33.8323"
-                                stroke="#f8f9fa"
+                                stroke="#0e0306"
                                 stroke-width="2"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"

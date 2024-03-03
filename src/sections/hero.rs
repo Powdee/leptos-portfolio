@@ -5,7 +5,7 @@ use leptos::*;
 #[component]
 pub fn Hero() -> impl IntoView {
     view! {
-        <div class="absolute backdrop-blur z-0 top-0 h-screen w-full bg-ek-dark bg-dot-ek-orange/[0.35] flex items-center justify-center">
+        <div class="absolute backdrop-blur z-0 top-0 h-screen w-full bg-ek-dark bg-dot-ek-orange/[0.7] flex items-center justify-center">
             <div class="absolute pointer-events-none inset-0 flex items-center justify-center bg-ek-dark [mask-image:radial-gradient(ellipse_at_center,transparent_20%,#0e0306)]"></div>
         </div>
         <Layout id="home".to_string() aria_label="Hero" class_name="".to_string()>

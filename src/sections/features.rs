@@ -1,17 +1,17 @@
-
-use std::fs;
-
 use crate::components::ui::assets::{
     ayx_logo::AyxLogo, helpie_logo::HelpieLogo, invaders_logo::InvadersLogo,
     madesense_logo::MadesenseLogo, oms_logo::OmsLogo, splash_logo::SplashLogo,
 };
 use crate::components::ui::{card::Card, layout::Layout};
-use crate::types::project::{Project, ProjectData};
+use crate::types::project::Project;
 
 use leptos::*;
 
 #[server(GetProjects, "/api", "GetJson", "v1/projects")]
 pub async fn get_projects() -> Result<Vec<Project>, ServerFnError> {
+    use std::fs;
+    use crate::types::project::ProjectData;
+
     let file_path = format!("{}/target/site/resources/projects.json", env!("CARGO_MANIFEST_DIR"));
     
     let file_content = match fs::read_to_string(file_path) {
@@ -117,6 +117,15 @@ pub fn Features() -> impl IntoView {
         </Layout>
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 

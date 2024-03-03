@@ -1,6 +1,7 @@
 pub mod app;
 pub mod components;
 pub mod pages;
+pub mod sections;
 pub mod utils;
 
 pub mod types {

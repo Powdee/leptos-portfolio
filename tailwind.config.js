@@ -15,14 +15,14 @@ module.exports = {
         explore: "0px 0px 2px 6px rgba(206,212,218, 0.3)",
       },
       backgroundColor: {
-        "ek-dark": "#0e0306",
-        "ek-orange": "#ff611d",
-        "ek-white": "#dad6ca",
+        "ek-dark": "#dad6ca",
+        "ek-orange": "#dc1a1a",
+        "ek-white": "#0e0306",
       },
       colors: {
-        "ek-dark": "#0e0306",
-        "ek-orange": "#ff611d",
-        "ek-white": "#dad6ca",
+        "ek-dark": "#dad6ca",
+        "ek-orange": "#dc1a1a",
+        "ek-white": "#0e0306",
       },
       fontSize: {
         "10xl": "11rem",
