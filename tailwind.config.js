@@ -1,4 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+const svgToDataUri = require("mini-svg-data-uri");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 module.exports = {
   content: ["*.html", "./src/**/*.rs"],
   theme: {
@@ -10,33 +15,35 @@ module.exports = {
         explore: "0px 0px 2px 6px rgba(206,212,218, 0.3)",
       },
       backgroundColor: {
-        "gray-1": "#F8F9FA",
-        "gray-2": "#E9ECEF",
-        "gray-3": "#DEE2E6",
-        "gray-4": "#CED4DA",
-        "gray-5": "#ADB5BD",
-        "gray-6": "#6C757D",
-        "gray-7": "#495057",
-        "gray-8": "#343A40",
-        "gray-9": "#212529",
+        "ek-dark": "#dad6ca",
+        "ek-orange": "#dc1a1a",
+        "ek-white": "#0e0306",
       },
       colors: {
-        "gray-1": "#F8F9FA",
-        "gray-2": "#E9ECEF",
-        "gray-3": "#DEE2E6",
-        "gray-4": "#CED4DA",
-        "gray-5": "#ADB5BD",
-        "gray-6": "#6C757D",
-        "gray-7": "#495057",
-        "gray-8": "#343A40",
-        "gray-9": "#212529",
+        "ek-dark": "#dad6ca",
+        "ek-orange": "#dc1a1a",
+        "ek-white": "#0e0306",
       },
       fontSize: {
-        "10xl": "9.5rem",
+        "10xl": "11rem",
       },
       lineHeight: {
         tighter: 1.15,
         relaxish: 1.8,
+        p: "1.75rem",
+        about: "2.05rem",
+        mediump: "4.35rem",
+        smallp: "4.75rem",
+        p: "1.75rem",
+        largep: "2.75rem",
+        heading: "10.313rem",
+        mediumheading: "5.313rem",
+        smallheading: "3.2rem",
+      },
+      letterSpacing: {
+        p: "-.1rem",
+        heading: "-.25rem",
+        smallheading: "-0.05rem",
       },
       maxWidth: {
         "8xl": "88rem",
@@ -51,5 +58,40 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    addVariablesForColors,
+    function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "bg-grid": (value) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
+            )}")`,
+          }),
+          "bg-grid-small": (value) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
+            )}")`,
+          }),
+          "bg-dot": (value) => ({
+            backgroundImage: `url("${svgToDataUri(
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
+            )}")`,
+          }),
+        },
+        { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
+      );
+    },
+  ],
 };
+
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}

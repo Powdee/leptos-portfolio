@@ -1,17 +1,17 @@
-
-use std::fs;
-
 use crate::components::ui::assets::{
     ayx_logo::AyxLogo, helpie_logo::HelpieLogo, invaders_logo::InvadersLogo,
     madesense_logo::MadesenseLogo, oms_logo::OmsLogo, splash_logo::SplashLogo,
 };
 use crate::components::ui::{card::Card, layout::Layout};
-use crate::types::project::{Project, ProjectData};
+use crate::types::project::Project;
 
 use leptos::*;
 
 #[server(GetProjects, "/api", "GetJson", "v1/projects")]
 pub async fn get_projects() -> Result<Vec<Project>, ServerFnError> {
+    use std::fs;
+    use crate::types::project::ProjectData;
+
     let file_path = format!("{}/target/site/resources/projects.json", env!("CARGO_MANIFEST_DIR"));
     
     let file_content = match fs::read_to_string(file_path) {
@@ -43,7 +43,7 @@ fn FeaturedCards() -> impl IntoView {
     });
 
     view! {
-        <div class="features mt-20 md:mt-40">
+        <div class="features mt-20 md:mt-40" id="projects">
             {move || {
                 projects
                     .get()
@@ -81,32 +81,62 @@ fn FeaturedCards() -> impl IntoView {
 #[component]
 pub fn Features() -> impl IntoView {
     view! {
-        <Layout id="projects".to_string() aria_label="Features" class_name="flex-col".to_string()>
-            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl tracking-tight text-gray-9 leading-tighter">
+        <Layout id="features".to_string() aria_label="Features" class_name="flex-col".to_string()>
+            <h2 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl leading-smallheading sm:leading-mediumheading tracking-smallheading sm:tracking-heading">
                 <div class="animated-title">
-                    <span class="animated-title-element text-gray-9">Featured</span>
+                    <span class="animated-title-element text-ek-white font-bold uppercase ">
+                        Featured
+                    </span>
                 </div>
                 <br/>
                 <div class="animated-title">
-                    <em class="animated-title-element font-light text-gray-9">work</em>
+                    <span class="animated-title-element font-light text-ek-white uppercase">
+                        work
+                    </span>
                 </div>
                 {' '}
                 <div class="animated-title">
-                    <span class="animated-title-element text-gray-9">experience</span>
+                    <span class="animated-title-element text-ek-white font-bold uppercase">
+                        experience
+                    </span>
                 </div>
                 <br/>
                 <div class="animated-title">
-                    <span class="animated-title-element text-gray-9">and</span>
+                    <span class="animated-title-element text-ek-white font-bold uppercase">
+                        and
+                    </span>
                 </div>
                 {' '}
                 <div class="animated-title">
-                    <em class="animated-title-element font-light text-gray-9">projects</em>
+                    <span class="animated-title-element font-light text-ek-white uppercase">
+                        projects
+                    </span>
                 </div>
-            </h1>
+            </h2>
             <FeaturedCards/>
         </Layout>
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

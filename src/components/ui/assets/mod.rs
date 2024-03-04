@@ -1,5 +1,6 @@
 pub mod ayx_logo;
 pub mod ayx_vector;
+pub mod globe;
 pub mod helpie_logo;
 pub mod invaders_logo;
 pub mod madesense_logo;

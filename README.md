@@ -2,16 +2,6 @@
 
 My personal website build with Rust (leptos), wasm bindgen, tailwind css for styling and deployed to cloud using fly.io with CI github actions.
 
-## Design ✍️
-
-Before I began implementing my website, I sketched the design, including typography and color palette, using Figma. It's not perfect, and it didn't need to be, as my main focus was on the technical aspects of the website.
-
-<br />
-
-<img src="https://leptoscv.s3.eu-central-1.amazonaws.com/figma-design-leptos-cv" height="500" alt="Figma CV Design">
-
-<br />
-
 ## Why Rust - Leptos 🤷 ?
 
 I've built a few applications in Rust and really fell in love with the language.

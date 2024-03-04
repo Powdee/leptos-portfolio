@@ -3,68 +3,41 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "jokker";
-  font-weight: "bold";
-  src: url("fonts/jokker/jokker-bold/jokker-bold.woff2") format("woff2"),
-    url("fonts/jokker/jokker-bold/jokker-bold.woff") format("woff");
+  font-family: "almarena";
+  font-weight: 700;
+  src: url("fonts/almarena/almarena-bold/almarena-dbold.woff2") format("woff2"),
+    url("fonts/almarena/almarena-bold/almarena-dbold.woff") format("woff");
 }
 
 @font-face {
-  font-family: "jokker";
-  font-weight: 500;
-  src: url("fonts/jokker/jokker-medium/jokker-medium.woff2") format("woff2"),
-    url("fonts/jokker/jokker-medium/jokker-medium.woff") format("woff");
-}
-
-@font-face {
-  font-family: "jokker";
+  font-family: "almarena";
   font-weight: 400;
-  src: url("fonts/jokker/jokker-regular/jokker.woff2") format("woff2"),
-    url("fonts/jokker/jokker-regular/jokker.woff") format("woff");
-}
-
-@font-face {
-  font-family: "jokker";
-  font-weight: 300;
-  font-style: "italic";
-  src: url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff2")
+  src: url("fonts/almarena/almarena-regular/almarena-dregular.woff2")
       format("woff2"),
-    url("fonts/jokker/jokker-light-italic/jokker-lightitalic.woff")
-      format("woff");
+    url("fonts/almarena/almarena-regular/almarena-dregular.woff") format("woff");
 }
 
 @layer base {
   html {
-    font-family: "jokker", Averta, system-ui, sans-serif;
+    font-family: "almarena", Averta, system-ui, sans-serif;
   }
   html,
   body {
-    @apply bg-gray-1;
-    @media (min-width: 1024px) {
-      background-image: url("https://leptoscv.s3.eu-central-1.amazonaws.com/grain.svg");
-    }
+    @apply bg-ek-dark;
   }
 }
 
-/* LENIS */
-html.lenis {
-  height: auto;
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
 }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
 }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
+::-webkit-scrollbar-thumb {
+  @apply bg-ek-orange;
 }
 
 /* ANIMATION */
@@ -253,7 +226,7 @@ html.lenis {
 .button {
   @apply relative;
   @apply overflow-hidden;
-  @apply bg-gray-1 ring-gray-9 w-full rounded-full px-4 py-8 text-lg font-normal shadow-sm outline-none ring-1 ring-inset md:py-12 md:text-3xl lg:col-span-2 lg:row-span-1 lg:py-16;
+  @apply bg-ek-dark ring-ek-white w-full rounded-full px-4 py-8 text-lg font-normal shadow-sm outline-none ring-1 ring-inset md:py-12 md:text-3xl lg:col-span-2 lg:row-span-1 lg:py-16;
 
   transform: translateZ(0);
   transition: transform 0.3s;
@@ -274,7 +247,7 @@ html.lenis {
   bottom: 1px;
   z-index: 3;
   border: 1px solid;
-  @apply border-gray-9;
+  @apply border-ek-white;
   border-radius: 1000px;
 }
 
@@ -296,7 +269,7 @@ html.lenis {
   width: 100%;
   height: 100%;
   transform: translateY(101%);
-  @apply bg-gray-9;
+  @apply bg-ek-white;
   border-radius: 50% 50% 0 0;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1),
     border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
@@ -319,7 +292,7 @@ html.lenis {
 .button-cta-title span {
   display: block;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  @apply text-gray-9;
+  @apply text-ek-white;
 }
 
 .button-cta:hover .button-cta-title span {
@@ -333,27 +306,27 @@ html.lenis {
   position: absolute;
   top: 110%;
   left: 0;
-  @apply text-gray-1;
+  @apply text-ek-dark;
 }
 
 .inverse.button {
-  @apply bg-gray-9;
+  @apply bg-ek-white;
 }
 
 .inverse .button-cta-border {
-  @apply border-gray-1;
+  @apply border-ek-dark;
 }
 
 .inverse .button-cta-ripple span {
-  @apply bg-gray-1;
+  @apply bg-ek-dark;
 }
 
 .inverse .button-cta-title span {
-  @apply text-gray-1;
+  @apply text-ek-dark;
 }
 
 .inverse .button-cta-title span:after {
-  @apply text-gray-9;
+  @apply text-ek-white;
 }
 
 canvas {
@@ -426,7 +399,7 @@ canvas {
   display: block;
   position: absolute;
   left: 50%;
-  @apply bg-gray-9;
+  @apply bg-ek-white;
   height: 0.5em;
   width: 0.5em;
   top: 0.6em;
@@ -443,7 +416,7 @@ canvas {
   height: 3em;
   width: 1.5em;
   border: 2px solid;
-  @apply border-gray-9;
+  @apply border-ek-white;
   border-radius: 1em;
 }
 
@@ -478,7 +451,7 @@ canvas {
 .pill {
   @apply relative;
   @apply overflow-hidden;
-  @apply bg-gray-2 font-medium rounded-full px-6 py-2 shadow-sm outline-none ring-gray-9 ring-1 ring-inset;
+  @apply bg-ek-dark font-medium rounded-full px-6 py-2 shadow-sm outline-none ring-ek-white ring-1 ring-inset;
 
   transform: translateZ(0);
   transition: transform 0.3s;
@@ -494,7 +467,7 @@ canvas {
   bottom: 1px;
   z-index: 3;
   border: 1px solid;
-  @apply border-gray-9;
+  @apply border-ek-white;
   border-radius: 1000px;
 }
 
@@ -516,7 +489,7 @@ canvas {
   width: 100%;
   height: 100%;
   transform: translateY(101%);
-  @apply bg-gray-9;
+  @apply bg-ek-white;
   border-radius: 50% 50% 0 0;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1),
     border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
@@ -539,7 +512,7 @@ canvas {
 .pill-cta-title span {
   display: block;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  @apply text-gray-9;
+  @apply text-ek-white;
 }
 
 .pill-cta:hover .pill-cta-title span {
@@ -553,25 +526,152 @@ canvas {
   position: absolute;
   top: 110%;
   left: 0;
-  @apply text-gray-2;
+  @apply text-ek-dark;
 }
 
 .inverse.pill {
-  @apply bg-gray-9;
+  @apply bg-ek-white;
 }
 
 .inverse .pill-cta-border {
-  @apply border-gray-2;
+  @apply border-ek-dark;
 }
 
 .inverse .pill-cta-ripple span {
-  @apply bg-gray-2;
+  @apply bg-ek-dark;
 }
 
 .inverse .pill-cta-title span {
-  @apply text-gray-2;
+  @apply text-ek-dark;
 }
 
 .inverse .pill-cta-title span:after {
-  @apply text-gray-9;
+  @apply text-ek-white;
+}
+
+/* ANIMATED EXPERIENCE */
+
+.experience {
+  @apply relative;
+  @apply overflow-hidden;
+  @apply bg-transparent w-full text-lg lg:text-2xl leading-largep font-[400] shadow-sm py-4 lg:py-7 px-2;
+  transform: translateZ(0);
+  transition: transform 0.3s;
+}
+
+.experience:hover,
+.experience:focus,
+.experience:active {
+  transition: transform 0.6s cubic-bezier(0.34, 5.56, 0.64, 1);
+}
+
+.experience-cta-border {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  z-index: 3;
+  border-bottom: 1px solid;
+  @apply border-ek-white;
+}
+
+.experience-cta-ripple {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.experience-cta-ripple span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: translateY(101%);
+  @apply bg-ek-white;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.experience-cta:hover .experience-cta-ripple span,
+.experience-cta:focus .experience-cta-ripple span,
+.experience-cta:active .experience-cta-ripple span {
+  transform: translateY(0);
+  transition-duration: 0.5s, 0.9s;
+}
+
+.experience-cta-title {
+  position: relative;
+  display: block;
+  padding: 0 0.16em 0 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.experience-cta-title span {
+  display: flex;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  @apply text-ek-white;
+}
+
+.experience-cta:hover .experience-cta-title span,
+.experience-cta:focus .experience-cta-title span,
+.experience-cta:active .experience-cta-title span {
+  transform: translateY(-110%);
+}
+
+.experience-cta-title span:after {
+  content: attr(data-text);
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  @apply text-ek-dark;
+}
+
+/* ANIMATED FLIP DOWN/UP */
+
+@keyframes flipDown {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipUp {
+  0% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.animated-flip-down {
+  will-change: auto;
+  animation-name: flipDown;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.34, 0.34, 0, 0.97);
+  animation-fill-mode: forwards;
+}
+
+.animated-flip-up {
+  will-change: auto;
+  animation-name: flipUp;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.34, 0.34, 0, 0.97);
+  animation-fill-mode: forwards;
 }
