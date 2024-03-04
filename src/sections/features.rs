@@ -82,7 +82,7 @@ fn FeaturedCards() -> impl IntoView {
 pub fn Features() -> impl IntoView {
     view! {
         <Layout id="features".to_string() aria_label="Features" class_name="flex-col".to_string()>
-            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl leading-smallheading sm:leading-mediumheading tracking-smallheading sm:tracking-heading">
+            <h2 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl leading-smallheading sm:leading-mediumheading tracking-smallheading sm:tracking-heading">
                 <div class="animated-title">
                     <span class="animated-title-element text-ek-white font-bold uppercase ">
                         Featured
@@ -112,11 +112,12 @@ pub fn Features() -> impl IntoView {
                         projects
                     </span>
                 </div>
-            </h1>
+            </h2>
             <FeaturedCards/>
         </Layout>
     }
 }
+
 
 
 

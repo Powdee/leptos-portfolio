@@ -6,7 +6,7 @@ use leptos::*;
 pub fn Perdiem() -> impl IntoView {
     view! {
         <Layout id="perdiem".to_string() aria_label="Perdiem" class_name="flex-col".to_string()>
-            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl text-ek-white leading-smallheading sm:leading-mediumheading tracking-smallheading sm:tracking-heading">
+            <h2 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl text-ek-white leading-smallheading sm:leading-mediumheading tracking-smallheading sm:tracking-heading">
                 <div class="animated-title">
                     <span class="animated-title-element text-ek-white font-regular uppercase">
                         My
@@ -18,13 +18,13 @@ pub fn Perdiem() -> impl IntoView {
                         philosophy
                     </span>
                 </div>
-            </h1>
+            </h2>
 
             <div class="min-h-[350px] md:min-h-[500px] grid lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col mt-20 md:mt-40">
                 <div class=" flex justify-center items-center order-2 lg:order-1 lg:row-span-3 self-center col-span-1">
-                    <h3 class="text-ek-orange text-center text-2xl md:text-4xl">
+                    <h4 class="text-ek-orange text-center text-2xl md:text-4xl">
                         3D animation <br/> coming soon
-                    </h3>
+                    </h4>
                 </div>
                 <Button
                     href="mailto:contact@erikkurjak.com".to_string()

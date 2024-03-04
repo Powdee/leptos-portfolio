@@ -8,7 +8,7 @@ use leptos_use::{use_element_visibility, use_window_scroll};
 #[component]
 pub fn InfoSocials() -> impl IntoView {
     view! {
-        <h1
+        <h2
             class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl mb-28 leading-smallheading sm:leading-mediumheading tracking-smallheading sm:tracking-heading"
             id="socials"
         >
@@ -30,7 +30,7 @@ pub fn InfoSocials() -> impl IntoView {
                     me
                 </span>
             </div>
-        </h1>
+        </h2>
         <div class="flex flex-col">
             <a
                 target="_blank"

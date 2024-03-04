@@ -9,7 +9,7 @@ pub fn Hero() -> impl IntoView {
             <div class="absolute pointer-events-none inset-0 flex items-center justify-center bg-ek-dark [mask-image:radial-gradient(ellipse_at_center,transparent_20%,#0e0306)]"></div>
         </div>
         <Layout id="home".to_string() aria_label="Hero" class_name="".to_string()>
-            <div class="text-left">
+            <h1 class="text-left">
                 <div class="animated-title">
                     <span class="text-6xl sm:text-8xl lg:text-9xl xl:text-10xl text-ek-white animated-title-element font-bold uppercase leading-smallheading sm:leading-mediumheading xl:leading-heading tracking-smallheading  sm:tracking-heading">
                         "Leading"
@@ -42,7 +42,7 @@ pub fn Hero() -> impl IntoView {
                         </span>
                     </div>
                 </div>
-            </div>
+            </h1>
         </Layout>
     }
 }
