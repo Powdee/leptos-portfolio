@@ -23,7 +23,6 @@ pub fn App() -> impl IntoView {
 
         <Router>
             <Show when=move || env == "production" fallback=SoonPage>
-                // <canvas id="canvas" width="800" height="600" class="absolute"></canvas>
                 <Routes>
                     <Route path="" view=HomePage/>
                     <Route path="/*any" view=NotFound/>

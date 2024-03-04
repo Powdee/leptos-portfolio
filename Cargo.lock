@@ -1446,6 +1446,7 @@ dependencies = [
  "chrono",
  "chrono-tz",
  "console_error_panic_hook",
+ "gloo-timers",
  "http",
  "leptos",
  "leptos-use",
@@ -1457,7 +1458,6 @@ dependencies = [
  "serde",
  "serde_json",
  "wasm-bindgen",
- "web-sys",
 ]
 
 [[package]]

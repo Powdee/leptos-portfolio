@@ -1,5 +1,4 @@
 
-use crate::components::ui::card_link::CardLink;
 use crate::components::ui::close::Close;
 use crate::components::ui::layout::Layout;
 use crate::types::project::Project;
@@ -69,7 +68,7 @@ pub fn UseCase(slug: String) -> impl IntoView {
     view! {
         <Close el=el/>
         <main class={
-            let base_class = "flex delay-75 duration-1000 mb-16 ease-out";
+            let base_class = "flex delay-75 duration-1000 mb-40 ease-out";
             move || {
                 if is_hovered.get() {
                     format!("{} {}", base_class, "usecase-in")
@@ -133,7 +132,7 @@ pub fn UseCase(slug: String) -> impl IntoView {
                                                 .map(|tag| {
                                                     view! {
                                                         <div class="bg-ek-orange rounded-full px-6 py-2">
-                                                            <span class="font-medium text-md">{tag}</span>
+                                                            <span class="font-[400] text-ek-dark text-md">{tag}</span>
                                                         </div>
                                                     }
                                                 })
@@ -149,7 +148,7 @@ pub fn UseCase(slug: String) -> impl IntoView {
                                         </p>
                                     </Show>
                                     <Show when=move || data.information.timeline.is_some()>
-                                        <p class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-ek-orange font-light">
+                                        <p class="text-md md:text-lg lg:text-xl lg:leading-relaxed leading-relaxed text-ek-white font-light">
                                             <b>Timeline:</b>
                                             {' '}
                                             {timeline.clone()}
@@ -163,25 +162,6 @@ pub fn UseCase(slug: String) -> impl IntoView {
                                     ></p>
                                 </div>
                             </div>
-                            <div class="features mt-20 md:mt-40">
-                                {move || {
-                                    data.cards
-                                        .iter()
-                                        .map(|area| {
-                                            view! {
-                                                <CardLink class_name=area.to_string()>
-                                                    <div class="h-full flex justify-center items-center">
-                                                        <h3 class="text-ek-dark text-xs sm:text-lg md:text-2xl">
-                                                            screen coming soon
-                                                        </h3>
-                                                    </div>
-                                                </CardLink>
-                                            }
-                                        })
-                                        .collect_view()
-                                }}
-
-                            </div>
                         }
                             .into_view()
                     }
@@ -191,6 +171,15 @@ pub fn UseCase(slug: String) -> impl IntoView {
         </main>
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 

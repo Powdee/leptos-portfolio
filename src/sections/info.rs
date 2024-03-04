@@ -2,13 +2,16 @@ use crate::{
     components::ui::button::Button, utils::map_y_to_value::map_y_to_value,
 };
 
-use leptos::{html::Section, *};
+use leptos::{html::Footer, *};
 use leptos_use::{use_element_visibility, use_window_scroll};
 
 #[component]
 pub fn InfoSocials() -> impl IntoView {
     view! {
-        <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl mb-28" id="socials">
+        <h1
+            class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl mb-28 leading-smallheading sm:leading-mediumheading tracking-smallheading sm:tracking-heading"
+            id="socials"
+        >
             <div class="animated-title">
                 <span class="animated-title-element text-ek-dark font-bold uppercase">Get</span>
             </div>
@@ -28,35 +31,30 @@ pub fn InfoSocials() -> impl IntoView {
                 </span>
             </div>
         </h1>
-        <div class="flex flex-col gap-8 md:gap-10">
-            <div class="flex flex-col gap-8 md:gap-10">
-                <a
-                    target="_blank"
-                    class="text-2xl md:text-3xl lg:text-4xl text-ek-dark font-[400]"
-                    href="https://github.com/Powdee"
-                >
-                    github
-                </a>
-                <div class="w-full h-[2px] bg-ek-dark"></div>
-            </div>
-
-            <div class="flex flex-col gap-8 md:gap-10">
-                <a
-                    target="_blank"
-                    class="text-2xl md:text-3xl lg:text-4xl text-ek-dark font-[400]"
-                    href="https://www.linkedin.com/in/erik-kurjak/"
-                >
-                    linkedIn
-                </a>
-                <div class="w-full h-[2px] bg-ek-dark"></div>
-            </div>
-
-            <div class="flex flex-col gap-8 md:gap-10">
-                <a class="text-2xl md:text-3xl lg:text-4xl text-ek-dark font-[400]" href="/resume">
-                    résumé
-                </a>
-                <div class="w-full h-[2px] bg-ek-dark"></div>
-            </div>
+        <div class="flex flex-col">
+            <a
+                target="_blank"
+                class="text-2xl md:text-3xl lg:text-4xl text-ek-dark font-[400] py-8 md:py-10"
+                href="https://github.com/Powdee"
+            >
+                github
+            </a>
+            <div class="w-full h-[2px] bg-ek-dark"></div>
+            <a
+                target="_blank"
+                class="text-2xl md:text-3xl lg:text-4xl text-ek-dark font-[400] py-8 md:py-10"
+                href="https://www.linkedin.com/in/erik-kurjak/"
+            >
+                linkedIn
+            </a>
+            <div class="w-full h-[2px] bg-ek-dark"></div>
+            <a
+                class="text-2xl md:text-3xl lg:text-4xl text-ek-dark font-[400] py-8 md:py-10"
+                href="/resume"
+            >
+                résumé
+            </a>
+            <div class="w-full h-[2px] bg-ek-dark"></div>
         </div>
     }
 }
@@ -65,7 +63,7 @@ pub fn InfoSocials() -> impl IntoView {
 pub fn InfoAction() -> impl IntoView {
     view! {
         <div class="mt-40 lg:mt-64 flex flex-col items-center justify-center" id="contact">
-            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl text-center">
+            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl text-center leading-smallheading sm:leading-mediumheading xl:leading-heading tracking-smallheading sm:tracking-heading">
                 <div class="animated-title">
                     <span class="animated-title-element text-ek-dark font-bold uppercase">
                         Want
@@ -94,7 +92,7 @@ pub fn InfoAction() -> impl IntoView {
 
 #[island]
 pub fn Info() -> impl IntoView {
-    let el = create_node_ref::<Section>();
+    let el = create_node_ref::<Footer>();
     let is_element_visible = use_element_visibility(el);
     let (_, y) = use_window_scroll();
 
@@ -107,11 +105,11 @@ pub fn Info() -> impl IntoView {
     });
 
     view! {
-        <section
+        <footer
             node_ref=el
             aria_label="Info"
             id="footer".to_string()
-            class="selection:bg-ek-dark selection:text-ek-white bg-ek-white max-w-full py-28 lg:py-64 relative w-full isolate lg:mx-auto lg:mx-0 lg:flex mx-auto max-w-auto 2xl:max-w-10xl px-4 md:px-6"
+            class="selection:bg-ek-dark selection:text-ek-white bg-ek-white max-w-full py-28 lg:pt-64 lg:pb-32 relative w-full isolate lg:mx-auto lg:mx-0 lg:flex mx-auto max-w-auto 2xl:max-w-10xl px-4 md:px-6"
             style=move || {
                 format!(
                     "border-top-left-radius: {}px;border-top-right-radius: {}px",
@@ -125,7 +123,7 @@ pub fn Info() -> impl IntoView {
                 <InfoSocials/>
                 <InfoAction/>
             </div>
-        </section>
+        </footer>
     }
 }
 

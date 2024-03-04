@@ -17,7 +17,7 @@ pub fn Hero() -> impl IntoView {
                 </div>
                 <br/>
                 <div class="animated-title">
-                    <span class="text-5xl sm:text-8xl lg:text-9xl xl:text-10xl text-ek-orange animated-title-element font-bold uppercase leading-smallheading sm:leading-mediumheading  xl:leading-heading tracking-smallheading sm:tracking-heading">
+                    <span class="text-5xl sm:text-8xl lg:text-9xl xl:text-10xl text-ek-orange animated-title-element font-bold break-all uppercase leading-smallheading sm:leading-mediumheading  xl:leading-heading tracking-smallheading sm:tracking-heading">
                         "Engineering"
                     </span>
                 </div>

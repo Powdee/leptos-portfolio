@@ -43,7 +43,7 @@ fn FeaturedCards() -> impl IntoView {
     });
 
     view! {
-        <div class="features mt-20 md:mt-40">
+        <div class="features mt-20 md:mt-40" id="projects">
             {move || {
                 projects
                     .get()
@@ -81,10 +81,10 @@ fn FeaturedCards() -> impl IntoView {
 #[component]
 pub fn Features() -> impl IntoView {
     view! {
-        <Layout id="projects".to_string() aria_label="Features" class_name="flex-col".to_string()>
-            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl">
+        <Layout id="features".to_string() aria_label="Features" class_name="flex-col".to_string()>
+            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl leading-smallheading sm:leading-mediumheading tracking-smallheading sm:tracking-heading">
                 <div class="animated-title">
-                    <span class="animated-title-element text-ek-white font-bold uppercase">
+                    <span class="animated-title-element text-ek-white font-bold uppercase ">
                         Featured
                     </span>
                 </div>
@@ -117,6 +117,8 @@ pub fn Features() -> impl IntoView {
         </Layout>
     }
 }
+
+
 
 
 

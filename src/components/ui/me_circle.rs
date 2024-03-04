@@ -24,7 +24,7 @@ pub fn MeCircle() -> impl IntoView {
                 font-size="18"
                 font-weight="medium"
                 letter-spacing="12px"
-                fill="#0e0306"
+                fill="#dad6ca"
             >
                 <textPath xlink:href="#textPath">Open to new challanges</textPath>
                 <animateTransform
@@ -83,7 +83,7 @@ pub fn MeCircleTablet() -> impl IntoView {
                 cy="120"
                 r="110"
                 fill="none"
-                stroke="#837e80"
+                stroke="#dad6ca"
             ></circle>
         </svg>
     }

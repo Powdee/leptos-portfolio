@@ -21,7 +21,7 @@ pub fn Close(el: NodeRef<Svg>) -> impl IntoView {
                         <g clip-path="url(#clip0_615_114)">
                             <path
                                 d="M38.7751 24.0174L36.9825 22.2248L29.8756 29.3317L22.7687 22.2248L20.9761 24.0174L28.083 31.1243L20.9761 38.2312L22.7687 40.0238L29.8756 32.9169L36.9825 40.0238L38.7751 38.2312L31.6682 31.1243L38.7751 24.0174Z"
-                                fill="#f8f9fa"
+                                fill="#0e0306"
                             ></path>
                         </g>
                         <defs>
@@ -29,7 +29,7 @@ pub fn Close(el: NodeRef<Svg>) -> impl IntoView {
                                 <rect
                                     width="51.7791"
                                     height="51.7791"
-                                    fill="white"
+                                    fill="#0e0306"
                                     transform="translate(4.25586 4.96509)"
                                 ></rect>
                             </clipPath>

@@ -27,6 +27,18 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-ek-orange;
+}
+
 /* ANIMATION */
 .usecase-in {
   transform: translateY(40);
@@ -541,7 +553,7 @@ canvas {
 .experience {
   @apply relative;
   @apply overflow-hidden;
-  @apply bg-ek-dark w-full text-lg lg:text-2xl leading-largep font-[400] shadow-sm py-7 px-2;
+  @apply bg-transparent w-full text-lg lg:text-2xl leading-largep font-[400] shadow-sm py-4 lg:py-7 px-2;
   transform: translateZ(0);
   transition: transform 0.3s;
 }
