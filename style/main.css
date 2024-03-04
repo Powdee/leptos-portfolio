@@ -861,14 +861,6 @@ html,
   top: 1rem;
 }
 
-.-top-20 {
-  top: -5rem;
-}
-
-.-top-10 {
-  top: -2.5rem;
-}
-
 .top-\[-20px\] {
   top: -20px;
 }
@@ -1373,10 +1365,6 @@ html,
 
 .uppercase {
   text-transform: uppercase;
-}
-
-.lowercase {
-  text-transform: lowercase;
 }
 
 .leading-about {
