@@ -38,7 +38,7 @@ module.exports = {
         largep: "2.75rem",
         heading: "10.313rem",
         mediumheading: "5.313rem",
-        smallheading: "2.813rem",
+        smallheading: "3.2rem",
       },
       letterSpacing: {
         p: "-.1rem",

@@ -29,6 +29,7 @@
 
 ::-webkit-scrollbar {
   width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -558,7 +559,9 @@ canvas {
   transition: transform 0.3s;
 }
 
-.experience:hover {
+.experience:hover,
+.experience:focus,
+.experience:active {
   transition: transform 0.6s cubic-bezier(0.34, 5.56, 0.64, 1);
 }
 
@@ -596,7 +599,9 @@ canvas {
   transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1);
 }
 
-.experience-cta:hover .experience-cta-ripple span {
+.experience-cta:hover .experience-cta-ripple span,
+.experience-cta:focus .experience-cta-ripple span,
+.experience-cta:active .experience-cta-ripple span {
   transform: translateY(0);
   transition-duration: 0.5s, 0.9s;
 }
@@ -615,7 +620,9 @@ canvas {
   @apply text-ek-white;
 }
 
-.experience-cta:hover .experience-cta-title span {
+.experience-cta:hover .experience-cta-title span,
+.experience-cta:focus .experience-cta-title span,
+.experience-cta:active .experience-cta-title span {
   transform: translateY(-110%);
 }
 
@@ -627,4 +634,44 @@ canvas {
   top: 110%;
   left: 0;
   @apply text-ek-dark;
+}
+
+/* ANIMATED FLIP DOWN/UP */
+
+@keyframes flipDown {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipUp {
+  0% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.animated-flip-down {
+  will-change: auto;
+  animation-name: flipDown;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.34, 0.34, 0, 0.97);
+  animation-fill-mode: forwards;
+}
+
+.animated-flip-up {
+  will-change: auto;
+  animation-name: flipUp;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.34, 0.34, 0, 0.97);
+  animation-fill-mode: forwards;
 }

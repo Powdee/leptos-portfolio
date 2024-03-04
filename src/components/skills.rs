@@ -73,7 +73,7 @@ pub fn Skills() -> impl IntoView {
                             } else {
                                 "text-ek-white"
                             };
-                            view! { <span class=class>{tech.to_string()}</span> }
+                            view! { <span class=move || class>{tech.to_string()}</span> }
                         })
                         .collect::<Vec<_>>()
                 }}

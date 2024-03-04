@@ -91,7 +91,7 @@ pub fn UseCase(slug: String) -> impl IntoView {
                             .map(|s| s.to_string())
                             .collect();
                         view! {
-                            <h1 class="text-5xl xs:text-6xl sm:text-7xl lg:text-8xl xl:text-10xl tracking-normal text-ek-white leading-tighter mb-4 mt-8 md:mb-10 md:mt-20">
+                            <h1 class="text-7xl sm:text-8xl xl:text-10xl tracking-normal text-ek-white mb-4 mt-8 md:mb-10 md:mt-20 sm:leading-mediumheading xl:leading-heading tracking-smallheading sm:tracking-heading">
                                 {vec_names
                                     .iter()
                                     .map(|name| {
@@ -171,6 +171,18 @@ pub fn UseCase(slug: String) -> impl IntoView {
         </main>
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
