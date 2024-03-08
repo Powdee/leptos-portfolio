@@ -4,7 +4,7 @@ use leptos::*;
 pub fn MadesenseLogo() -> impl IntoView {
     view! {
         <svg
-            class="lg:w-[108px] w-[50px]"
+            class="lg:w-[108px] w-[50px] stroke-ek-dark"
             width="108"
             height="96"
             viewBox="0 0 108 96"
@@ -12,14 +12,11 @@ pub fn MadesenseLogo() -> impl IntoView {
             xmlns="http://www.w3.org/2000/svg"
         >
             <g clip-path="url(#clip0_642_206)">
-                <path
-                    d="M97.5015 12.3193L54 37.48L10.4984 12.3193H97.5015Z"
-                    stroke="#dad6ca"
-                    stroke-width="3"
-                ></path>
-                <path d="M4.90906 10.8193L54 95.9999" stroke="#dad6ca" stroke-width="3"></path>
-                <path d="M54 39.2129V96" stroke="#dad6ca" stroke-width="3"></path>
-                <path d="M103.091 10.8193L54 95.9999" stroke="#dad6ca" stroke-width="3"></path>
+                <path d="M97.5015 12.3193L54 37.48L10.4984 12.3193H97.5015Z" stroke-width="3">
+                </path>
+                <path d="M4.90906 10.8193L54 95.9999" stroke-width="3"></path>
+                <path d="M54 39.2129V96" stroke-width="3"></path>
+                <path d="M103.091 10.8193L54 95.9999" stroke-width="3"></path>
             </g>
             <defs>
                 <clipPath id="clip0_642_206">

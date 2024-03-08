@@ -37,7 +37,7 @@ pub fn Skills() -> impl IntoView {
 
     create_effect(move |_| {
         let timer = Interval::new(1250, move || {
-            let new_highlighted = (0..highlighted.get().len())
+            let new_highlighted = (0..highlighted.get_untracked().len())
                 .map(|index| {
                     if index % 3 == 0 {
                         random::<bool>()

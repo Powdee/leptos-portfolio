@@ -122,6 +122,15 @@
   }
 }
 
+@keyframes removeOverflow {
+  0% {
+    overflow: hidden;
+  }
+  100% {
+    overflow: visible;
+  }
+}
+
 .animated-title {
   position: relative;
   display: inline-block;
@@ -129,6 +138,10 @@
   padding: 0.15em;
   vertical-align: top;
   overflow: hidden;
+  animation-name: removeOverflow;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 
 .animated-title-element {
@@ -420,6 +433,15 @@ canvas {
   border-radius: 1em;
 }
 
+.scroll-icon.hero {
+  @apply border-ek-orange;
+  opacity: 0.5;
+}
+
+.hero .scroll-icon__dot {
+  @apply bg-ek-orange;
+}
+
 .link {
   position: relative;
   will-change: transform;
@@ -638,17 +660,6 @@ canvas {
 
 /* ANIMATED FLIP DOWN/UP */
 
-@keyframes flipDown {
-  0% {
-    transform: rotateX(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: rotateX(90deg);
-    opacity: 0;
-  }
-}
-
 @keyframes flipUp {
   0% {
     transform: rotateX(-90deg);
@@ -658,14 +669,6 @@ canvas {
     transform: rotateX(0deg);
     opacity: 1;
   }
-}
-
-.animated-flip-down {
-  will-change: auto;
-  animation-name: flipDown;
-  animation-duration: 1s;
-  animation-timing-function: cubic-bezier(0.34, 0.34, 0, 0.97);
-  animation-fill-mode: forwards;
 }
 
 .animated-flip-up {

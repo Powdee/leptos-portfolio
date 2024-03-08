@@ -132,7 +132,7 @@ pub fn UseCase(slug: String) -> impl IntoView {
                                                 .map(|tag| {
                                                     view! {
                                                         <div class="bg-ek-orange rounded-full px-6 py-2">
-                                                            <span class="font-[400] text-ek-dark text-md">{tag}</span>
+                                                            <span class="font-[400] text-ek-white text-md">{tag}</span>
                                                         </div>
                                                     }
                                                 })
@@ -171,6 +171,7 @@ pub fn UseCase(slug: String) -> impl IntoView {
         </main>
     }
 }
+
 
 
 
