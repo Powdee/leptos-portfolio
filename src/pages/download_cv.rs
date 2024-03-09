@@ -7,7 +7,7 @@ use crate::components::ui::button::Button;
 use crate::components::ui::close::Close;
 use crate::components::ui::layout::Layout;
 
-#[island]
+#[component]
 pub fn DownloadCVPage() -> impl IntoView {
     let closeIcon = create_node_ref::<Svg>();
     let is_hovered = use_element_hover(closeIcon);

@@ -90,7 +90,7 @@ pub fn InfoAction() -> impl IntoView {
     }
 }
 
-#[island]
+#[component]
 pub fn Info() -> impl IntoView {
     let el = create_node_ref::<Footer>();
     let is_element_visible = use_element_visibility(el);

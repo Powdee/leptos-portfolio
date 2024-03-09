@@ -3,7 +3,7 @@ use crate::components::ui::layout::Layout;
 use gloo_timers::callback::Interval;
 use leptos::*;
 
-#[island]
+#[component]
 pub fn Hero() -> impl IntoView {
     let (skill, write_skill) = create_signal("TypeScript");
 

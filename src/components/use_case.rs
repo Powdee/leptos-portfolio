@@ -46,7 +46,7 @@ pub async fn get_project_by_slug(
     Ok(project)
 }
 
-#[island]
+#[component]
 pub fn UseCase(slug: String) -> impl IntoView {
     let (project, write_project) = create_signal(None::<Project>);
 
@@ -171,6 +171,7 @@ pub fn UseCase(slug: String) -> impl IntoView {
         </main>
     }
 }
+
 
 
 

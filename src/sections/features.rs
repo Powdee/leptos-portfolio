@@ -27,7 +27,7 @@ pub async fn get_projects() -> Result<Vec<Project>, ServerFnError> {
     Ok(le_json.data)
 }
 
-#[island]
+#[component]
 fn FeaturedCards() -> impl IntoView {
     let (projects, write_projects) = create_signal(Vec::<Project>::new());
 
@@ -117,6 +117,7 @@ pub fn Features() -> impl IntoView {
         </Layout>
     }
 }
+
 
 
 

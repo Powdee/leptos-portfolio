@@ -2,7 +2,7 @@ use gloo_timers::callback::Interval;
 use leptos::*;
 use rand::random;
 
-#[island]
+#[component]
 pub fn Skills() -> impl IntoView {
     let technologies = vec![
         "TypeScript",
