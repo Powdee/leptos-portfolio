@@ -12,15 +12,16 @@ pub fn Header() -> impl IntoView {
     view! {
         <header
             id="header"
-            class="sticky top-0 bg-ek-dark mx-auto max-w-full px-3 md:px-5 selection:bg-ek-white selection:text-ek-dark relative backdrop-invert-0 z-10"
+            class="sticky top-0 bg-ek-dark mx-auto max-w-full selection:bg-ek-white selection:text-ek-dark relative backdrop-invert-0 z-10"
         >
             <nav
-                class="w-full py-2 md:py-3 border-b-ek-white/[0.35] border-b-2"
+                class="w-full py-2 md:py-3 border-b-ek-white/[0.35] border-b-2 px-3 md:px-5"
                 aria-label="Global"
             >
                 <ul class="gap-4 flex-row flex items-center justify-between">
-                    <li class="font-almarena text-ek-white text-md md:text-lg flex uppercase">
-                        Kurjak
+                    <li class="font-almarena text-ek-white text-md md:text-lg flex uppercase gap-1">
+                        <span>Erik</span>
+                        <span class="block sm:hidden">Kurjak</span>
                     </li>
                     <li class="hidden lg:flex text-ek-white text-xl md:text-2xl">
                         <span class="text-sm sm:text-md flex items-center gap-2">
@@ -91,6 +92,38 @@ pub fn Header() -> impl IntoView {
                                 ></path>
                             </svg>
                         </span>
+                    </li>
+                </ul>
+            </nav>
+            <nav
+                class="w-full py-2 md:py-3 bg-ek-white border-b-ek-white/[0.35] border-b-2 px-3 md:px-5"
+                aria-label="Global"
+            >
+                <ul class="gap-4 flex-row flex items-center justify-between">
+                    <li class="hidden sm:block font-almarena text-ek-dark text-md md:text-lg flex uppercase">
+                        Kurjak
+                    </li>
+
+                    <li class="cursor-pointer flex gap-4 md:gap-8 items-center w-full md:justify-end justify-center">
+                        <a
+                            href="/resume"
+                            class="text-sm sm:text-lg text-ek-dark flex items-center gap-1"
+                        >
+                            résumé
+                        </a>
+                        <a
+                            href="#projects"
+                            class="text-sm sm:text-lg text-ek-dark flex items-center gap-1"
+                        >
+                            featured projects
+                        </a>
+                        <a
+                            href="https://github.com/Powdee"
+                            target="_blank"
+                            class="text-sm sm:text-lg text-ek-dark flex items-center gap-1"
+                        >
+                            github
+                        </a>
                     </li>
                 </ul>
             </nav>

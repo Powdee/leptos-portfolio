@@ -124,7 +124,7 @@ pub fn Info() -> impl IntoView {
                 <InfoAction/>
             </div>
             <span class="md:text-left text-center flex justify-center mt-20 md:absolute md:left-5 md:bottom-5 text-sm sm:text-md text-ek-dark flex items-center">
-                "© Copyright 2024 Erik Kurjak All rights reserved"
+                "© Copyright 2024, Erik Kurjak, All rights reserved"
             </span>
         </footer>
     }
