@@ -43,7 +43,7 @@ pub fn Profile() -> impl IntoView {
                         letter-spacing="12px"
                         fill="#dad6ca"
                     >
-                        <textPath xlink:href="#textPath">Open to new challanges</textPath>
+                        <textPath xlink:href="#textPath">Not actively looking</textPath>
                         <animateTransform
                             attributeName="transform"
                             type="rotate"
